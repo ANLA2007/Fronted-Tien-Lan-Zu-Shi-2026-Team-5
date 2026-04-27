@@ -1,0 +1,164 @@
+.pagina-home {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: 
+        radial-gradient(circle at 50% 20%, rgba(255, 193, 7, 0.5), transparent 50%),
+        radial-gradient(circle at 10% 85%, rgba(76, 175, 80, 0.6), transparent 50%),
+        #fcfcfc;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-home .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.pagina-home .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    text-decoration: none;
+    border: none;
+}
+
+.pagina-home .logo img {
+    width: 60px;
+    height: auto;
+    background: transparent;
+}
+
+.pagina-home .logo span {
+    font-size: 26px;
+    font-style: italic;
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pagina-home .menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.pagina-home .menu span {
+    color: #436d4e;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+
+.pagina-home .menu button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-home .contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    align-items: center;
+    padding: 40px 10%;
+}
+
+.pagina-home .imagen img {
+    max-width: 90%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+
+.pagina-home .descripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pagina-home .titulo-grande {
+    font-size: 65px;
+    color: #2e7d32;
+    margin: 0;
+    font-weight: 800;
+}
+
+.pagina-home .titulo-chico {
+    font-size: 28px;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.pagina-home .raya {
+    width: 100%;
+    max-width: 620px; 
+    height: 8px;
+    background-color: #ffb74d;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.pagina-home .frase {
+    font-style: italic;
+    color: #5d4037;
+    font-size: 19px;
+    max-width: 500px;
+}
+
+.pagina-home .redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pagina-home .circulo {
+    background-color: #bc9a6c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+@media (max-width: 850px) {
+    .pagina-home .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .pagina-home .menu {
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pagina-home .contenedor {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+        text-align: center;
+    }
+
+    .pagina-home .titulo-grande {
+        font-size: 40px;
+    }
+
+    .pagina-home .raya {
+        max-width: 80%;
+    }
+}
+
