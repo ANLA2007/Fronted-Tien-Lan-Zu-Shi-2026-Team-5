@@ -1,0 +1,661 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body.Inventario {
+    background-color: #f5f8fb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Inventario .header {
+    background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
+    padding: 15px 30px;
+    color: #e8f5e9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.Inventario .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Inventario .logo-negocio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Inventario .logo-negocio img {
+    width: 40px; 
+    height: auto;
+}
+
+.Inventario .user-avatar {
+    background: #6fcf97;
+    color: #0d3b2e;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.Inventario .main-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    flex: 1;
+}
+
+.Inventario .sidebar {
+    background: linear-gradient(180deg, #0d3b2e, #1f7a63);
+    padding: 20px;
+}
+
+.Inventario .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #e8f5e9;
+    background: rgba(255,255,255,0.08);
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.Inventario .nav-link:hover {
+    background: rgba(111,207,151,0.3);
+    transform: translateX(5px);
+}
+
+.Inventario .nav-link.active {
+    background: #6fcf97;
+    color: #0d3b2e;
+}
+
+.Inventario .nav-link img {
+    width: 18px; 
+}
+
+
+.main-content {
+    padding: 30px;
+}
+
+.container {
+    background:white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+    border: 3px solid rgba(111,207,151,0.2);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    scrollbar-darkshadow-color: #145a32;
+
+}
+
+.styled-table thead th {
+    text-align: left;
+    padding: 12px;
+    background:#0d3b2e;
+    color: #c7cdd7;
+    font-size: 12px;
+    border-bottom: 2px solid #edf2f7;
+    padding: 20px;
+
+}
+
+
+
+.styled-table tbody td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-photo, .User-initials {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.User-initials {
+    background-color: #9decf9;
+    color: #2c5282;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.user-email {
+    font-size: 11px;
+    color: #718096;
+}
+
+.status-icon {
+    width: 16px; 
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.status-label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status-label.active { color: #38a169; }
+.status-label.pending { color: #805ad5; }
+.status-label.suspend { color: #e53e3e; }
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.modal-open {
+    display: flex !important;
+}
+
+
+.modal-content {
+    background: #1f7a63;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.3s ease;
+}
+
+.modal-content.activo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.btn-new-user {
+    background-color: #0d3b2e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-new-user:hover {
+    background-color: #6fcf97;
+}
+
+.btn-delete {
+    background: #fed7d7;
+    color: #c53030;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #f56565;
+    color: white;
+}
+
+
+.footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.page-btn {
+    padding: 8px 14px;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background-color: #e8f5e9;
+    border-color: #cbd5e0;
+}
+
+
+.active-page {
+    background-color: #0d3b2e;
+    color: white;
+    border-color: #1a202c;
+}
+
+.entries-info {
+    font-size: 14px;
+    color: #718096;
+}
+.actions-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-action {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color:  #e8f5e9;
+    color: #2b313b;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.select-action:focus {
+    border-color: #1164b2;
+}
+
+.btn-apply {
+    background-color: #ebf8ff;
+    color: #2e21c7;
+    border: 1px solid #19217e;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-apply:hover {
+    background-color: #2832b8;
+    color: white;
+    border-color: #3182ce;
+}
+
+.btn-icon{
+    background-color: white;
+    border: none;
+    color: #2f432f;
+    transition: 0.2s;
+}
+
+.btn-icon:hover {
+    background: white;
+    color: rgb(23, 120, 21);
+}
+
+.user-name{
+    
+    font-size: 14px;
+    font-weight: 700;
+
+}
+.text-imp {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4b5563;
+}
+.form-group{
+
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+
+}
+
+.close-btn{
+    background-color: #0d3b2e;
+    border: none;
+    color: white;
+}
+
+.form-group input, 
+.form-group .select-acciones {
+    width: 100%; 
+    padding: 10px 12px;
+    margin-top: 6px; 
+    margin-bottom: 6px;
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px; 
+    font-size: 14px;
+    color: #2d3748;
+    outline: none; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-save {
+
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;           
+    background-color: #1f7a63; 
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .Inventario .main-container {
+        flex-direction: column;
+    }
+
+    .Inventario .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .Inventario .nav {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 12px;
+        padding-bottom: 5px;
+    }
+
+    .Inventario .nav-link {
+        flex-direction: column; 
+        min-width: 80px;
+        font-size: 11px;
+        padding: 10px 5px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .Inventario .nav-link img {
+        width: 22px;
+        margin-bottom: 5px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Inventario .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .Inventario .nav-link span {
+        font-size: 10px;
+    }
+
+    .Inventario .nav-link {
+        min-width: 70px;
+    }
+
+    .status-label {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .actions {
+        display: flex;
+        gap: 5px;
+    }
+
+    .table-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .page-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .Inventario .logo-negocio span {
+        font-size: 18px;
+    }
+    
+    .filter-options {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-apply {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Inventario .main-container {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Inventario .sidebar {
+        padding: 10px 15px;
+        order: -1;
+        background: #0d3b2e;
+    }
+
+    .Inventario .nav {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .Inventario .nav-link {
+        flex: 0 0 auto;
+        flex-direction: column;
+        min-width: 75px;
+        text-align: center;
+        padding: 6px;
+        font-size: 10px;
+        margin-bottom: 0;
+    }
+
+    .Inventario .nav-link img {
+        margin: 0;
+        margin-bottom: 3px;
+        width: 20px;
+    }
+
+    .Inventario .nav-link span {
+        font-size: 9px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 15px;
+        border-width: 2px;
+    }
+
+    .table-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .actions-left {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .select-action {
+        flex: 1;
+    }
+
+    .btn-apply {
+        width: auto;
+    }
+
+    .btn-new-user {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -15px;
+        padding: 0 15px;
+    }
+
+    .styled-table thead th {
+        padding: 12px 8px;
+        font-size: 11px;
+    }
+
+    .styled-table tbody td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .user-info-cell {
+        gap: 8px;
+    }
+
+    .user-name {
+        font-size: 13px;
+    }
+
+    .user-email {
+        font-size: 10px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-group {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .table-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .pagination {
+        justify-content: center;
+        scale: 0.9;
+    }
+
+    .entries-info {
+        font-size: 12px;
+    }
+}
