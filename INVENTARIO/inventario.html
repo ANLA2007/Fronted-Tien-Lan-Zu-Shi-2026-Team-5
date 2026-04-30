@@ -7,253 +7,289 @@
     <link rel="stylesheet" href="inventario.css">
 </head>
 
-<body class="Usuario">
+<body class="Inventario">
 
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-negocio">
-                <img src="img/logo.png" alt="">
-                <span>Tien Lan Zu Shi</span>
-            </div>
-            <div class="user-info">
-                <div class="notif">
+<header class="header">
+    <div class="header-content">
+        <div class="logo-negocio">
+            <img src="img/logo.png" alt="">
+            <span>Tien Lan Zu Shi</span>
+        </div>
+        <div class="user-info">
+            <div class="notif">
                 🔔
                 <span class="notif-badge">3</span>
             </div>
-                <span>Admin</span>
-                <div class="user-avatar">TL</div>
-            </div>
+            <span>Admin</span>
+            <div class="user-avatar">TL</div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <div class="main-container">
-        <aside class="sidebar">
-            <nav class="nav">
-                <a href="index.html" class="nav-link">
+<div class="main-container">
+    <aside class="sidebar">
+        <nav class="nav">
+
+              <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
                     <img src="img/home.png">
-                    <span>Dashboard</span>
+                    <span>Inicio</span>
                 </a>
-                <a href="../USUARIO/usuario.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Usuarios</span>
-                </a>
-                <a href="roles.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Roles</span>
-                </a>
-                <a href="clientes.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Clientes</span>
-                </a>
-                <a href="platillos.html" class="nav-link">
-                    <img src="img/platillos.png">
-                    <span>Platillos</span>
-                </a>
-                <a href="ventas.html" class="nav-link">
-                    <img src="img/venta.png">
-                    <span>Ventas</span>
-                </a>
-                <a href="historial.html" class="nav-link">
-                    <img src="img/historialventa.png">
-                    <span>Historial Venta</span>
-                </a>
-                <a href="../INVENTARIO/inventario.html" class="nav-link active">
-                    <img src="img/inventario.png">
-                    <span>Inventario</span>
-                </a>
-                <a href="merma.html" class="nav-link">
-                    <img src="img/inventariomerma.png">
-                    <span>Inventario Merma</span>
-                </a>
-                <a href="configuracion.html" class="nav-link">
-                    <img src="img/configuracion.png">
-                    <span>Configuración</span>
-                </a>
-                <a href="LOGIN/login.html" class="nav-link">
-                    <img src="img/cerrarsesion.png">
-                    <span>Cerrar sesión</span>
-                </a>
-            </nav>
-        </aside>
 
-        <div class="content-wrapper">
-            <header class="main-header">
-                <div class="space">
-                
-                </div>
-                <div class="action-buttons">
-                    <button class="btn btn-new" id="openModal">+ Nuevo Inventario</button>
-                    <button class="btn btn-secondary">Excel</button>
-                </div>
-            </header>
+            <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                <img src="img/grafico.png">
+                <span>Dashboard</span>
+            </a>
+            <a href="../USUARIO/usuario.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Usuarios</span>
+            </a>
+            <a href="../ROLES/roles.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Roles</span>
+            </a>
+            <a href="../CLIENTE/clientes.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Clientes</span>
+            </a>
+            <a href="../PLATILLOS/platillos.html" class="nav-link">
+                <img src="img/platillos.png">
+                <span>Porcion</span>
+            </a>
+            <a href="../VENTA/ventas.html" class="nav-link">
+                <img src="img/venta.png">
+                <span>Ventas</span>
+            </a>
+            <a href="../HISTORIAL/historial.html" class="nav-link">
+                <img src="img/historialventa.png">
+                <span>Historial Venta</span>
+            </a>
+            <a href="../INVENTARIO/inventario.html" class="nav-link active">
+                <img src="img/inventario.png">
+                <span>Inventario</span>
+            </a>
+           
+            <a href="../CONFIGURACION/configuracion.html" class="nav-link">
+                <img src="img/configuracion.png">
+                <span>Configuración</span>
+            </a>
+            <a href="../LOGIN/login.html" class="nav-link">
+                <img src="img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+        </nav>
+    </aside>
 
-            <section class="filter-bar">
+    <div class="content-wrapper">
 
-                <div class="title-section">
-                    <div class="date-container">
-                        <label>Desde:</label>
+        <header class="main-header">
+            <div class="space"></div>
+            <div class="action-buttons">
+                <button class="btn btn-new" id="openModal">+ Nuevo Inventario</button>
+                <button class="btn btn-secondary">Excel</button>
+            </div>
+        </header>
+
+      
+        <section class="filter-bar">
+            <div class="title-section">
+
+                <div class="date-container">
+                    <label>Desde:</label>
                     <div class="input-date">
-                        <input type="date">
+                        <input type="date" id="fromDate">
                     </div>
-                    <div class="date-container">
+                </div>
+
+                <div class="date-container">
                     <label>Hasta:</label>
                     <div class="input-date">
-                        <input type="date">
+                        <input type="date" id="toDate">
                     </div>
-                    
-                    </div>
-                    <button class="btn-filtrar">Filtrar</button>
                 </div>
-                <div class="search-container">
-                    <span class="icon"><img src="img/search.png"></span>
-                    <input type="text" placeholder="Buscar Inventario">
-                </div>
-                <select class="filter-select">
-                    <option>Todo</option>
-                    <option>10</option>
-                    <option>3</option>
-                </select>
-            </section>
 
-            <div class="table-container">
-                <table class="orders-table">
-                    <thead>
-                        <tr>
-                            <th>FECHA</th>
-                            <th>PRODUCTO</th>
-                            <th>STOCK</th>
-                            <th>PRECIO</th>
-                            <th>ACCION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>20 MAY 2025</td>
-                            <td>Tacos de Repollo</td>
-                            <td>230</td>
-                            <td>25</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>19 MAY 2025</td>
-                            <td>Arroz Cantones</td>
-                            <td>160</td>
-                            <td>50</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>22 JUL 2025</td>
-                            <td>Arroz Chaufa</td>
-                            <td>120</td>
-                            <td>35</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>15 JUN 2026</td>
-                            <td>Nasi Lemak Vegano</td>
-                            <td>180</td>
-                            <td>45</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>18 JUN 2026</td>
-                            <td>Satay de Tempeh</td>
-                            <td>250</td>
-                            <td>35</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>22 JUL 2026</td>
-                            <td>Laksa de Curry (Tofu)</td>
-                            <td>120</td>
-                            <td>50</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
+                <button class="btn-filtrar" onclick="filtrar()">Filtrar</button>
 
-                        <tr>
-                            <td>30 JUL 2025</td>
-                            <td>Dumpling</td>
-                            <td>200</td>
-                            <td>30</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>05 AGO 2025</td>
-                            <td>Sopa Wantán</td>
-                            <td>85</td>
-                            <td>28</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>12 AGO 2026</td>
-                            <td>Nasi Goreng Sayur</td>
-                            <td>140</td>
-                            <td>38</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-                        <tr>
-                            <td>01 SEP 2025</td>
-                            <td>Tallarín Saltado</td>
-                            <td>110</td>
-                            <td>40</td>
-                            <td><button class="btn-more">•••</button></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-                <footer class="table-footer">
-                    <div class="pagination">
-                        <button class="page-btn">Anterior</button>
-                        <button class="page-btn active-page">1</button>
-                        <button class="page-btn">2</button>
-                        <button class="page-btn">3</button>
-                        <button class="page-btn">Siguiente</button>
-                    </div>
-                    <div class="entries-info">Mostrando 10 de 100 </div>
-                </footer>
             </div>
+
+           
+            <div class="search-container">
+                <span class="icon"><img src="img/search.png"></span>
+                <input type="text" id="buscador" placeholder="Buscar Inventario">
+            </div>
+
+            <select class="filter-select">
+                <option>Todo</option>
+                <option>10</option>
+                <option>3</option>
+            </select>
+        </section>
+
+        <div class="table-container">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>PRODUCTO</th>
+                        <th>STOCK DIARIO</th>
+                        <th>STOCK ACUMULADO</th>
+                        <th>PRECIO</th>
+                        <th>ACCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>20 MAY 2025</td>
+                        <td>Tacos de Repollo</td>
+                        <td>230</td>
+                        <td>500</td>
+                        <td>25</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>19 MAY 2025</td>
+                        <td>Arroz Cantones</td>
+                        <td>160</td>
+                        <td>400</td>
+                        <td>50</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>22 JUL 2025</td>
+                        <td>Arroz Chaufa</td>
+                        <td>120</td>
+                        <td>300</td>
+                        <td>35</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>15 JUN 2026</td>
+                        <td>Nasi Lemak Vegano</td>
+                        <td>180</td>
+                        <td>600</td>
+                        <td>45</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>18 JUN 2026</td>
+                        <td>Satay de Tempeh</td>
+                        <td>250</td>
+                        <td>700</td>
+                        <td>35</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>22 JUL 2026</td>
+                        <td>Laksa de Curry (Tofu)</td>
+                        <td>120</td>
+                        <td>450</td>
+                        <td>50</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>30 JUL 2025</td>
+                        <td>Dumpling</td>
+                        <td>200</td>
+                        <td>520</td>
+                        <td>30</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>05 AGO 2025</td>
+                        <td>Sopa Wantán</td>
+                        <td>85</td>
+                        <td>300</td>
+                        <td>28</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>12 AGO 2026</td>
+                        <td>Nasi Goreng Sayur</td>
+                        <td>140</td>
+                        <td>480</td>
+                        <td>38</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>01 SEP 2025</td>
+                        <td>Tallarín Saltado</td>
+                        <td>110</td>
+                        <td>350</td>
+                        <td>40</td>
+                        <td><button class="btn-more">•••</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <footer class="table-footer">
+                <div class="pagination">
+                    <button class="page-btn">Anterior</button>
+                    <button class="page-btn active-page">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">Siguiente</button>
+                </div>
+                <div class="entries-info">Mostrando 10 de 100</div>
+            </footer>
         </div>
+
     </div>
+</div>
 
-    <footer class="footer-fin">
-        <span>© 2026 Tien Lan Zu Shi</span>
-    </footer>
+<footer class="footer-fin">
+    <span>© 2026 Tien Lan Zu Shi</span>
+</footer>
 
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Agregar Inventario</h2>
-                <button class="close-btn" id="closeModal">✖</button>
-            </div>
-            <form class="user-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Seleccionar Platillo</label>
-                        <select class="select-acciones">
-                            <option>Arroz Cantones</option>
-                            <option>Tacos de Repollo</option>
-                            <option>Dumpling</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Fecha</label>
-                        <input type="text" placeholder="10-03-2025" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Stock</label>
-                        <input type="text" placeholder="20" required>
-                    </div>
-                </div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Agregar Inventario</h2>
+            <button class="close-btn" id="closeModal">✖</button>
+        </div>
+
+        <form class="user-form">
+            <div class="form-row">
                 <div class="form-group">
-                    <label>Precio</label>
-                    <input type="text" placeholder="500 C$" required>
+                    <label>Seleccionar Platillo</label>
+                    <select class="select-acciones">
+                        <option>Arroz Cantones</option>
+                        <option>Tacos de Repollo</option>
+                        <option>Dumpling</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn-save">GUARDAR</button>
-            </form>
-        </div>
-    </div>
 
-    <script src="js/inventory.js"></script>
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="text" placeholder="10-03-2025" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Stock</label>
+                    <input type="text" placeholder="20" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="text" placeholder="500 C$" required>
+            </div>
+
+            <button type="submit" class="btn-save">GUARDAR</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/inventory.js"></script>
 </body>
 </html>

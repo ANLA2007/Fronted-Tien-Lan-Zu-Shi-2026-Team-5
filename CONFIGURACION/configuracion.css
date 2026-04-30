@@ -1,0 +1,328 @@
+body.configuracion {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.configuracion .header {
+    background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
+    padding: 15px 30px;
+    color: #e8f5e9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.configuracion .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.configuracion .logo-negocio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.configuracion .logo-negocio img {
+    width: 40px;
+}
+
+.configuracion .logo-negocio span {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #e8f5e9;
+}
+
+
+.configuracion .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.configuracion .notif {
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.configuracion .notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #097514;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.configuracion .user-avatar {
+    background: #6fcf97;
+    color: #0d3b2e;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+.configuracion .main-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    flex: 1;
+}
+
+
+.configuracion .sidebar {
+    background: linear-gradient(180deg, #0d3b2e, #1f7a63);
+    padding: 20px;
+}
+
+.configuracion .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.configuracion .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #e8f5e9;
+    background: rgba(255,255,255,0.08);
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.configuracion .nav-link img {
+    width: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.configuracion .nav-link:hover {
+    background: rgba(111,207,151,0.3);
+    transform: translateX(5px);
+}
+
+.configuracion .nav-link.active {
+    background: #6fcf97;
+    color: #0d3b2e;
+}
+
+
+.configuracion .main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.configuracion .grid-secundario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+
+.configuracion .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    min-height: 200px;
+    height: auto;
+}
+
+
+.configuracion .card span {
+    font-weight: bold;
+    color: #0d3b2e;
+}
+
+
+.configuracion .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.configuracion .item input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+.configuracion .btn-save {
+    margin-top: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1f7a63;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.configuracion .btn-save:hover {
+    background: #0d3b2e;
+}
+
+.configuracion .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 1024px) {
+
+    .configuracion .main-container {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .configuracion .grid-secundario {
+        grid-template-columns: 1fr;
+    }
+
+    .configuracion .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+   
+    .configuracion .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    
+    .configuracion .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .configuracion .sidebar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+    .configuracion .nav {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .configuracion .nav-link {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    
+    .configuracion .grid-secundario {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .configuracion .card {
+        min-height: auto;
+    }
+
+   
+    .configuracion .item input {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .configuracion .logo-negocio span {
+        font-size: 18px;
+    }
+
+    .configuracion .btn-save {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .configuracion .user-info {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+
+
+body.configuracion.dark-mode {
+    background: #0f172a;
+}
+
+
+body.configuracion.dark-mode .header {
+    background: linear-gradient(135deg, #0b1f17, #0d3b2e, #145c45);
+}
+
+
+body.configuracion.dark-mode .sidebar {
+    background: linear-gradient(180deg, #0b1f17, #0d3b2e);
+}
+
+
+body.configuracion.dark-mode .card {
+    background: #1e293b;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+
+body.configuracion.dark-mode .card span {
+    color: #e5e7eb;
+}
+
+
+body.configuracion.dark-mode .item input {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+}
+
+
+body.configuracion.dark-mode .footer {
+    background: #0b1f17;
+}
+
+
+body.configuracion.dark-mode .nav-link {
+    background: rgba(255,255,255,0.05);
+}
