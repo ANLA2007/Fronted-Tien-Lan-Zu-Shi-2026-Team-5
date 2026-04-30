@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nueva Venta</title>
+<link rel="stylesheet" href="NuevaVenta.css">
+</head>
+
+<body class="venta">
+
+<header class="header">
+    <div class="header-content">
+
+        <div class="logo-negocio">
+            <img src="img/logo.png" alt="">
+            <span>Tien Lan Zu Shi</span>
+        </div>
+
+        <div class="user-info">
+
+            <div class="notif">
+                🔔
+                <span class="notif-badge">3</span>
+            </div>
+
+            <span>Admin</span>
+
+            <div class="user-avatar">TL</div>
+
+        </div>
+
+    </div>
+</header>
+
+<div class="main-container">
+
+    <aside class="sidebar">
+        <nav class="nav">
+
+            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                    <img src="img/home.png">
+                    <span>Inicio</span>
+                </a>
+            <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                    <img src="img/grafico.png">
+                    <span>Dashboard</span>
+                </a>
+
+            <a href="../USUARIO/usuario.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Usuarios</span>
+            </a>
+
+            <a href="../ROLES/roles.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Roles</span>
+            </a>
+
+            <a href="../CLIENTES/clientes.html" class="nav-link">
+                <img src="img/usuario.png">
+                <span>Clientes</span>
+            </a>
+
+            <a href="../PLATILLOS/platillos.html" class="nav-link">
+                <img src="img/platillos.png">
+                <span>Platillos</span>
+            </a>
+
+            <a href="../VENTAS/NuevaVenta.html" class="nav-link active">
+                <img src="img/venta.png">
+                <span>Ventas</span>
+            </a>
+
+            <a href="../HISTORIAL/HistorialVentas.html" class="nav-link">
+                <img src="img/historialventa.png">
+                <span>Historial Venta</span>
+            </a>
+
+            <a href="../INVENTARIO/inventario.html" class="nav-link">
+                <img src="img/inventario.png">
+                <span>Inventario</span>
+            </a>
+
+            <a href="../CONFIGURACION/configuracion.html" class="nav-link">
+                <img src="img/configuracion.png">
+                <span>Configuración</span>
+            </a>
+
+            <a href="../LOGIN/login.html" class="nav-link">
+                <img src="img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+
+        </nav>
+    </aside>
+
+  
+    <div class="main-content">
+
+        
+
+        <div class="container">
+
+            <div class="card">
+                <h2> Datos del Cliente</h2>
+
+                <input type="text" placeholder="Nombre del cliente"><br>
+                <input type="text" placeholder="Teléfono"><br>
+                <input type="text" placeholder="Dirección">
+            </div>
+
+            <div class="card">
+                <h2> Datos de la Venta</h2>
+
+                <label>Vendedor:</label>
+                <select>
+                    <option>Mesero 1</option>
+                    <option>Mesero 2</option>
+                    <option>Mesero 3</option>
+                    <option>Mesero 4</option>
+                </select>
+
+                <br><br>
+
+                <label>Seleccionar platillos:</label>
+
+                <select id="menuSelect" multiple onchange="agregarSeleccionados()">
+                    <option value="Arroz Cantones|10"> Arroz Cantones - $10</option>
+                    <option value="Arroz Chino|10"> Arroz Chino - $10</option>
+                    <option value="Arroz Blanco|7"> Arroz Blanco - $7</option>
+                    <option value="Fideos con Arroz|10"> Fideos con Arroz - $10</option>
+                    <option value="Chao Mein|15"> Chao Mein - $15</option>
+                    <option value="Porcion de Vegetales|8"> Porcion de Vegetales - $8</option>
+                    <option value="Sopa de vegetales|8"> Sopa de vegetales - $8</option>
+                    <option value="Tacos a la Plancha|12"> Tacos a la Plancha - $12</option>
+                    <option value="Tacos Fritos|12"> Tacos Fritos - $12</option>
+                    <option value="Tallarines|12"> Tallarines - $12</option>
+                    <option value="Leche de soya con Jengibre|3"> Leche de soya con Jengibre - $3</option>
+                    <option value="Te Caliente|6"> Te Caliente - $6</option>
+                    <option value="Te de Limon|6"> Te de Limon - $6</option>
+                    <option value="Te de Jamaica|6"> Te de Jamaica - $6</option>
+                    <option value="Cafe con Leche|6"> Cafe con Leche - $6</option>
+                    <option value="Cafe negro|6"> Cafe negro - $6</option>
+                </select>
+
+            </div>
+
+            <div class="card">
+                <h2> Detalle de Venta</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="detalle"></tbody>
+                </table>
+
+                <h3>Total a pagar: $<span id="total">0</span></h3>
+
+                <button class="btn-primary">Guardar Venta</button>
+                <button class="btn-danger">Cancelar</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+    © 2026 Tien Lan Zu Shi 
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
