@@ -108,6 +108,7 @@ body.dashboard {
 
 .dashboard .nav-link img {
     width: 22px;
+    filter: brightness(0) invert(1);
 }
 
 .dashboard .nav-link:hover {
@@ -176,6 +177,7 @@ body.dashboard {
 
 .dashboard .stats-card img {
     width: 42px;
+    filter: brightness(0) invert(1);
 }
 
 .dashboard .stats-card .info {

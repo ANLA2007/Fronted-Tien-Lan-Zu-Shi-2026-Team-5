@@ -1,14 +1,13 @@
-
-body.Usuario {
+body.Inventario {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f3f4f6;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.Usuario .header {
+.Inventario .header {
     background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
     padding: 15px 30px;
     color: #e8f5e9;
@@ -16,27 +15,24 @@ body.Usuario {
     flex-shrink: 0;
 }
 
-.Usuario .header-content {
+.Inventario .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 
-
-
-
-.Usuario .logo-negocio {
+.Inventario .logo-negocio {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.Usuario .logo-negocio img {
+.Inventario .logo-negocio img {
     width: 40px;
 }
 
-.Usuario .logo-negocio span {
+.Inventario .logo-negocio span {
     font-family: 'Segoe UI', sans-serif;
     font-size: 22px;
     font-style: italic;
@@ -44,14 +40,14 @@ body.Usuario {
     color: #e8f5e9;
 }
 
-.Usuario .user-info {
+.Inventario .user-info {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 
-.Usuario .notif {
+.Inventario .notif {
     position: relative;
     font-size: 22px;
     cursor: pointer;
@@ -59,7 +55,7 @@ body.Usuario {
     align-items: center;
 }
 
-.Usuario .notif-badge {
+.Inventario .notif-badge {
     position: absolute;
     top: -6px;
     right: -8px;
@@ -75,7 +71,7 @@ body.Usuario {
     justify-content: center;
 }
 
-.Usuario .user-avatar {
+.Inventario .user-avatar {
     background: #6fcf97;
     color: #0d3b2e;
     padding: 10px;
@@ -83,26 +79,38 @@ body.Usuario {
     font-weight: bold;
 }
 
-.Usuario .main-container {
+.Inventario .main-container {
     display: flex;
     flex: 1;
 }
 
-.Usuario .sidebar {
+.Inventario .sidebar {
     background: linear-gradient(180deg, #0d3b2e, #1f7a63);
     padding: 20px;
-    width: 250px;
-    min-width: 250px;
+    
+}
+
+.Inventario .nav-link img {
+    width: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.Inventario .nav-link:hover {
+    background: rgba(111,207,151,0.3);
+    transform: translateX(5px);
+}
+
+.Inventario .nav-link.active {
+    background: #6fcf97;
+    color: #0d3b2e;
+}
+
+.Inventario .nav {
     display: flex;
     flex-direction: column;
 }
 
-.Usuario .nav {
-    display: flex;
-    flex-direction: column;
-}
-
-.Usuario .nav-link {
+.Inventario .nav-link {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -116,33 +124,30 @@ body.Usuario {
     font-weight: 600;
 }
 
-.Usuario .nav-link img {
-    width: 22px;
-}
-
-.Usuario .nav-link:hover {
-    background: rgba(111,207,151,0.3);
-    transform: translateX(5px);
-}
-
-.Usuario .nav-link.active {
-    background: #6fcf97;
-    color: #0d3b2e;
-}
-
-.content-wrapper {
-    flex: 1;
+.Inventario .content-wrapper {
     padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: #f3f4f6;
+    flex: 1;
+    background: #f3f4f6; 
+    align-items: center;
+    
+}
+
+.Inventario .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1200px; 
+    box-sizing: border-box;
 }
 
 .main-header h1 {
@@ -158,27 +163,26 @@ body.Usuario {
 
 .filter-bar {
     display: flex;
-    gap: 15px;
+    width: 100%;
+    max-width: 1200px; 
+    justify-content: space-between; 
     align-items: center;
-    justify-content: space-between;
     padding: 20px;
     background: #f3f4ef;
-    gap: 20px;
-    border-radius: 2px;
-    border: 1px solid #e5e7eb;
-    border-top-color:  #1f7a63;
-    border-left-color: #1f7a63;
-    border-block-color: #1f7a63;
     border-radius: 8px;
+    border: 1px solid #1f7a63;
     box-shadow: 0 8px 20px rgba(125, 236, 108, 0.139);
+    box-sizing: border-box; 
 }
 
+
 .search-container {
-    background: white;
-    border: 1px solid #e5e7eb;
     padding: 8px 12px;
+    border: 1px solid #e5e7eb; 
     border-radius: 8px;
+    background-color: white;
     display: flex;
+    align-items: center;
     width: 250px;
 }
 
@@ -197,6 +201,9 @@ body.Usuario {
     box-shadow: 0 8px 20px rgba(125, 236, 108, 0.247);
     border-color: #1f7a63;
     border-radius: 8px;
+    width: 100%;
+    max-width: 1200px; 
+    box-sizing: border-box;
 }
 
 .orders-table {
@@ -258,6 +265,9 @@ body.Usuario {
     gap: 15px;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 .search-container {
@@ -403,21 +413,23 @@ body.Usuario {
     border: 1px solid #e5e7eb;
     background: white;
     color: #333;
+    margin-bottom: 15px;
 }
 
 .btn-save {
     width: 100%;
     padding: 12px;
-    background: #0d3b2e;
+     background: linear-gradient(135deg, #2ecc71, #145a32); ;
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    size: 10px;
 }
 
 .btn-save:hover{
-    color: #6fcf97;
+    background: #6cc3f2;
 }
 
 .filter-select {
@@ -501,11 +513,11 @@ body.Usuario {
 
 @media (max-width: 900px) {
     
-    .Usuario .main-container {
+    .Inventario .main-container {
         flex-direction: column;
     }
 
-    .Usuario .sidebar {
+    .Inventario .sidebar {
         width: 100%;
         min-width: 100%;
         height: auto;
@@ -513,7 +525,7 @@ body.Usuario {
         box-sizing: border-box;
     }
 
-    .Usuario .nav {
+    .Inventario .nav {
         flex-direction: row;
         overflow-x: auto;  
         white-space: nowrap;
@@ -521,7 +533,7 @@ body.Usuario {
         padding-bottom: 5px;
     }
 
-    .Usuario .nav-link {
+    .Inventario .nav-link {
         flex-direction: column;
         min-width: 90px;
         font-size: 11px;
@@ -531,7 +543,7 @@ body.Usuario {
         text-align: center;
     }
 
-    .Usuario .nav-link img {
+    .Inventario .nav-link img {
         width: 20px;
         margin: 0 auto;
     }
@@ -552,17 +564,17 @@ body.Usuario {
 
 @media (max-width: 500px) {
 
-    .Usuario .header-content {
+    .Inventario .header-content {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
 
-    .Usuario .nav-link span {
+    .Inventario .nav-link span {
         font-size: 10px;
     }
 
-    .Usuario .nav-link {
+    .Inventario .nav-link {
         min-width: 70px;
     }
 
@@ -586,24 +598,24 @@ body.Usuario {
         gap: 15px;
     }
 
-    .Usuario .header {
+    .Inventario .header {
         padding: 10px 15px;
     }
 
-    .Usuario .logo-negocio span {
+    .Inventario .logo-negocio span {
         font-size: 16px;
     }
 
-    .Usuario .nav {
+    .Inventario .nav {
         gap: 5px;
     }
 
-    .Usuario .nav-link {
+    .Inventario .nav-link {
         min-width: 65px;
         padding: 6px;
     }
 
-    .Usuario .nav-link span {
+    .Inventario .nav-link span {
         font-size: 9px;
         font-weight: 500;
     }

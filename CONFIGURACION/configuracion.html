@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" href="configuracion.css">
+</head>
+
+<body class="configuracion">
+
+    <header class="header">
+        <div class="header-content">
+
+            <div class="logo-negocio">
+                <img src="img/logo.png" alt="">
+                <span>Tien Lan Zu Shi</span>
+            </div>
+
+            <div class="user-info">
+
+                <div class="notif">
+                    🔔
+                    <span class="notif-badge">3</span>
+                </div>
+
+                <span>Admin</span>
+
+                <div class="user-avatar">TL</div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <aside class="sidebar">
+            <nav class="nav">
+
+                 <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                    <img src="img/home.png">
+                    <span>Inicio</span>
+                </a>
+
+                <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                    <img src="img/grafico.png">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../USUARIO/usuario.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Usuarios</span>
+                </a>
+
+                <a href="../ROLES/roles.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Roles</span>
+                </a>
+
+                <a href="../CLIENTES/clientes.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Clientes</span>
+                </a>
+
+                <a href="../PLATILLOS/platillos.html" class="nav-link">
+                    <img src="img/platillos.png">
+                    <span>Porcion</span>
+                </a>
+
+                <a href="../VENTAS/ventas.html" class="nav-link">
+                    <img src="img/venta.png">
+                    <span>Ventas</span>
+                </a>
+
+                <a href="../HISTORIAL/historial.html" class="nav-link">
+                    <img src="img/historialventa.png">
+                    <span>Historial Venta</span>
+                </a>
+
+                <a href="../INVENTARIO/inventario.html" class="nav-link">
+                    <img src="img/inventario.png">
+                    <span>Inventario</span>
+                </a>
+
+                <a href="configuracion.html" class="nav-link active">
+                    <img src="img/configuracion.png">
+                    <span>Configuración</span>
+                </a>
+
+                <a href="../LOGIN/login.html" class="nav-link">
+                    <img src="img/cerrarsesion.png">
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="grid-secundario">
+
+                <div class="card">
+                    <span>⚙️ Datos del sistema</span>
+
+                    <div class="item">
+                        <span>Nombre</span>
+                        <input type="text" value="Sistema Admin">
+                    </div>
+
+                    <div class="item">
+                        <span>Administrador</span>
+                        <input type="text" value="Admin TL">
+                    </div>
+
+                    <div class="item">
+                        <span>Correo</span>
+                        <input type="email" value="admin@sistema.com">
+                    </div>
+
+                    <div class="item">
+                        <span>Idioma</span>
+                        <input type="text" value="Español">
+                    </div>
+
+                    <button class="btn-save">Guardar cambios</button>
+                </div>
+
+                <div class="card">
+
+                    <span>🔐 Seguridad</span>
+
+                    <div class="item">
+                        <span>Contraseña actual</span>
+                        <input type="password">
+                    </div>
+
+                    <div class="item">
+                        <span>Nueva contraseña</span>
+                        <input type="password">
+                    </div>
+
+                    <div class="item">
+                        <span>Confirmar</span>
+                        <input type="password">
+                    </div>
+
+                    <button class="btn-save">Actualizar</button>
+                </div>
+
+                <div class="card">
+                    <span>🎨 Apariencia</span>
+
+                    <div class="item">
+                        <span>Modo oscuro</span>
+                        <button class="btn-save" onclick="document.body.classList.toggle('dark-mode')">
+                            🌙 Modo oscuro
+                        </button>
+                    </div>
+
+                    <div class="item">
+                        <span>Tamaño letra</span>
+                        <input type="text" value="Mediano">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span>⚡ Sistema</span>
+
+                    <div class="item">
+                        <span>Notificaciones</span>
+                        <input type="text" value="Activadas">
+                    </div>
+
+                    <div class="item">
+                        <span>Estado</span>
+                        <input type="text" value="Activo">
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="footer">
+        <span>© 2026 Tien Lan Zu Shi</span>
+    </footer>
+
+</body>
+
+</html>
