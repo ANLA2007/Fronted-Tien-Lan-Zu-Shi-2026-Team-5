@@ -1,0 +1,389 @@
+body.venta {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.venta .header {
+    background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
+    padding: 15px 30px;
+    color: #e8f5e9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.venta .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.venta .logo-negocio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.venta .logo-negocio img {
+    width: 40px;
+}
+
+.venta .logo-negocio span {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #e8f5e9;
+}
+
+.venta .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.venta .notif {
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.venta .notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #097514;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.venta .user-avatar {
+    background: #6fcf97;
+    color: #0d3b2e;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.venta .main-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    flex: 1;
+}
+
+.venta .sidebar {
+    background: linear-gradient(180deg, #0d3b2e, #1f7a63);
+    padding: 20px;
+}
+
+.venta .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.venta .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #e8f5e9;
+    background: rgba(255,255,255,0.08);
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.venta .nav-link img {
+    width: 22px;
+     filter: brightness(0) invert(1);
+}
+
+.venta .nav-link:hover {
+    background: rgba(111,207,151,0.3);
+    transform: translateX(5px);
+}
+
+.venta .nav-link.active {
+    background: #6fcf97;
+    color: #0d3b2e;
+}
+
+.venta .main-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.venta .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+
+
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0fdf4;
+    margin: 0;
+}
+
+.navbar {
+    background: #166534;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-left: 6px solid #0d3b2e;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0d3b2e;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+     color: #111827;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.paid { background: #22c55e; }
+.cancel { background: #ef4444; }
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.plato {
+    background: #ecfdf5;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plato:hover {
+    background: #bbf7d0;
+    transform: scale(1.05);
+}
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.venta .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 900px) {
+
+   
+    .venta .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+   
+    .venta .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .venta .sidebar {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .venta .nav {
+        flex-direction: row;
+    }
+
+    .venta .nav-link {
+        min-width: 120px;
+        justify-content: center;
+    }
+
+  
+    .venta .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+
+   
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 600px) {
+
+  
+    .venta .logo-negocio span {
+        font-size: 16px;
+    }
+
+    .venta .logo-negocio img {
+        width: 30px;
+    }
+
+  
+    input, select, button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        margin-top: 5px;
+    }
+
+   
+    .card {
+        padding: 12px;
+    }
+
+   
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+
+    .plato {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+
+   
+    .venta .header {
+        padding: 10px;
+    }
+
+  
+    .venta .nav-link {
+        min-width: 100px;
+        font-size: 12px;
+    }
+
+  
+    th, td {
+        font-size: 11px;
+    }
+
+    
+    .venta .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+   
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plato {
+        font-size: 12px;
+    }
+}

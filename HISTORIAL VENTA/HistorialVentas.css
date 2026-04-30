@@ -1,0 +1,306 @@
+body.historialventas {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+.historialventas .header {
+    background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
+    padding: 15px 30px;
+    color: #e8f5e9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.historialventas .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.historialventas .logo-negocio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.historialventas .logo-negocio img {
+    width: 40px;
+}
+
+.historialventas .logo-negocio span {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #e8f5e9;
+}
+
+.historialventas .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.historialventas .notif {
+    position: relative;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.historialventas .notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #097514;
+    color: white;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.historialventas .user-avatar {
+    background: #6fcf97;
+    color: #0d3b2e;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.historialventas .main-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    flex: 1;
+}
+
+.historialventas .sidebar {
+    background: linear-gradient(180deg, #0d3b2e, #1f7a63);
+    padding: 20px;
+}
+
+.historialventas .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.historialventas .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #e8f5e9;
+    background: rgba(255,255,255,0.08);
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.historialventas .nav-link img {
+    width: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.historialventas .nav-link:hover {
+    background: rgba(111,207,151,0.3);
+    transform: translateX(5px);
+}
+
+.historialventas .nav-link.active {
+    background: #6fcf97;
+    color: #0d3b2e;
+}
+
+.historialventas .main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.navbar {
+    background: #166534;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-left: 6px solid #0d3b2e;;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #22c55e;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0d3b2e;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #111827; 
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.paid { background: #22c55e; }
+.cancel { background: #ef4444; }
+
+
+.historialventas .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 900px) {
+
+    
+    .historialventas .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+   
+    .historialventas .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .historialventas .sidebar {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .historialventas .nav {
+        flex-direction: row;
+    }
+
+    .historialventas .nav-link {
+        min-width: 120px;
+        justify-content: center;
+    }
+
+   
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 600px) {
+
+   
+    .historialventas .logo-negocio span {
+        font-size: 16px;
+    }
+
+    .historialventas .logo-negocio img {
+        width: 30px;
+    }
+
+   
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+
+  
+    .historialventas .header {
+        padding: 10px;
+    }
+
+    
+    .historialventas .nav-link {
+        min-width: 100px;
+        font-size: 12px;
+    }
+
+  
+    th, td {
+        font-size: 11px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
