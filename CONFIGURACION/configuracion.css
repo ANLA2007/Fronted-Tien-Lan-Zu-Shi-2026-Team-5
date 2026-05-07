@@ -200,116 +200,160 @@ body.configuracion {
     margin-top: auto;
 }
 
-
 @media (max-width: 1024px) {
 
     .configuracion .main-container {
-        grid-template-columns: 200px 1fr;
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        width: 100%;
+    }
+
+    .configuracion .sidebar {
+        display: block;
+        padding: 20px;
+    }
+
+    .configuracion .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .configuracion .nav-link {
+        flex-direction: row;
+        min-width: auto;
+        min-height: auto;
+        font-size: 13px;
+        padding: 10px;
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .configuracion .content {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .configuracion .card {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .configuracion .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .configuracion .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 12px;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .configuracion .nav {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        width: max-content;
+    }
+
+    .configuracion .nav-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 110px;
+        min-height: 80px;
+        padding: 12px;
+        margin: 0;
+        text-align: center;
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+
+    .configuracion .content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .configuracion .grid-secundario {
         grid-template-columns: 1fr;
     }
 
-    .configuracion .header-content {
-        flex-wrap: wrap;
-        gap: 10px;
+    .configuracion .card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
+@media (max-width: 500px) {
 
-@media (max-width: 768px) {
-
-   
     .configuracion .header-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
 
-    
-    .configuracion .main-container {
-        grid-template-columns: 1fr;
+    .configuracion .user-info {
+        width: 100%;
+        justify-content: flex-end;
     }
-
-    .configuracion .sidebar {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
-    }
-
-    .configuracion .nav {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .configuracion .nav-link {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-
-    
-    .configuracion .grid-secundario {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .configuracion .card {
-        min-height: auto;
-    }
-
-   
-    .configuracion .item input {
-        font-size: 14px;
-    }
-}
-
-
-@media (max-width: 480px) {
 
     .configuracion .logo-negocio span {
         font-size: 18px;
     }
 
-    .configuracion .btn-save {
-        font-size: 14px;
-        padding: 8px;
+    .configuracion .nav-link {
+        min-width: 85px;
+        min-height: 70px;
+        font-size: 11px;
+        padding: 10px;
     }
 
-    .configuracion .user-info {
-        flex-wrap: wrap;
-        gap: 8px;
+    .configuracion .content {
+        padding: 15px;
+    }
+
+    .configuracion .card {
+        padding: 12px;
+    }
+
+    .configuracion .btn-save {
+        width: 100%;
     }
 }
-
-
 
 body.configuracion.dark-mode {
     background: #0f172a;
 }
 
-
 body.configuracion.dark-mode .header {
     background: linear-gradient(135deg, #0b1f17, #0d3b2e, #145c45);
 }
 
-
 body.configuracion.dark-mode .sidebar {
     background: linear-gradient(180deg, #0b1f17, #0d3b2e);
 }
-
 
 body.configuracion.dark-mode .card {
     background: #1e293b;
     box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
-
 body.configuracion.dark-mode .card span {
     color: #e5e7eb;
 }
-
 
 body.configuracion.dark-mode .item input {
     background: #0f172a;
@@ -317,11 +361,9 @@ body.configuracion.dark-mode .item input {
     border: 1px solid #334155;
 }
 
-
 body.configuracion.dark-mode .footer {
     background: #0b1f17;
 }
-
 
 body.configuracion.dark-mode .nav-link {
     background: rgba(255,255,255,0.05);

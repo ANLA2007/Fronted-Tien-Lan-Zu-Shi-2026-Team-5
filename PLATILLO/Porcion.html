@@ -51,7 +51,7 @@
                 <span>Dashboard</span>
             </a>
 
-            <a href="../USUARIO/usuarios.html" class="nav-link">
+            <a href="../USUARIO/usuario.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Usuarios</span>
             </a>
@@ -61,7 +61,7 @@
                 <span>Roles</span>
             </a>
 
-            <a href="../CLIENTES/clientes.html" class="nav-link">
+            <a href="../CLIENTE/cliente.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Clientes</span>
             </a>
@@ -76,12 +76,12 @@
                 <span>Porcion</span>
             </a>
 
-            <a href="../VENTAS/ventas.html" class="nav-link">
+            <a href="../VENTA/NuevaVenta.html" class="nav-link">
                 <img src="img/venta.png">
                 <span>Ventas</span>
             </a>
 
-            <a href="../HISTORIAL/historial.html" class="nav-link">
+            <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
                 <img src="img/historialventa.png">
                 <span>Historial Venta</span>
             </a>
@@ -109,7 +109,7 @@
 
         <div class="header-roles">
 
-            <h1> Gestión de Platillos</h1>
+            <h2> Gestión de Platillos</h2>
 
             <button class="btn-roles" onclick="abrirModal()">
                 + nuevo platillo
@@ -123,8 +123,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Categoría</th>
+                    <th>categoria</th>
+                    <th>Precio porcion</th>
+                    <th>Descripcion</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
@@ -147,9 +148,11 @@
 
         <input type="text" id="nombre" placeholder="Nombre del platillo">
 
-        <input type="number" id="precio" placeholder="Precio">
+         <input type="text" id="categoria" placeholder="Nombre Categoria">
 
-        <input type="text" id="categoria" placeholder="Categoría">
+        <input type="number" id="precioporcion" placeholder="Precio Porcion">
+
+        <input type="text" id="descripcion" placeholder="Descripcion">
 
         <p id="error" class="error-text"></p>
 
@@ -173,6 +176,9 @@
     </div>
 
 </div>
+<footer class="footer">
+    <p>© 2026 Tien Lan Zu Shi</p>
+</footer>
 
 <script src="js/Porcion.js" defer></script>
 

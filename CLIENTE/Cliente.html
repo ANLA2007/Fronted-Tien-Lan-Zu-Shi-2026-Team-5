@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
     <link rel="stylesheet" href="Cliente.css">
 </head>
@@ -43,38 +44,52 @@
                 <img src="img/grafico.png">
                 <span>Dashboard</span>
             </a>
+
             <a href="../USUARIO/usuario.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Usuarios</span>
             </a>
+
             <a href="../ROLES/roles.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Roles</span>
             </a>
-            <a href="../CLIENTES/clientes.html" class="nav-link active">
+
+            <a href="../CLIENTE/cliente.html" class="nav-link active">
                 <img src="img/usuario.png">
                 <span>Clientes</span>
             </a>
-            <a href="../PLATILLOS/platillos.html" class="nav-link">
-                <img src="img/platillos.png">
-                <span>Platillos</span>
+
+               <a href="../CATEGORIA/categoria.html" class="nav-link ">
+                <img src="img/usuario.png">
+                <span>Categorías</span>
             </a>
-            <a href="../VENTAS/ventas.html" class="nav-link">
+
+            <a href="../PLATILLO/Porcion.html" class="nav-link">
+                <img src="img/platillos.png">
+                <span>Porcion</span>
+            </a>
+
+            <a href="../VENTA/NuevaVenta.html" class="nav-link">
                 <img src="img/venta.png">
                 <span>Ventas</span>
             </a>
-            <a href="../HISTORIAL/historial.html" class="nav-link">
+
+            <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
                 <img src="img/historialventa.png">
                 <span>Historial Venta</span>
             </a>
+
             <a href="../INVENTARIO/inventario.html" class="nav-link">
                 <img src="img/inventario.png">
                 <span>Inventario</span>
             </a>
+
             <a href="../CONFIGURACION/configuracion.html" class="nav-link">
                 <img src="img/configuracion.png">
                 <span>Configuración</span>
             </a>
+            
             <a href="../LOGIN/login.html" class="nav-link">
                 <img src="img/cerrarsesion.png">
                 <span>Cerrar sesión</span>
@@ -86,7 +101,7 @@
 
         <div class="card">
 
-            <h2>Lista de clientes</h2>
+            <h2>Gestión de clientes</h2>
 
             <input type="text" id="buscar" placeholder="Buscar cliente...">
 
@@ -118,19 +133,33 @@
 
 </div>
 
-<!-- MODAL -->
+
 <div class="modal" id="modal">
     <div class="modal-content">
 
-        <h3>Datos del cliente</h3>
+        <form id="formCliente" style="display: contents;">
 
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="text" id="apellido" placeholder="Apellido" required>
-        <input type="text" id="telefono" placeholder="Teléfono" required pattern="[0-9]{8}" maxlength="8" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" title="El teléfono debe contener exactamente 8 números">
-        <input type="text" id="direccion" placeholder="Dirección" required>
+            <h3>Datos del cliente</h3>
 
-        <button class="btn" id="guardar">Guardar</button>
-        <button class="btn" id="cerrar">Cerrar</button>
+            <input type="text" id="nombre" placeholder="Nombre" required>
+
+            <input type="text" id="apellido" placeholder="Apellido" required>
+
+            <input type="text" id="telefono" placeholder="Teléfono"
+                required
+                pattern="[0-9]{8}"
+                maxlength="8"
+                inputmode="numeric"
+                oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                title="El teléfono debe contener exactamente 8 números">
+
+            <input type="text" id="direccion" placeholder="Dirección" required>
+
+            <button class="btn" type="submit">Guardar</button>
+
+            <button class="btn" type="button" id="cerrar">Cerrar</button>
+
+        </form>
 
     </div>
 </div>

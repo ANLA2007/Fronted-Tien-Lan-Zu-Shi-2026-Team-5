@@ -16,8 +16,10 @@ btnCerrar.addEventListener("click", () => {
     modal.classList.remove("modal-open");
 });
 
-// GUARDAR
-btnGuardar.addEventListener("click", () => {
+
+document.getElementById("formCliente").addEventListener("submit", (e) => {
+
+    e.preventDefault(); // evita recargar
 
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;

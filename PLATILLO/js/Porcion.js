@@ -14,8 +14,9 @@ function cerrarModal() {
     modal.style.display = "none";
 
     document.getElementById("nombre").value = "";
-    document.getElementById("precio").value = "";
     document.getElementById("categoria").value = "";
+    document.getElementById("precioporcion").value = "";
+    document.getElementById("descripcion").value = "";
 
     error.textContent = "";
 }
@@ -24,18 +25,19 @@ function cerrarModal() {
 function guardar() {
 
     const nombre = document.getElementById("nombre").value.trim();
-    const precio = document.getElementById("precio").value.trim();
     const categoria = document.getElementById("categoria").value.trim();
+    const precioporcion = document.getElementById("precioporcion").value.trim();
+    const descripcion = document.getElementById("descripcion").value.trim();
     const estado = document.getElementById("estado").value;
 
     const error = document.getElementById("error");
 
-    // Validación
-    if (nombre === "" || precio === "" || categoria === "") {
+// Validación
+if (nombre === "" || categoria === "" || precioporcion === "" || descripcion === "") {
 
-        error.textContent = "⚠️ Completa todos los campos";
-        return;
-    }
+    error.textContent = "⚠️ Completa todos los campos";
+    return;
+}
 
     error.textContent = "";
 
@@ -46,9 +48,10 @@ function guardar() {
     
     nuevaFila.insertCell(0).innerText = id;
     nuevaFila.insertCell(1).innerText = nombre;
-    nuevaFila.insertCell(2).innerText = "$" + precio;
-    nuevaFila.insertCell(3).innerText = categoria;
-    nuevaFila.insertCell(4).innerText = estado;
+    nuevaFila.insertCell(2).innerText = categoria;
+    nuevaFila.insertCell(3).innerText = "$" + precioporcion;
+    nuevaFila.insertCell(4).innerText = descripcion;
+    nuevaFila.insertCell(5).innerText = estado;
 
     const acciones = nuevaFila.insertCell(5);
 
@@ -83,8 +86,9 @@ function cambiarEstado(boton) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const nombre = document.getElementById("nombre");
-    const precio = document.getElementById("precio");
-    const categoria = document.getElementById("categoria");
+     const categoria = document.getElementById("categoria");
+    const precioporcion = document.getElementById("precioporcion");
+    const descripcion = document.getElementById("descripcion");
 
     function limpiarError() {
 
@@ -92,6 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     nombre.addEventListener("input", limpiarError);
-    precio.addEventListener("input", limpiarError);
-    categoria.addEventListener("input", limpiarError);
+    precioporcion.addEventListener("input", limpiarError);
+    descripcion.addEventListener("input", limpiarError);
 });
