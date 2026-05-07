@@ -40,12 +40,12 @@ function guardarCategoria() {
 
     const id = tabla.rows.length;
 
-    const fechaActual = new Date().toISOString().split('T')[0];
+   const descripcion = document.getElementById("descripcionCategoria").value.trim();
 
     nuevaFila.insertCell(0).innerText = id;
     nuevaFila.insertCell(1).innerText = nombre;
     nuevaFila.insertCell(2).innerText = estado;
-    nuevaFila.insertCell(3).innerText = fechaActual;
+    nuevaFila.insertCell(3).innerText = descripcion;
 
     const celdaAcciones = nuevaFila.insertCell(4);
 

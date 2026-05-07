@@ -264,126 +264,206 @@ select {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
-   
-    .venta .header-content {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-   
     .venta .main-container {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        width: 100%;
     }
 
     .venta .sidebar {
+        display: block;
+        padding: 20px;
+        width: 230px;
+        box-sizing: border-box;
+    }
+
+    .venta .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .venta .nav-link {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: auto;
+        font-size: 13px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .venta .main-content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .venta .container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .venta .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        width: 100%;
+    }
+
+    .venta table {
+        width: 100%;
+        min-width: 700px;
+        border-collapse: collapse;
+    }
+
+    .venta .table-responsive {
+        width: 100%;
         overflow-x: auto;
-        gap: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .venta .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .venta .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        gap: 8px;
+        box-sizing: border-box;
     }
 
     .venta .nav {
         flex-direction: row;
+        gap: 8px;
     }
 
     .venta .nav-link {
-        min-width: 120px;
+        flex-direction: column;
         justify-content: center;
+        text-align: center;
+        min-width: 90px;
+        font-size: 11px;
+        padding: 10px;
+        margin-bottom: 0;
     }
 
-  
-    .venta .stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .venta .main-content {
+        padding: 20px;
     }
 
-    
+    .container {
+        padding: 15px;
+    }
+
     .menu-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     }
 
-   
     table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+        min-width: 750px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
-  
-    .venta .logo-negocio span {
-        font-size: 16px;
+    .venta .header {
+        padding: 12px 15px;
     }
 
-    .venta .logo-negocio img {
-        width: 30px;
+    .venta .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
-  
-    input, select, button {
+    .venta .user-info {
         width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .venta .logo-negocio span {
+        font-size: 18px;
+    }
+
+    .venta .nav-link {
+        min-width: 75px;
+        font-size: 10px;
+        padding: 8px;
         box-sizing: border-box;
     }
 
-    button {
-        margin-top: 5px;
+    .venta .main-content {
+        padding: 15px;
+        box-sizing: border-box;
     }
 
-   
-    .card {
+    .venta .card {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .venta .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+    }
+
+    .venta .plato {
         padding: 12px;
+        font-size: 13px;
+        text-align: center;
     }
 
-   
-    th, td {
+    .venta input,
+    .venta select,
+    .venta button {
+        width: 100%;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
+    .venta .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .venta table {
+        min-width: 750px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .venta th,
+    .venta td {
         font-size: 12px;
         padding: 8px;
-    }
-
-    
-    .menu-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    }
-
-    .plato {
-        padding: 10px;
-        font-size: 12px;
+        white-space: nowrap;
     }
 }
 
-@media (max-width: 400px) {
 
-   
-    .venta .header {
-        padding: 10px;
-    }
 
-  
-    .venta .nav-link {
-        min-width: 100px;
-        font-size: 12px;
-    }
-
-  
-    th, td {
-        font-size: 11px;
-    }
-
-    
-    .venta .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-   
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .plato {
-        font-size: 12px;
-    }
+.venta .main-content {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
 }

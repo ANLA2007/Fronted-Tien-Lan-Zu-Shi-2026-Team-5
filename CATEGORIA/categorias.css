@@ -119,7 +119,12 @@ body.categorias {
     background: #6fcf97;
     color: #0d3b2e;
 }
-
+.categorias .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+}
 :root {
     --verde-base: #10b981;
     --verde-hover: #059669;
@@ -212,7 +217,9 @@ body.categorias {
 }
 
 .modal-content input,
-.modal-content select {
+.modal-content select,
+.modal-content textarea
+ {
     width: 100%;
     padding: 12px;
     border: 1px solid #e5e7eb;
@@ -259,19 +266,76 @@ body.categorias {
     color: #e5e7eb;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+
     .categorias .main-container {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 230px 1fr;
     }
 
     .categorias .sidebar {
-        display: none;
+        display: block;
+        padding: 20px;
     }
 
-    .main-content {
+    .categorias .nav {
+        flex-direction: column;
+    }
+
+    .categorias .nav-link {
+        flex-direction: row;
+        min-width: auto;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .categorias .main-content {
+        padding: 20px;
+    }
+
+    .table-categorias {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .categorias .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .categorias .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    .categorias .nav {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .categorias .nav-link {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-width: 90px;
+        font-size: 11px;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+    .categorias .main-content {
         margin: 15px;
-        padding: 25px;
+        padding: 20px;
         border-radius: 20px;
+        width: auto;
+        box-sizing: border-box;
     }
 
     .header-roles {
@@ -279,75 +343,72 @@ body.categorias {
         align-items: flex-start;
         gap: 15px;
     }
+
+    .btn-roles {
+        width: 100%;
+    }
+
+    .table-roles {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        min-width: 700px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+    .categorias .header {
+        padding: 12px 15px;
+    }
+
     .categorias .header-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
 
+    .categorias .user-info {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
     .categorias .logo-negocio span {
         font-size: 18px;
     }
 
-    .categorias .user-info {
-        width: 100%;
-        justify-content: space-between;
+    .categorias .nav-link {
+        min-width: 75px;
+        font-size: 10px;
+        padding: 8px;
     }
 
-    .main-content {
+    .categorias .main-content {
         margin: 10px;
-        padding: 20px;
-    }
-
-    .btn-roles {
-        width: 100%;
-        text-align: center;
-    }
-
-    .modal-content {
-        width: 90%;
-        padding: 25px;
-    }
-}
-
-@media (max-width: 700px) {
-    .table-roles thead {
-        display: none;
-    }
-
-    .table-roles,
-    .table-roles tbody,
-    .table-roles tr,
-    .table-roles td {
-        display: block;
-        width: 100%;
-    }
-
-    .table-roles tr {
-        margin-bottom: 15px;
-        background: #ffffff;
+        padding: 15px;
         border-radius: 15px;
-        box-shadow: var(--sombra);
+    }
+
+    .table-roles {
+        min-width: 800px;
+    }
+
+    .table-roles th,
+    .table-roles td {
+        font-size: 12px;
         padding: 10px;
     }
 
-    .table-roles td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border-bottom: none;
-    }
-
-    .table-roles td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        width: 50%;
-        text-align: left;
-        font-weight: bold;
-        color: #0d3b2e;
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+        border-radius: 18px;
     }
 }
+

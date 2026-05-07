@@ -91,14 +91,90 @@ h2 {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
     .caja {
-        grid-template-columns: 1fr;
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+        padding: 25px;
+    }
+
+    .logo img {
+        width: 220px;
+    }
+
+    .formulario {
+        padding: 35px;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .caja {
         width: 90%;
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .formulario {
+        padding: 30px;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .login {
+        padding: 15px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .caja {
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .logo {
+        padding: 15px;
     }
 
     .logo img {
         width: 150px;
-        margin: 20px 0;
+    }
+
+    .formulario {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .campo input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .formulario button {
+        padding: 12px;
+        font-size: 14px;
     }
 }

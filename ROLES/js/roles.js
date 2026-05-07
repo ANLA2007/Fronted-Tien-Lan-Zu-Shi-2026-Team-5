@@ -34,14 +34,12 @@ function guardarRol() {
     const nuevaFila = tabla.insertRow();
 
     const id = tabla.rows.length;
-    const fechaActual = new Date().toISOString().split('T')[0];
 
     nuevaFila.insertCell(0).innerText = id;
     nuevaFila.insertCell(1).innerText = nombre;
     nuevaFila.insertCell(2).innerText = estado;
-    nuevaFila.insertCell(3).innerText = fechaActual;
 
-    const celdaAcciones = nuevaFila.insertCell(4);
+    const celdaAcciones = nuevaFila.insertCell(3);
     celdaAcciones.innerHTML = `
         <button onclick="cambiarEstado(this)">🔄</button>
         <button onclick="eliminarRol(this)">❌</button>
@@ -67,7 +65,7 @@ function cambiarEstado(boton) {
     }
 }
 
-// Quitar error mientras escribe
+
 document.addEventListener("DOMContentLoaded", () => {
     const inputNombre = document.getElementById("nombreRol");
 

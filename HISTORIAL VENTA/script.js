@@ -37,6 +37,7 @@ function filtrar() {
     });
 }
 
+
 // NUEVA VENTA
 let total = 0;
 
@@ -86,18 +87,3 @@ function calcular() {
     document.getElementById("total").innerText = total.toFixed(2);
 }
 
-function calcular() {
-    total = 0;
-
-    document.querySelectorAll("#detalle tr").forEach(fila => {
-        let cantidad = fila.children[1].children[0].value;
-        let precio = fila.children[2].innerText;
-
-        let subtotal = cantidad * precio;
-        fila.children[3].innerText = subtotal;
-
-        total += subtotal;
-    });
-
-    document.getElementById("total").innerText = total;
-}

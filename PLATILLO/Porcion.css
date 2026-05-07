@@ -121,8 +121,26 @@ body.porcion {
     color: #0d3b2e;
 }
 
+.porcion .main-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.porcion .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
 
 
+.porcion .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 15px;
+}
 
 :root {
     --verde-base: #10b981;
@@ -132,9 +150,6 @@ body.porcion {
     --blanco: #ffffff;
     --sombra: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-
-
 
 
 .main-content {
@@ -175,7 +190,7 @@ body.porcion {
 .table-roles th {
     text-align: left;
     padding: 15px;
-    background: #065f46;
+    background: #0d3b2e;
     color: #ffffff;
     font-size: 0.9rem;
 }
@@ -205,7 +220,7 @@ body.porcion {
 
 .modal-content {
     background:  #0d3b2e;
-    margin: 10% auto;
+    margin: 3% auto;
     padding: 40px;
     width: 350px;
     border-radius: 25px; 
@@ -273,98 +288,197 @@ body.porcion {
    
 }
 
+@media (max-width: 1024px) {
 
-
-@media (max-width: 900px) {
     .porcion .main-container {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        width: 100%;
     }
 
     .porcion .sidebar {
-        display: none;
+        display: block;
+        padding: 20px;
     }
 
+    .porcion .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .porcion .nav-link {
+        flex-direction: row;
+        min-width: auto;
+        font-size: 13px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .porcion .header-content {
+        gap: 10px;
+    }
+
+    .porcion .main-content,
     .main-content {
         margin: 15px;
-        padding: 25px;
+        padding: 20px;
         border-radius: 20px;
+        width: auto;
+        box-sizing: border-box;
     }
 
-    .header-porcion {
+    .table-roles {
+        min-width: 700px;
+        width: 100%;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 420px;
+        margin: 15% auto;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .porcion .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .porcion .sidebar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        gap: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .porcion .nav {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .porcion .nav-link {
+        flex-direction: column;
+        min-width: 100px;
+        font-size: 11px;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .porcion .header-content {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .porcion .main-content,
+    .main-content {
+        margin: 15px;
+        padding: 20px;
+        border-radius: 20px;
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    .header-roles {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
+
+    .btn-roles {
+        width: 100%;
+        text-align: center;
+    }
+
+    .table-roles {
+        min-width: 700px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 420px;
+        margin: 15% auto;
+        padding: 25px;
+        box-sizing: border-box;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+
+    .porcion .header {
+        padding: 15px;
+    }
+
     .porcion .header-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+    }
+
+    .porcion .user-info {
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .porcion .logo-negocio span {
         font-size: 18px;
     }
 
-    .porcion .user-info {
-        width: 100%;
-        justify-content: space-between;
+    .porcion .nav-link {
+        min-width: 85px;
+        font-size: 10px;
+        padding: 8px;
     }
 
+    .porcion .main-content,
     .main-content {
         margin: 10px;
-        padding: 20px;
+        padding: 15px;
+        border-radius: 16px;
     }
 
-    .btn-porcion {
-        width: 100%;
-        text-align: center;
+    .header-roles h2 {
+        font-size: 20px;
+    }
+
+    .table-roles {
+        min-width: 800px;
+    }
+
+    .table-roles th,
+    .table-roles td {
+        font-size: 12px;
+        padding: 10px;
+        white-space: nowrap;
     }
 
     .modal-content {
-        width: 90%;
-        padding: 25px;
+        width: 95%;
+        padding: 20px;
+        margin: 20% auto;
+    }
+
+    .modal-content h3 {
+        font-size: 1.2rem;
     }
 }
-
-@media (max-width: 700px) {
-    .table-porcion thead {
-        display: none;
-    }
-
-    .table-porcion,
-    .table-porcion tbody,
-    .table-porcion tr,
-    .table-porcion td {
-        display: block;
-        width: 100%;
-    }
-
-    .table-porcion tr {
-        margin-bottom: 15px;
-        background: #ffffff;
-        border-radius: 15px;
-        box-shadow: var(--sombra);
-        padding: 10px;
-    }
-
-    .table-porcion td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border-bottom: none;
-    }
-
-    .table-porcion td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        width: 50%;
-        text-align: left;
-        font-weight: bold;
-        color: #0d3b2e;
-    }
-}
-

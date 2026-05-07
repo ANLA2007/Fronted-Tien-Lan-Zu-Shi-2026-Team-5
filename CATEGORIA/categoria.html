@@ -52,7 +52,7 @@
                 <img src="img/grafico.png">
                 <span>Dashboard</span>
                 
-            <a href="../USUARIO/usuarios.html" class="nav-link">
+            <a href="../USUARIO/usuario.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Usuarios</span>
             </a>
@@ -62,7 +62,7 @@
                 <span>Roles</span>
             </a>
 
-             <a href="../CLIENTE/clientes.html" class="nav-link">
+             <a href="../CLIENTE/cliente.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Clientes</span>
             </a>
@@ -74,15 +74,15 @@
 
             <a href="../PLATILLO/Porcion.html" class="nav-link">
                 <img src="img/platillos.png">
-                <span>Platillos</span>
+                <span>Porcion</span>
             </a>
 
-            <a href="../VENTAS/ventas.html" class="nav-link">
+            <a href="../VENTA/NuevaVenta.html" class="nav-link">
                 <img src="img/venta.png">
                 <span>Ventas</span>
             </a>
 
-            <a href="../HISTORIAL/historial.html" class="nav-link">
+            <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
                 <img src="img/historialventa.png">
                 <span>Historial Venta</span>
             </a>
@@ -110,7 +110,7 @@
 
         <div class="header-roles">
 
-            <h1> Gestión de Categorías</h1>
+            <h2> Gestión de Categorías</h2>
 
             <button class="btn-roles" onclick="abrirModal()">
                 + Nueva Categoría
@@ -126,7 +126,7 @@
                     <th>ID</th>
                     <th>Nombre Categoría</th>
                     <th>Estado</th>
-                    <th>Fecha</th>
+                    <th>Descripcion</th>
                     <th>Acciones</th>
                 </tr>
 
@@ -165,6 +165,12 @@
 
         </select>
 
+        <input
+           type="text"
+           id="descripcionCategoria"
+        placeholder="Descripción de la categoría"
+         >
+
         <div class="modal-buttons">
 
             <button
@@ -186,6 +192,9 @@
     </div>
 
 </div>
+<footer class="footer">
+    <p>© 2026 Tien Lan Zu Shi</p>
+</footer>
 
 <script src="js/categorias.js" defer></script>
 

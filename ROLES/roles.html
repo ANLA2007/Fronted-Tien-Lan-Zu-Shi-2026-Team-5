@@ -59,7 +59,7 @@
                 <span>Roles</span>
             </a>
 
-            <a href="../CLIENTES/clientes.html" class="nav-link">
+            <a href="../CLIENTE/cliente.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Clientes</span>
             </a>
@@ -73,12 +73,12 @@
                 <span>Porcion</span>
             </a>
 
-            <a href="../ventas/ventas.html" class="nav-link">
+            <a href="../VENTA/NuevaVenta.html" class="nav-link">
                 <img src="img/venta.png">
                 <span>Ventas</span>
             </a>
 
-            <a href="/HISTORIAL/historial.html" class="nav-link">
+            <a href="/HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
                 <img src="img/historialventa.png">
                 <span>Historial Venta</span>
             </a>
@@ -105,7 +105,7 @@
     <div class="main-content">
 
         <div class="header-roles">
-            <h1>Gestión de Roles</h1>
+            <h2>Gestión de Roles</h2>
             <button class="btn-roles" onclick="abrirModal()">+ Nuevo Rol</button>
         </div>
 
@@ -115,7 +115,7 @@
                     <th>ID</th>
                     <th>Nombre del Rol</th>
                     <th>Estado</th>
-                    <th>Fecha</th>
+                    
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -125,7 +125,6 @@
                     <td>1</td>
                     <td>Administrador</td>
                     <td>Activo</td>
-                    <td>2026-04-27</td>
                     <td>
                         <button onclick="cambiarEstado(this)">🔄</button>
                         <button onclick="eliminarRol(this)">❌</button>
@@ -159,6 +158,9 @@
     </div>
 </div>
 
+<footer class="footer">
+    <p>© 2026 Tien Lan Zu Shi</p>
+</footer>
 <script src="js/roles.js" defer></script>
 
 </body>
