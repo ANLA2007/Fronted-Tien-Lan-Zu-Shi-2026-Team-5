@@ -210,36 +210,32 @@ td {
     margin-top: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 
     .historialventas .main-container {
-        display: grid;
-        grid-template-columns: 230px 1fr;
-        width: 100%;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .historialventas .header-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .historialventas .user-info {
+        flex-shrink: 0;
     }
 
     .historialventas .sidebar {
-        display: block;
-        padding: 20px;
-    }
-
-    .historialventas .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        padding: 15px 10px;
     }
 
     .historialventas .nav-link {
-        flex-direction: row;
-        min-width: auto;
         font-size: 13px;
-        padding: 10px;
-        margin: 0;
+        padding: 10px 8px;
     }
 
-    .historialventas .content {
+    .historialventas .main-content {
         padding: 20px;
-        box-sizing: border-box;
     }
 
     .container {
@@ -248,7 +244,7 @@ td {
     }
 
     .card {
-        max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
     }
 }
@@ -258,28 +254,31 @@ td {
     .historialventas .main-container {
         display: flex;
         flex-direction: column;
-        width: 100%;
     }
 
     .historialventas .sidebar {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
-        gap: 8px;
         width: 100%;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        overflow-y: hidden;
         box-sizing: border-box;
     }
 
     .historialventas .nav {
         display: flex;
         flex-direction: row;
+        overflow-x: auto;
         gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
     }
 
     .historialventas .nav-link {
-        flex-direction: column;
-        min-width: 100px;
+        flex: 0 0 auto;
+        white-space: nowrap;
+        min-width: 95px;
         font-size: 11px;
         padding: 10px;
         margin: 0;
@@ -287,9 +286,10 @@ td {
         box-sizing: border-box;
     }
 
-    .historialventas .content {
+    .historialventas .main-content {
+        padding: 18px;
+        min-width: 0;
         width: 100%;
-        padding: 15px;
         box-sizing: border-box;
     }
 
@@ -297,10 +297,88 @@ td {
         width: 100%;
         padding: 15px;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .card {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        min-width: 700px;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .historialventas .header {
+        padding: 10px 15px;
+    }
+
+    .historialventas .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .historialventas .logo-negocio {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .historialventas .logo-negocio span {
+        font-size: 18px;
+    }
+
+    .historialventas .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .historialventas .main-content {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .historialventas .sidebar {
+        padding: 8px;
+    }
+
+    .historialventas .nav {
+        gap: 6px;
+    }
+
+    .historialventas .nav-link {
+        min-width: 85px;
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 100%;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    input,
+    button {
+        width: 100%;
+        margin: 5px 0;
         box-sizing: border-box;
     }
 
@@ -310,50 +388,14 @@ td {
         width: 100%;
     }
 
-    th, td {
+    th,
+    td {
         white-space: nowrap;
     }
 }
 
-@media (max-width: 500px) {
-
-    .historialventas .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .historialventas .user-info {
-        width: 100%;
-        justify-content: flex-end;
-    }
-
-    .historialventas .nav-link {
-        min-width: 85px;
-        font-size: 10px;
-        padding: 8px;
-    }
-
-    .historialventas .content {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    input,
-    button {
-        width: 100%;
-        margin: 5px 0;
-        box-sizing: border-box;
-    }
-}
 .historialventas .main-content {
     height: calc(100vh - 70px);
     overflow-y: auto;
+    overflow-x: hidden;
 }

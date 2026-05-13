@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,159 +11,228 @@
 
 <body class="roles">
 
-<header class="header">
-    <div class="header-content">
+    <header class="header">
 
-        <div class="logo-negocio">
-            <img src="img/logo.png" alt="">
-            <span>Tien Lan Zu Shi</span>
-        </div>
+        <div class="header-content">
 
-        <div class="user-info">
-
-            <div class="notif">
-                🔔
-                <span class="notif-badge">3</span>
+            <div class="logo-negocio">
+                <img src="img/logo.png" alt="">
+                <span>Tien Lan Zu Shi</span>
             </div>
 
-            <span>Admin</span>
+            <div class="user-info">
 
-            <div class="user-avatar">TL</div>
+                <div class="notif">
+                    🔔
+                    <span class="notif-badge">3</span>
+                </div>
+
+                <span>Admin</span>
+
+                <div class="user-avatar">
+                    TL
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-</header>
+    </header>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <aside class="sidebar">
-        <nav class="nav">
+        <aside class="sidebar">
 
-            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+            <nav class="nav">
+
+                <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
                     <img src="img/home.png">
                     <span>Inicio</span>
                 </a>
 
-            <a href="../DASHBOARD/dashboard.html" class="nav-link">
-                <img src="img/grafico.png">
-                <span>Dashboard</span>
+                <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                    <img src="img/grafico.png">
+                    <span>Dashboard</span>
+                </a>
 
+                <a href="../USUARIO/usuario.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Usuarios</span>
+                </a>
 
-            <a href="../USUARIO/usuario.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Usuarios</span>
-            </a>
+                <a href="../ROLES/roles.html" class="nav-link active">
+                    <img src="img/usuario.png">
+                    <span>Roles</span>
+                </a>
 
-            <a href="../ROLES/roles.html" class="nav-link active">
-                <img src="img/usuario.png">
-                <span>Roles</span>
-            </a>
+                <a href="../CLIENTE/Cliente.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Clientes</span>
+                </a>
 
-            <a href="../CLIENTE/Cliente.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Clientes</span>
-            </a>
-            <a href="../CATEGORIA/categoria.html" class="nav-link ">
-                <img src="img/usuario.png">
-                <span>Categorías</span>
-            </a>
+                <a href="../CATEGORIA/categoria.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Categorías</span>
+                </a>
 
-            <a href="../PLATILLO/Porcion.html" class="nav-link">
-                <img src="img/platillos.png">
-                <span>Porcion</span>
-            </a>
+                <a href="../PLATILLO/Porcion.html" class="nav-link">
+                    <img src="img/platillos.png">
+                    <span>Porción</span>
+                </a>
 
-            <a href="../VENTA/NuevaVenta.html" class="nav-link">
-                <img src="img/venta.png">
-                <span>Ventas</span>
-            </a>
+                <a href="../VENTA/NuevaVenta.html" class="nav-link">
+                    <img src="img/venta.png">
+                    <span>Ventas</span>
+                </a>
 
-            <a href="/HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
-                <img src="img/historialventa.png">
-                <span>Historial Venta</span>
-            </a>
+                <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
+                    <img src="img/historialventa.png">
+                    <span>Historial Venta</span>
+                </a>
 
-            <a href="../INVENTARIO/inventario.html" class="nav-link">
-                <img src="img/inventario.png">
-                <span>Inventario</span>
-            </a>
+                <a href="../INVENTARIO/inventario.html" class="nav-link">
+                    <img src="img/inventario.png">
+                    <span>Inventario</span>
+                </a>
 
-            <a href="../CONFIGURACION/configuracion.html" class="nav-link">
-                <img src="img/configuracion.png">
-                <span>Configuración</span>
-            </a>
+                <a href="../CONFIGURACION/configuracion.html" class="nav-link">
+                    <img src="img/configuracion.png">
+                    <span>Configuración</span>
+                </a>
 
-            <a href="../LOGIN/login.html" class="nav-link">
-                <img src="img/cerrarsesion.png">
-                <span>Cerrar sesión</span>
-            </a>
-            
+                <a href="../LOGIN/login.html" class="nav-link">
+                    <img src="img/cerrarsesion.png">
+                    <span>Cerrar sesión</span>
+                </a>
 
-        </nav>
-    </aside>
+            </nav>
 
-    <div class="main-content">
+        </aside>
 
-        <div class="header-roles">
-            <h2>Gestión de Roles</h2>
-            <button class="btn-roles" onclick="abrirModal()">+ Nuevo Rol</button>
-        </div>
+        <main class="main-content">
 
-        <table class="table-roles" id="tablaRoles">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre del Rol</th>
-                    <th>Estado</th>
-                    
-                    <th>Acciones</th>
-                </tr>
-            </thead>
+            <div class="roles-container">
 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>Activo</td>
-                    <td>
-                        <button onclick="cambiarEstado(this)">🔄</button>
-                        <button onclick="eliminarRol(this)">❌</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <div class="header-roles">
+
+                    <h2>Gestión de Roles</h2>
+
+                    <div class="roles-tools">
+
+                        <input type="text" class="search-role" placeholder="Buscar rol">
+
+                        <button class="btn-import">
+                            Importar
+                        </button>
+
+                        <button class="btn-roles" onclick="abrirModal()">
+                            + Nuevo Rol
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table-roles">
+
+                        <thead>
+
+                            <tr>
+                                <th>Nombre del Rol</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Administrador</td>
+
+                                <td>
+                                    <span class="estado-activo">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="acciones-tabla">
+
+                                        <button class="btn-editar" onclick="cambiarEstado(this)">
+                                            Editar
+                                        </button>
+
+                                        <button class="btn-eliminar" onclick="eliminarRol(this)">
+                                            Eliminar
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
 
     </div>
-</div>
 
-<div id="modalRol" class="modal">
-    <div class="modal-content">
+    <div id="modalRol" class="modal">
 
-        <h3>Nuevo Rol</h3>
+        <div class="modal-content">
 
-        <input type="text" id="nombreRol" placeholder="Nombre del rol">
+            <h3>Nuevo Rol</h3>
 
-        <p id="errorRol" class="error-text"></p>
+            <input type="text" id="nombreRol" placeholder="Nombre del rol">
 
-        <select id="estadoRol">
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        </select>
+            <p id="errorRol" class="error-text"></p>
 
-        <div class="modal-buttons">
-            <button class="btn-roles" onclick="guardarRol()">Guardar</button>
-            <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+            <select id="estadoRol">
+
+                <option value="Activo">
+                    Activo
+                </option>
+
+                <option value="Inactivo">
+                    Inactivo
+                </option>
+
+            </select>
+
+            <div class="modal-buttons">
+
+                <button class="btn-roles" onclick="guardarRol()">
+                    Guardar
+                </button>
+
+                <button class="btn-cancel" onclick="cerrarModal()">
+                    Cancelar
+                </button>
+
+            </div>
+
         </div>
 
     </div>
-</div>
 
-<footer class="footer">
-    <p>© 2026 Tien Lan Zu Shi</p>
-</footer>
-<script src="js/roles.js" defer></script>
+    <footer class="footer">
+        <p>© 2026 Tien Lan Zu Shi</p>
+    </footer>
+
+    <script src="js/roles.js" defer></script>
 
 </body>
+
 </html>
-    

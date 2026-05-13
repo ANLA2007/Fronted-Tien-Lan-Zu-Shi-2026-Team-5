@@ -1,79 +1,198 @@
 console.log("JS Categorías conectado");
 
+
+// ABRIR MODAL
 function abrirModal() {
-    document.getElementById("modalCategoria").style.display = "block";
+
+    const modal = document.getElementById("modalCategoria");
+
+    modal.style.display = "flex";
 }
 
+
+// CERRAR MODAL
 function cerrarModal() {
 
     const modal = document.getElementById("modalCategoria");
-    const input = document.getElementById("nombreCategoria");
+
+    const nombre = document.getElementById("nombreCategoria");
+
+    const descripcion = document.getElementById("descripcionCategoria");
+
     const error = document.getElementById("errorCategoria");
+
 
     modal.style.display = "none";
 
-    input.value = "";
+    nombre.value = "";
 
-    error.textContent = "";
+    descripcion.value = "";
+
+    error.innerHTML = "";
 }
 
+
+// GUARDAR CATEGORÍA
 function guardarCategoria() {
 
     const nombre = document.getElementById("nombreCategoria").value.trim();
 
     const estado = document.getElementById("estadoCategoria").value;
 
+    const descripcion = document.getElementById("descripcionCategoria").value.trim();
+
     const error = document.getElementById("errorCategoria");
 
-    if (nombre === "") {
 
-        error.textContent = "⚠️ Debes ingresar una categoría";
+    // VALIDAR CAMPOS
+    if (
+        nombre === "" ||
+        descripcion === ""
+    ) {
+
+        error.innerHTML = "⚠️ Completa todos los campos";
 
         return;
     }
 
-    error.textContent = "";
 
-    const tabla = document.querySelector("#tablaCategorias tbody");
+    // LIMPIAR ERROR
+    error.innerHTML = "";
 
-    const nuevaFila = tabla.insertRow();
 
-    const id = tabla.rows.length;
+    // TABLA
+    const tbody = document.querySelector(".table-categorias tbody");
 
-   const descripcion = document.getElementById("descripcionCategoria").value.trim();
 
-    nuevaFila.insertCell(0).innerText = id;
-    nuevaFila.insertCell(1).innerText = nombre;
-    nuevaFila.insertCell(2).innerText = estado;
-    nuevaFila.insertCell(3).innerText = descripcion;
+    // CREAR FILA
+    const fila = document.createElement("tr");
 
-    const celdaAcciones = nuevaFila.insertCell(4);
 
-    celdaAcciones.innerHTML = `
-        <button onclick="cambiarEstado(this)">🔄</button>
-        <button onclick="eliminarCategoria(this)">❌</button>
+    // CLASE ESTADO
+    let claseEstado = "";
+
+    if (estado === "Activo") {
+
+        claseEstado = "estado-activo";
+
+    } else {
+
+        claseEstado = "estado-inactivo";
+    }
+
+
+    // CONTENIDO FILA
+    fila.innerHTML = `
+
+        <td>${nombre}</td>
+
+        <td>
+            <span class="${claseEstado}">
+                ${estado}
+            </span>
+        </td>
+
+        <td>${descripcion}</td>
+
+        <td>
+
+            <div class="acciones-tabla">
+
+                <button class="btn-editar"
+                    onclick="cambiarEstado(this)">
+                    Editar
+                </button>
+
+                <button class="btn-eliminar"
+                    onclick="eliminarCategoria(this)">
+                    Eliminar
+                </button>
+
+            </div>
+
+        </td>
     `;
 
+
+    // AGREGAR FILA
+    tbody.appendChild(fila);
+
+
+    // CERRAR MODAL
     cerrarModal();
 }
 
+
+// ELIMINAR
 function eliminarCategoria(boton) {
 
-    const fila = boton.parentElement.parentElement;
+    const fila = boton.closest("tr");
 
     fila.remove();
 }
 
+
+// CAMBIAR ESTADO
 function cambiarEstado(boton) {
 
-    const celdaEstado = boton.parentElement.parentElement.cells[2];
+    const estado = boton.closest("tr").querySelector("span");
 
-    if (celdaEstado.innerText === "Activo") {
 
-        celdaEstado.innerText = "Inactivo";
+    if (estado.innerText === "Activo") {
+
+        estado.innerText = "Inactivo";
+
+        estado.classList.remove("estado-activo");
+
+        estado.classList.add("estado-inactivo");
 
     } else {
 
-        celdaEstado.innerText = "Activo";
+        estado.innerText = "Activo";
+
+        estado.classList.remove("estado-inactivo");
+
+        estado.classList.add("estado-activo");
+    }
+}
+
+
+// BUSCADOR
+const buscador = document.querySelector(".search-categoria");
+
+buscador.addEventListener("keyup", function () {
+
+    const texto = this.value.toLowerCase();
+
+    const filas = document.querySelectorAll(".table-categorias tbody tr");
+
+
+    filas.forEach(fila => {
+
+        const nombreCategoria =
+            fila.cells[0].textContent.toLowerCase();
+
+
+        if (nombreCategoria.includes(texto)) {
+
+            fila.style.display = "";
+
+        } else {
+
+            fila.style.display = "none";
+        }
+    });
+
+});
+
+
+// CERRAR MODAL 
+window.onclick = function(event) {
+
+    const modal = document.getElementById("modalCategoria");
+
+    if (event.target === modal) {
+
+        cerrarModal();
     }
 }

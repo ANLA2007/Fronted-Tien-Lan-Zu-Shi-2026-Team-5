@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     background: 
         radial-gradient(circle at 50% 20%, rgba(255, 193, 7, 0.5), transparent 50%),
         radial-gradient(circle at 10% 85%, rgba(76, 175, 80, 0.6), transparent 50%),
         #fcfcfc;
+
     display: flex;
     flex-direction: column;
 }
@@ -134,7 +136,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 
     .pagina-home .navbar {
         padding: 10px 40px;
@@ -145,8 +147,9 @@
     }
 
     .pagina-home .contenedor {
-        padding: 30px 8%;
         grid-template-columns: 1fr 1fr;
+        padding: 30px 8%;
+        gap: 30px;
     }
 
     .pagina-home .titulo-grande {
@@ -162,8 +165,12 @@
     }
 }
 
-
 @media (max-width: 900px) {
+
+    .pagina-home {
+        height: auto;
+        overflow-y: auto;
+    }
 
     .pagina-home .navbar {
         flex-direction: column;
@@ -172,20 +179,35 @@
     }
 
     .pagina-home .menu {
-        gap: 20px;
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 20px;
     }
 
     .pagina-home .contenedor {
         grid-template-columns: 1fr;
-        padding: 20px 5%;
+        padding: 25px 5%;
         text-align: center;
+        gap: 30px;
+    }
+
+    .pagina-home .descripcion {
+        order: 2;
+    }
+
+    .pagina-home .imagen {
+        order: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagina-home .imagen img {
+        max-width: 75%;
     }
 
     .pagina-home .titulo-grande {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     .pagina-home .titulo-chico {
@@ -195,17 +217,26 @@
     .pagina-home .raya {
         max-width: 80%;
     }
-
-    .pagina-home .imagen img {
-        max-width: 80%;
-    }
 }
-
 
 @media (max-width: 500px) {
 
+    .pagina-home {
+        height: auto;
+        overflow-y: auto;
+    }
+
     .pagina-home .navbar {
         padding: 15px;
+        gap: 15px;
+    }
+
+    .pagina-home .logo {
+        gap: 10px;
+    }
+
+    .pagina-home .logo img {
+        width: 45px;
     }
 
     .pagina-home .logo span {
@@ -213,34 +244,61 @@
     }
 
     .pagina-home .menu {
-        flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .pagina-home .menu span {
+        font-size: 13px;
     }
 
     .pagina-home .menu button {
-        width: 100%;
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+    .pagina-home .contenedor {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+        gap: 25px;
+    }
+
+    .pagina-home .imagen {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagina-home .imagen img {
+        max-width: 90%;
     }
 
     .pagina-home .titulo-grande {
-        font-size: 30px;
+        font-size: 32px;
+        line-height: 1.1;
     }
 
     .pagina-home .titulo-chico {
         font-size: 18px;
     }
 
-    .pagina-home .frase {
-        font-size: 15px;
+    .pagina-home .raya {
+        height: 6px;
+        max-width: 85%;
+        margin: 15px 0;
     }
 
-    .pagina-home .imagen img {
+    .pagina-home .frase {
+        font-size: 15px;
         max-width: 100%;
+    }
+
+    .pagina-home .redes {
+        gap: 10px;
     }
 
     .pagina-home .circulo {
         width: 35px;
         height: 35px;
-        font-size: 12px;
+        font-size: 13px;
     }
 }
-

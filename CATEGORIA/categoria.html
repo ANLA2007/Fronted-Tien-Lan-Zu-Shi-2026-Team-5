@@ -29,7 +29,9 @@
 
             <span>Admin</span>
 
-            <div class="user-avatar">TL</div>
+            <div class="user-avatar">
+                TL
+            </div>
 
         </div>
 
@@ -44,14 +46,15 @@
         <nav class="nav">
 
             <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
-                    <img src="img/home.png">
-                    <span>Inicio</span>
-                </a>
+                <img src="img/home.png">
+                <span>Inicio</span>
+            </a>
 
             <a href="../DASHBOARD/dashboard.html" class="nav-link">
                 <img src="img/grafico.png">
                 <span>Dashboard</span>
-                
+            </a>
+
             <a href="../USUARIO/usuario.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Usuarios</span>
@@ -62,7 +65,7 @@
                 <span>Roles</span>
             </a>
 
-             <a href="../CLIENTE/Cliente.html" class="nav-link">
+            <a href="../CLIENTE/Cliente.html" class="nav-link">
                 <img src="img/usuario.png">
                 <span>Clientes</span>
             </a>
@@ -74,7 +77,7 @@
 
             <a href="../PLATILLO/Porcion.html" class="nav-link">
                 <img src="img/platillos.png">
-                <span>Porcion</span>
+                <span>Porción</span>
             </a>
 
             <a href="../VENTA/NuevaVenta.html" class="nav-link">
@@ -97,7 +100,7 @@
                 <span>Configuración</span>
             </a>
 
-            <a href="login.html" class="nav-link">
+            <a href="../LOGIN/login.html" class="nav-link">
                 <img src="img/cerrarsesion.png">
                 <span>Cerrar sesión</span>
             </a>
@@ -106,38 +109,63 @@
 
     </aside>
 
-    <div class="main-content">
+    <main class="main-content">
 
-        <div class="header-roles">
+        <div class="categorias-container">
 
-            <h2> Gestión de Categorías</h2>
+            <div class="header-categorias">
 
-            <button class="btn-roles" onclick="abrirModal()">
-                + Nueva Categoría
-            </button>
+                <h2>Gestión de Categorías</h2>
+
+                <div class="categorias-tools">
+
+                    <input 
+                        type="text" 
+                        class="search-categoria" 
+                        placeholder="Buscar categoría"
+                    >
+
+                    <button class="btn-import">
+                        Importar
+                    </button>
+
+                    <button 
+                        class="btn-categoria" 
+                        onclick="abrirModal()"
+                    >
+                        + Nueva Categoría
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table-categorias">
+
+                    <thead>
+
+                        <tr>
+                            <th>Nombre Categoría</th>
+                            <th>Estado</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </div>
 
-        <table class="table-roles" id="tablaCategorias">
-
-            <thead>
-
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre Categoría</th>
-                    <th>Estado</th>
-                    <th>Descripcion</th>
-                    <th>Acciones</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-            </tbody>
-
-        </table>
-
-    </div>
+    </main>
 
 </div>
 
@@ -155,26 +183,30 @@
             placeholder="Nombre de la categoría"
         >
 
-        <p id="errorCategoria" class="error-text"></p>
-
         <select id="estadoCategoria">
 
-            <option value="Activo">Activo</option>
+            <option value="Activo">
+                Activo
+            </option>
 
-            <option value="Inactivo">Inactivo</option>
+            <option value="Inactivo">
+                Inactivo
+            </option>
 
         </select>
 
         <input
-           type="text"
-           id="descripcionCategoria"
-        placeholder="Descripción de la categoría"
-         >
+            type="text"
+            id="descripcionCategoria"
+            placeholder="Descripción de la categoría"
+        >
+
+        <p id="errorCategoria" class="error-text"></p>
 
         <div class="modal-buttons">
 
             <button
-                class="btn-roles"
+                class="btn-categoria"
                 onclick="guardarCategoria()"
             >
                 Guardar
@@ -192,8 +224,9 @@
     </div>
 
 </div>
+
 <footer class="footer">
-    <p>© 2026 Tien Lan Zu Shi</p>
+    <p>© 2026 Tien Lan Zhu Shi</p>
 </footer>
 
 <script src="js/categorias.js" defer></script>

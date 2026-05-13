@@ -1,76 +1,147 @@
 console.log("JS conectado");
+
+
+// ABRIR MODAL
 function abrirModal() {
-    document.getElementById("modalRol").style.display = "block";
+
+    const modal = document.getElementById("modalRol");
+
+    modal.style.display = "flex";
 }
 
+
+// CERRAR MODAL
 function cerrarModal() {
+
     const modal = document.getElementById("modalRol");
+
     const input = document.getElementById("nombreRol");
+
     const error = document.getElementById("errorRol");
+
 
     modal.style.display = "none";
+
     input.value = "";
-    input.classList.remove("input-error");
-    error.textContent = "";
+
+    error.innerHTML = "";
 }
 
-// Guarda cada rol
+
+// GUARDAR ROL
 function guardarRol() {
+
     const nombre = document.getElementById("nombreRol").value.trim();
+
     const estado = document.getElementById("estadoRol").value;
-    const input = document.getElementById("nombreRol");
+
     const error = document.getElementById("errorRol");
 
+
+    // VALIDAR INPUT
     if (nombre === "") {
-        error.textContent = "⚠️ Debes ingresar un nombre para el rol";
-        input.classList.add("input-error");
+
+        error.innerHTML = "⚠️ Debes ingresar un nombre para el rol";
+
         return;
     }
 
-    error.textContent = "";
-    input.classList.remove("input-error");
 
-    const tabla = document.querySelector("#tablaRoles tbody");
-    const nuevaFila = tabla.insertRow();
+    // LIMPIAR ERROR
+    error.innerHTML = "";
 
-    const id = tabla.rows.length;
 
-    nuevaFila.insertCell(0).innerText = id;
-    nuevaFila.insertCell(1).innerText = nombre;
-    nuevaFila.insertCell(2).innerText = estado;
+    // OBTENER TABLA
+    const tbody = document.querySelector(".table-roles tbody");
 
-    const celdaAcciones = nuevaFila.insertCell(3);
-    celdaAcciones.innerHTML = `
-        <button onclick="cambiarEstado(this)">🔄</button>
-        <button onclick="eliminarRol(this)">❌</button>
+
+    // CREAR FILA
+    const fila = document.createElement("tr");
+
+
+    // CONTENIDO
+    fila.innerHTML = `
+
+        <td>${nombre}</td>
+
+        <td>
+            <span class="estado-activo">
+                ${estado}
+            </span>
+        </td>
+
+        <td>
+
+            <div class="acciones-tabla">
+
+                <button class="btn-editar">
+                    Editar
+                </button>
+
+                <button class="btn-eliminar"
+                    onclick="eliminarRol(this)">
+                    Eliminar
+                </button>
+
+            </div>
+
+        </td>
     `;
 
+
+    // AGREGAR FILA
+    tbody.appendChild(fila);
+
+
+    // CERRAR MODAL
     cerrarModal();
 }
 
-// Eliminar rol
+
+// ELIMINAR
 function eliminarRol(boton) {
-    const fila = boton.parentElement.parentElement;
+
+    const fila = boton.closest("tr");
+
     fila.remove();
 }
 
-// Cambiar estado
-function cambiarEstado(boton) {
-    const celdaEstado = boton.parentElement.parentElement.cells[2];
 
-    if (celdaEstado.innerText === "Activo") {
-        celdaEstado.innerText = "Inactivo";
-    } else {
-        celdaEstado.innerText = "Activo";
+// BUSCAR ROL
+const buscador = document.querySelector(".search-role");
+
+buscador.addEventListener("keyup", function () {
+
+    const texto = this.value.toLowerCase();
+
+    const filas = document.querySelectorAll(".table-roles tbody tr");
+
+
+    filas.forEach(fila => {
+
+        const nombreRol = fila.cells[0].textContent.toLowerCase();
+
+
+        if (nombreRol.includes(texto)) {
+
+            fila.style.display = "";
+
+        } else {
+
+            fila.style.display = "none";
+        }
+    });
+
+});
+
+
+// CERRAR MODAL 
+window.onclick = function(event) {
+
+    const modal = document.getElementById("modalRol");
+
+    if (event.target === modal) {
+
+        cerrarModal();
     }
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const inputNombre = document.getElementById("nombreRol");
-
-    inputNombre.addEventListener("input", () => {
-        inputNombre.classList.remove("input-error");
-        document.getElementById("errorRol").textContent = "";
-    });
-});

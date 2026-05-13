@@ -50,6 +50,7 @@ body.dashboard {
     cursor: pointer;
     display: flex;
     align-items: center;
+
 }
 
 .dashboard .notif-badge {
@@ -263,11 +264,6 @@ body.dashboard {
 }
 
 
-.dashboard .image-box {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
 .dashboard .welcome-text {
     background: rgba(13, 59, 46, 0.9);
     color: #fff;
@@ -279,161 +275,412 @@ body.dashboard {
     margin-bottom: 10px;
 }
 
-.dashboard .image-box img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
+.dashboard .charts-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.dashboard .chart-card{
+    background: linear-gradient(135deg, #0d3b2e, #1f7a63);
+    border-radius: 20px;
+    padding: 22px;
+    transition: 0.35s;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard .chart-card:hover{
+    transform: translateY(-7px) scale(1.02);
+    background: linear-gradient(135deg, #6fcf97, #1f7a63, #0d3b2e);
+}
+
+.dashboard .chart-title{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dashboard .line-chart{
+    position: relative;
+    height: 240px;
     border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
 }
 
-@media (max-width: 1024px) {
+.dashboard .line-chart::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(111,207,151,0.85),
+        rgba(111,207,151,0.15)
+    );
+
+    clip-path: polygon(
+        0% 85%,
+        15% 68%,
+        35% 73%,
+        55% 48%,
+        75% 58%,
+        100% 18%,
+        100% 100%,
+        0% 100%
+    );
+}
+
+.dashboard .chart-labels{
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dashboard .point{
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
+
+.dashboard .p1{
+    left: 10%;
+    bottom: 18%;
+}
+
+.dashboard .p2{
+    left: 28%;
+    bottom: 32%;
+}
+
+.dashboard .p3{
+    left: 45%;
+    bottom: 28%;
+}
+
+.dashboard .p4{
+    left: 65%;
+    bottom: 52%;
+}
+
+.dashboard .p5{
+    left: 85%;
+    bottom: 72%;
+}
+
+.dashboard .circle-chart{
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        #7be0a5 0% 75%,
+        rgba(255,255,255,0.18) 75% 100%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard .circle-center{
+    width: 110px;
+    height: 110px;
+    background: #0d3b2e;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*NOTA: Estimado profesor el responsive fue segun la PC de Alexa (DELL Inspiron 15)*/
+
+@media (max-width: 1200px) {
 
     .dashboard .main-container {
-        display: grid;
-        grid-template-columns: 230px 1fr;
-        width: 100%;
+        grid-template-columns: 180px 1fr;
     }
-
-    .dashboard .sidebar {
-        display: block;
-        padding: 20px;
-    }
-
-    .dashboard .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .dashboard .nav-link {
-        flex-direction: row;
-        align-items: center;
-        min-width: auto;
-        font-size: 13px;
-        padding: 10px;
-        margin: 0;
-    }
-
-    .dashboard .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dashboard .mini-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dashboard .main-content {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 900px) {
-
-    .dashboard .main-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dashboard .sidebar {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
-        gap: 8px;
-    }
-
-    .dashboard .nav {
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    .dashboard .nav-link {
-        flex-direction: column;
-        min-width: 110px;
-        font-size: 11px;
-        padding: 12px;
-        margin-bottom: 0;
-        text-align: center;
-    }
-
-    .dashboard .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dashboard .grid-secundario {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard .mini-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dashboard .image-box img {
-        width: 100%;
-        height: auto;
-        max-height: 220px;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    .dashboard .main-content {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 500px) {
 
     .dashboard .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .dashboard .user-info {
-        width: 100%;
-        justify-content: flex-end;
+        flex-shrink: 0;
+    }
+
+    .dashboard .sidebar {
+        padding: 15px 10px;
+    }
+
+    .dashboard .nav-link {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    .dashboard .main-content {
+        padding: 20px;
     }
 
     .dashboard .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .dashboard .charts-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .dashboard .chart-card {
+        padding: 18px;
+    }
+
+    .dashboard .line-chart {
+        height: 210px;
+    }
+
+    .dashboard .circle-chart {
+        width: 160px;
+        height: 160px;
+    }
+
+    .dashboard .circle-center {
+        width: 95px;
+        height: 95px;
+        font-size: 24px;
+    }
+
+    .dashboard .chart-title {
+        font-size: 16px;
     }
 
     .dashboard .mini-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .dashboard .grid-secundario {
         grid-template-columns: 1fr;
     }
+}
+@media (max-width:900px){
 
-    .dashboard .image-box img {
-        width: 100%;
-        height: auto;
-        max-height: 180px;
-        object-fit: cover;
-        object-position: center;
+    .dashboard .main-container{
+        display:flex;
+        flex-direction:column;
+        width:100%;
     }
 
-    .dashboard .nav-link {
-        min-width: 90px;
-        font-size: 10px;
-        padding: 10px;
+    .dashboard .sidebar{
+        width:100%;
+        padding:10px;
+        position:sticky;
+        top:0;
+        z-index:100;
+        overflow-y:hidden;
+        box-sizing:border-box;
     }
 
-    .dashboard .main-content {
-        padding: 15px;
+    .dashboard .nav{
+        flex-direction:row;
+        overflow-x:auto;
+        gap:8px;
+        -webkit-overflow-scrolling:touch;
     }
 
-    .dashboard .card {
-        padding: 15px;
+    .dashboard .nav-link{
+        flex:0 0 auto;
+        white-space:nowrap;
+        min-width:95px;
+        text-align:center;
+        font-size:11px;
+        padding:10px;
+        box-sizing:border-box;
     }
 
-    .dashboard .welcome-text {
-        font-size: 12px;
-        padding: 10px;
+    .dashboard .main-content{
+        padding:20px;
+        min-width:0;
+        overflow-x:hidden;
+        height:auto;
+    }
+
+    .dashboard .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .dashboard .charts-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .dashboard .mini-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .dashboard .grid-secundario{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .dashboard .line-chart{
+        height:200px;
     }
 }
-.dashboard .main-content {
-    height: calc(100vh - 70px);
-    overflow-y: auto;
+
+@media (max-width:500px){
+
+    .dashboard .header{
+        padding:10px 15px;
+    }
+
+    .dashboard .header-content{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .dashboard .logo-negocio{
+        width:100%;
+        justify-content:center;
+    }
+
+    .dashboard .logo-negocio span{
+        font-size:18px;
+    }
+
+    .dashboard .user-info{
+        width:100%;
+        justify-content:center;
+    }
+
+    .dashboard .sidebar{
+        padding:8px;
+    }
+
+    .dashboard .nav{
+        gap:6px;
+    }
+
+    .dashboard .nav-link{
+        min-width:80px;
+        font-size:10px;
+        padding:8px;
+        border-radius:10px;
+    }
+
+    .dashboard .nav-link img{
+        width:18px;
+    }
+
+    .dashboard .main-content{
+        padding:15px 10px;
+        gap:15px;
+        overflow-x:hidden;
+        box-sizing:border-box;
+    }
+
+    .dashboard .stats-grid,
+    .dashboard .charts-grid,
+    .dashboard .mini-grid,
+    .dashboard .grid-secundario{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .dashboard .stats-card,
+    .dashboard .chart-card,
+    .dashboard .card{
+        padding:14px;
+        border-radius:16px;
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .dashboard .stats-card img{
+        width:35px;
+    }
+
+    .dashboard .stats-card .info span{
+        font-size:12px;
+    }
+
+    .dashboard .stats-card .info b{
+        font-size:18px;
+    }
+
+    .dashboard .welcome-text{
+        font-size:12px;
+        padding:10px;
+        text-align:center;
+    }
+
+    .dashboard .chart-title{
+        font-size:15px;
+        text-align:center;
+    }
+
+    .dashboard .line-chart{
+        height:170px;
+        width:100%;
+    }
+
+    .dashboard .chart-labels{
+        font-size:10px;
+    }
+
+    .dashboard .point{
+        font-size:11px;
+    }
+
+    .dashboard .circle-chart{
+        width:140px;
+        height:140px;
+    }
+
+    .dashboard .circle-center{
+        width:85px;
+        height:85px;
+        font-size:20px;
+    }
+
+    .dashboard .item{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .dashboard .footer{
+        font-size:12px;
+        padding:12px;
+    }
+
+    body.dashboard{
+        overflow-x:hidden;
+    }
+}
+
+.dashboard .main-content{
+    height:calc(100vh - 70px);
+    overflow-y:auto;
+    overflow-x:hidden;
 }
