@@ -1,101 +1,179 @@
 console.log("JS Porcion conectado");
 
-// Abrir modal
+
+// ABRIR MODAL
 function abrirModal() {
-    document.getElementById("modal").style.display = "block";
+
+    const modal = document.getElementById("modalPorcion");
+
+    modal.style.display = "flex";
 }
 
-// Cerrar modal
+
+// CERRAR MODAL
 function cerrarModal() {
 
-    const modal = document.getElementById("modal");
-    const error = document.getElementById("error");
+    const modal = document.getElementById("modalPorcion");
+
+    const nombre = document.getElementById("nombrePlatillo");
+
+    const categoria = document.getElementById("categoriaPlatillo");
+
+    const precio = document.getElementById("precioPlatillo");
+
+    const descripcion = document.getElementById("descripcionPlatillo");
+
+    const error = document.getElementById("errorPlatillo");
+
 
     modal.style.display = "none";
 
-    document.getElementById("nombre").value = "";
-    document.getElementById("categoria").value = "";
-    document.getElementById("precioporcion").value = "";
-    document.getElementById("descripcion").value = "";
+    nombre.value = "";
 
-    error.textContent = "";
+    categoria.value = "";
+
+    precio.value = "";
+
+    descripcion.value = "";
+
+    error.innerHTML = "";
 }
 
-// Guardar Porcion
-function guardar() {
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const categoria = document.getElementById("categoria").value.trim();
-    const precioporcion = document.getElementById("precioporcion").value.trim();
-    const descripcion = document.getElementById("descripcion").value.trim();
-    const estado = document.getElementById("estado").value;
+// GUARDAR PLATILLO
+function guardarPlatillo() {
 
-    const error = document.getElementById("error");
+    const nombre = document.getElementById("nombrePlatillo").value.trim();
 
-// Validación
-if (nombre === "" || categoria === "" || precioporcion === "" || descripcion === "") {
+    const categoria = document.getElementById("categoriaPlatillo").value.trim();
 
-    error.textContent = "⚠️ Completa todos los campos";
-    return;
-}
+    const precio = document.getElementById("precioPlatillo").value.trim();
 
-    error.textContent = "";
+    const descripcion = document.getElementById("descripcionPlatillo").value.trim();
 
-    const tabla = document.querySelector("#tablaPlatillos tbody");
-    const nuevaFila = tabla.insertRow();
+    const estado = document.getElementById("estadoPlatillo").value;
 
-    const id = tabla.rows.length;
-    
-    nuevaFila.insertCell(0).innerText = id;
-    nuevaFila.insertCell(1).innerText = nombre;
-    nuevaFila.insertCell(2).innerText = categoria;
-    nuevaFila.insertCell(3).innerText = "$" + precioporcion;
-    nuevaFila.insertCell(4).innerText = descripcion;
-    nuevaFila.insertCell(5).innerText = estado;
+    const error = document.getElementById("errorPlatillo");
 
-    const acciones = nuevaFila.insertCell(5);
 
-    acciones.innerHTML = `
-        <button onclick="cambiarEstado(this)">🔄</button>
-        <button onclick="eliminarPlatillo(this)">❌</button>
+    // VALIDAR INPUTS
+    if (
+        nombre === "" ||
+        categoria === "" ||
+        precio === "" ||
+        descripcion === ""
+    ) {
+
+        error.innerHTML = "⚠️ Completa todos los campos";
+
+        return;
+    }
+
+
+    // LIMPIAR ERROR
+    error.innerHTML = "";
+
+
+    // OBTENER TABLA
+    const tbody = document.querySelector(".table-porcion tbody");
+
+
+    // CREAR FILA
+    const fila = document.createElement("tr");
+
+
+    // CONTENIDO
+    fila.innerHTML = `
+
+        <td>${nombre}</td>
+
+        <td>${categoria}</td>
+
+        <td>$${precio}</td>
+
+        <td>${descripcion}</td>
+
+        <td>
+            <span class="${estado === 'Activo'
+                ? 'estado-activo'
+                : 'estado-inactivo'}">
+                ${estado}
+            </span>
+        </td>
+
+        <td>
+
+            <div class="acciones-tabla">
+
+                <button class="btn-editar">
+                    Editar
+                </button>
+
+                <button class="btn-eliminar"
+                    onclick="eliminarPlatillo(this)">
+                    Eliminar
+                </button>
+
+            </div>
+
+        </td>
     `;
 
+
+    // AGREGAR FILA
+    tbody.appendChild(fila);
+
+
+    // CERRAR MODAL
     cerrarModal();
 }
 
-// Eliminar platillo
+
+// ELIMINAR
 function eliminarPlatillo(boton) {
 
-    const fila = boton.parentElement.parentElement;
+    const fila = boton.closest("tr");
+
     fila.remove();
 }
 
-// Cambiar estado
-function cambiarEstado(boton) {
 
-    const celdaEstado = boton.parentElement.parentElement.cells[4];
+// BUSCAR PLATILLO
+const buscador = document.querySelector(".search-porcion");
 
-    if (celdaEstado.innerText === "Activo") {
-        celdaEstado.innerText = "Inactivo";
-    } else {
-        celdaEstado.innerText = "Activo";
+buscador.addEventListener("keyup", function () {
+
+    const texto = this.value.toLowerCase();
+
+    const filas = document.querySelectorAll(".table-porcion tbody tr");
+
+
+    filas.forEach(fila => {
+
+        const nombrePlatillo =
+            fila.cells[0].textContent.toLowerCase();
+
+
+        if (nombrePlatillo.includes(texto)) {
+
+            fila.style.display = "";
+
+        } else {
+
+            fila.style.display = "none";
+        }
+    });
+
+});
+
+
+// CERRAR MODAL
+window.onclick = function(event) {
+
+    const modal = document.getElementById("modalPorcion");
+
+    if (event.target === modal) {
+
+        cerrarModal();
     }
 }
-
-// Limpiar error mientras escribe
-document.addEventListener("DOMContentLoaded", () => {
-
-    const nombre = document.getElementById("nombre");
-     const categoria = document.getElementById("categoria");
-    const precioporcion = document.getElementById("precioporcion");
-    const descripcion = document.getElementById("descripcion");
-
-    function limpiarError() {
-
-        document.getElementById("error").textContent = "";
-    }
-
-    nombre.addEventListener("input", limpiarError);
-    precioporcion.addEventListener("input", limpiarError);
-    descripcion.addEventListener("input", limpiarError);
-});

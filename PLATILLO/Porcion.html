@@ -11,177 +11,240 @@
 
 <body class="porcion">
 
-<header class="header">
-    <div class="header-content">
+    <header class="header">
 
-        <div class="logo-negocio">
-            <img src="img/logo.png" alt="">
-            <span>Tien Lan Zhu Shi</span>
-        </div>
+        <div class="header-content">
 
-        <div class="user-info">
-
-            <div class="notif">
-                🔔
-                <span class="notif-badge">3</span>
+            <div class="logo-negocio">
+                <img src="img/logo.png" alt="">
+                <span>Tien Lan Zhu Shi</span>
             </div>
 
-            <span>Admin</span>
+            <div class="user-info">
 
-            <div class="user-avatar">TL</div>
+                <div class="notif">
+                    🔔
+                    <span class="notif-badge">3</span>
+                </div>
+
+                <span>Admin</span>
+
+                <div class="user-avatar">
+                    TL
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="main-container">
+
+        <aside class="sidebar">
+
+            <nav class="nav">
+
+                <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                    <img src="img/home.png">
+                    <span>Inicio</span>
+                </a>
+
+                <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                    <img src="img/grafico.png">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../USUARIO/usuario.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Usuarios</span>
+                </a>
+
+                <a href="../ROLES/roles.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Roles</span>
+                </a>
+
+                <a href="../CLIENTE/Cliente.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Clientes</span>
+                </a>
+
+                <a href="../CATEGORIA/categoria.html" class="nav-link">
+                    <img src="img/usuario.png">
+                    <span>Categorías</span>
+                </a>
+
+                <a href="../PLATILLO/Porcion.html" class="nav-link active">
+                    <img src="img/platillos.png">
+                    <span>Porción</span>
+                </a>
+
+                <a href="../VENTA/NuevaVenta.html" class="nav-link">
+                    <img src="img/venta.png">
+                    <span>Ventas</span>
+                </a>
+
+                <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
+                    <img src="img/historialventa.png">
+                    <span>Historial Venta</span>
+                </a>
+
+                <a href="../INVENTARIO/inventario.html" class="nav-link">
+                    <img src="img/inventario.png">
+                    <span>Inventario</span>
+                </a>
+
+                <a href="../CONFIGURACION/configuracion.html" class="nav-link">
+                    <img src="img/configuracion.png">
+                    <span>Configuración</span>
+                </a>
+
+                <a href="../LOGIN/login.html" class="nav-link">
+                    <img src="img/cerrarsesion.png">
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="porcion-container">
+
+                <div class="header-porcion">
+
+                    <h2>Gestión de Platillos</h2>
+
+                    <div class="porcion-tools">
+
+                        <input 
+                            type="text" 
+                            class="search-porcion" 
+                            placeholder="Buscar platillo"
+                        >
+
+                        <button class="btn-import">
+                            Importar
+                        </button>
+
+                        <button 
+                            class="btn-porcion" 
+                            onclick="abrirModal()"
+                        >
+                            + Nuevo Platillo
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table-porcion">
+
+                        <thead>
+
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio Porción</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div id="modalPorcion" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Nuevo Platillo</h3>
+
+            <input 
+                type="text"
+                id="nombrePlatillo"
+                placeholder="Nombre del platillo"
+            >
+
+            <input 
+                type="text"
+                id="categoriaPlatillo"
+                placeholder="Nombre categoría"
+            >
+
+            <input 
+                type="number"
+                id="precioPlatillo"
+                placeholder="Precio porción"
+            >
+
+            <input 
+                type="text"
+                id="descripcionPlatillo"
+                placeholder="Descripción"
+            >
+
+            <p id="errorPlatillo" class="error-text"></p>
+
+            <select id="estadoPlatillo">
+
+                <option value="Activo">
+                    Activo
+                </option>
+
+                <option value="Inactivo">
+                    Inactivo
+                </option>
+
+            </select>
+
+            <div class="modal-buttons">
+
+                <button 
+                    class="btn-porcion"
+                    onclick="guardarPlatillo()"
+                >
+                    Guardar
+                </button>
+
+                <button 
+                    class="btn-cancel"
+                    onclick="cerrarModal()"
+                >
+                    Cancelar
+                </button>
+
+            </div>
 
         </div>
 
     </div>
-</header>
 
-<div class="main-container">
+    <footer class="footer">
+        <p>© 2026 Tien Lan Zhu Shi</p>
+    </footer>
 
-    <aside class="sidebar">
-
-        <nav class="nav">
-
-            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
-                <img src="img/home.png">
-                <span>Inicio</span>
-            </a>
-
-            <a href="../DASHBOARD/dashboard.html" class="nav-link">
-                <img src="img/grafico.png">
-                <span>Dashboard</span>
-            </a>
-
-            <a href="../USUARIO/usuario.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Usuarios</span>
-            </a>
-
-            <a href="../ROLES/roles.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Roles</span>
-            </a>
-
-            <a href="../CLIENTE/Cliente.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Clientes</span>
-            </a>
-
-            <a href="../CATEGORIA/categoria.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Categorías</span>
-            </a>
-
-            <a href="../PLATILLO/Porcion.html" class="nav-link active">
-                <img src="img/platillos.png">
-                <span>Porcion</span>
-            </a>
-
-            <a href="../VENTA/NuevaVenta.html" class="nav-link">
-                <img src="img/venta.png">
-                <span>Ventas</span>
-            </a>
-
-            <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
-                <img src="img/historialventa.png">
-                <span>Historial Venta</span>
-            </a>
-
-            <a href="../INVENTARIO/inventario.html" class="nav-link">
-                <img src="img/inventario.png">
-                <span>Inventario</span>
-            </a>
-
-            <a href="../CONFIGURACION/configuracion.html" class="nav-link">
-                <img src="img/configuracion.png">
-                <span>Configuración</span>
-            </a>
-
-            <a href="../LOGIN/login.html" class="nav-link">
-                <img src="img/cerrarsesion.png">
-                <span>Cerrar sesión</span>
-            </a>
-
-        </nav>
-
-    </aside>
-
-    <div class="main-content">
-
-        <div class="header-roles">
-
-            <h2> Gestión de Platillos</h2>
-
-            <button class="btn-roles" onclick="abrirModal()">
-                + nuevo platillo
-            </button>
-
-        </div>
-
-        <table class="table-roles" id="tablaPlatillos">
-
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>categoria</th>
-                    <th>Precio porcion</th>
-                    <th>Descripcion</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-
-            <tbody>
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-<div id="modal" class="modal">
-
-    <div class="modal-content">
-
-        <h3>Nuevo Platillo</h3>
-
-        <input type="text" id="nombre" placeholder="Nombre del platillo">
-
-         <input type="text" id="categoria" placeholder="Nombre Categoria">
-
-        <input type="number" id="precioporcion" placeholder="Precio Porcion">
-
-        <input type="text" id="descripcion" placeholder="Descripcion">
-
-        <p id="error" class="error-text"></p>
-
-        <select id="estado">
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        </select>
-
-        <div class="modal-buttons">
-
-            <button class="btn-roles" onclick="guardar()">
-                Guardar
-            </button>
-
-            <button class="btn-cancel" onclick="cerrarModal()">
-                Cancelar
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-<footer class="footer">
-    <p>© 2026 Tien Lan Zu Shi</p>
-</footer>
-
-<script src="js/Porcion.js" defer></script>
+    <script src="js/Porcion.js" defer></script>
 
 </body>
-</html>
 
+</html>

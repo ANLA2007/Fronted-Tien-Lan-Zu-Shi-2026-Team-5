@@ -1,60 +1,135 @@
-let id = 2;
+console.log("JS conectado");
 
-// MODAL
-const modal = document.getElementById("modal");
-const btnAbrir = document.getElementById("btnAbrir");
-const btnCerrar = document.getElementById("cerrar");
-const btnGuardar = document.getElementById("guardar");
+function abrirModal(){
 
-// ABRIR
-btnAbrir.addEventListener("click", () => {
+    const modal = document.getElementById("modalCliente");
+
     modal.classList.add("modal-open");
-});
+}
 
-// CERRAR
-btnCerrar.addEventListener("click", () => {
+function cerrarModal(){
+
+    const modal = document.getElementById("modalCliente");
+
     modal.classList.remove("modal-open");
-});
 
+    document.getElementById("nombreCliente").value = "";
 
-document.getElementById("formCliente").addEventListener("submit", (e) => {
+    document.getElementById("apellidoCliente").value = "";
 
-    e.preventDefault(); // evita recargar
+    document.getElementById("telefonoCliente").value = "";
 
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value;
-    let telefono = document.getElementById("telefono").value;
-    let direccion = document.getElementById("direccion").value;
+    document.getElementById("direccionCliente").value = "";
 
-    if (nombre === "" || apellido === "") {
-        alert("Completa los datos");
+    const error = document.getElementById("errorCliente");
+
+    error.style.display = "none";
+
+    error.innerHTML = "";
+}
+
+function guardarCliente(){
+
+    const nombre = document.getElementById("nombreCliente").value.trim();
+
+    const apellido = document.getElementById("apellidoCliente").value.trim();
+
+    const telefono = document.getElementById("telefonoCliente").value.trim();
+
+    const direccion = document.getElementById("direccionCliente").value.trim();
+
+    const error = document.getElementById("errorCliente");
+
+    if(nombre === "" || apellido === "" || telefono === "" || direccion === ""){
+
+        error.style.display = "block";
+
+        error.innerHTML = "⚠️ Debes completar todos los campos";
+
         return;
     }
 
-    let tabla = document.getElementById("bodyClientes");
+    error.style.display = "none";
 
-    let fila = document.createElement("tr");
+    error.innerHTML = "";
+
+    const tbody = document.querySelector(".table-clientes tbody");
+
+    const fila = document.createElement("tr");
 
     fila.innerHTML = `
-        <td>${id++}</td>
+
         <td>${nombre} ${apellido}</td>
+
         <td>${telefono}</td>
+
         <td>${direccion}</td>
+
+        <td>
+            <span class="estado-activo">
+                Activo
+            </span>
+        </td>
+
+        <td>
+
+            <div class="acciones-tabla">
+
+                <button class="btn-editar">
+                    Editar
+                </button>
+
+                <button class="btn-eliminar"
+                        onclick="eliminarCliente(this)">
+                    Eliminar
+                </button>
+
+            </div>
+
+        </td>
     `;
 
-    tabla.appendChild(fila);
+    tbody.appendChild(fila);
 
-    modal.classList.remove("modal-open");
-});
+    cerrarModal();
+}
 
-// BUSCADOR (igual)
-document.getElementById("buscar").addEventListener("keyup", function () {
+function eliminarCliente(boton){
 
-    let filtro = this.value.toLowerCase();
-    let filas = document.querySelectorAll("#tablaClientes tbody tr");
+    const fila = boton.closest("tr");
+
+    fila.remove();
+}
+
+const buscador = document.querySelector(".search-cliente");
+
+buscador.addEventListener("keyup", function(){
+
+    const texto = this.value.toLowerCase();
+
+    const filas = document.querySelectorAll(".table-clientes tbody tr");
 
     filas.forEach(fila => {
-        let texto = fila.textContent.toLowerCase();
-        fila.style.display = texto.includes(filtro) ? "" : "none";
+
+        const contenido = fila.textContent.toLowerCase();
+
+        if(contenido.includes(texto)){
+
+            fila.style.display = "";
+
+        }else{
+
+            fila.style.display = "none";
+        }
     });
 });
+
+window.onclick = function(event){
+
+    const modal = document.getElementById("modalCliente");
+
+    if(event.target === modal){
+
+        cerrarModal();
+    }
+}

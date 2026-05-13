@@ -1,444 +1,602 @@
-body.roles {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body.roles{
+    margin:0;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:#f5f8fb;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
-.roles .header {
-    background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
-    padding: 15px 30px;
-    color: #e8f5e9;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.roles .header{
+    background:linear-gradient(135deg,#0d3b2e,#1f7a63,#6fcf97);
+    padding:15px 30px;
+    color:#e8f5e9;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
 
-.roles .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.roles .header-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.roles .logo-negocio {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.roles .logo-negocio{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.roles .logo-negocio img {
-    width: 40px;
+.roles .logo-negocio img{
+    width:40px;
 }
 
-.roles .logo-negocio span {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 22px;
-    font-style: italic;
-    font-weight: bold;
-    color: #e8f5e9;
+.roles .logo-negocio span{
+    font-size:22px;
+    font-style:italic;
+    font-weight:bold;
+    color:#e8f5e9;
 }
 
-.roles .user-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.roles .user-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.roles .notif {
-    position: relative;
-    font-size: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.roles .notif{
+    position:relative;
+    font-size:22px;
 }
 
-.roles .notif-badge {
-    position: absolute;
-    top: -6px;
-    right: -8px;
-    background: #097514;
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.roles .notif-badge{
+    position:absolute;
+    top:-6px;
+    right:-8px;
+    background:#097514;
+    color:white;
+    font-size:11px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.roles .user-avatar {
-    background: #6fcf97;
-    color: #0d3b2e;
-    padding: 10px;
-    border-radius: 50%;
-    font-weight: bold;
+.roles .user-avatar{
+    background:#6fcf97;
+    color:#0d3b2e;
+    padding:10px;
+    border-radius:50%;
+    font-weight:bold;
 }
 
-.roles .main-container {
-    display: grid;
-    grid-template-columns: 230px 1fr;
-    flex: 1;
+.roles .main-container{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    flex:1;
 }
 
-.roles .sidebar {
-    background: linear-gradient(180deg, #0d3b2e, #1f7a63);
-    padding: 20px;
+.roles .sidebar{
+    background:linear-gradient(180deg,#0d3b2e,#1f7a63);
+    padding:20px;
 }
 
-.roles .nav {
-    display: flex;
-    flex-direction: column;
+.roles .nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-.roles .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #e8f5e9;
-    background: rgba(255,255,255,0.08);
-    transition: 0.3s;
-    font-weight: 600;
+.roles .nav-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#e8f5e9;
+    background:rgba(255,255,255,0.08);
+    transition:0.3s;
+    font-weight:600;
 }
 
-.roles .nav-link img {
-    width: 22px;
-    filter: brightness(0) invert(1);
+.roles .nav-link img{
+    width:22px;
+    filter:brightness(0) invert(1);
 }
 
-.roles .nav-link:hover {
-    background: rgba(111,207,151,0.3);
-    transform: translateX(5px);
+.roles .nav-link:hover{
+    background:rgba(111,207,151,0.3);
+    transform:translateX(5px);
 }
 
-.roles .nav-link.active {
-    background: #6fcf97;
-    color: #0d3b2e;
+.roles .nav-link.active{
+    background:#6fcf97;
+    color:#0d3b2e;
 }
 
-
-.roles .footer {
-    background: #0d3b2e;
-    color: #e8f5e9;
-    text-align: center;
-    padding: 15px;
+.main-content{
+    padding:30px;
 }
 
-:root {
-    --verde-base: #10b981;
-    --verde-hover: #059669;
-    --verde-fondo: #f0fdf4;
-    --gris-fondo: #e5e7eb;
-    --blanco: #ffffff;
-    --sombra: 0 10px 25px rgba(0,0,0,0.1);
+.roles-container{
+    background:white;
+    padding:22px;
+    border-radius:18px;
+    border:2px solid rgba(111,207,151,0.15);
 }
 
-
-.main-content {
-    flex: 1;
-    margin: 25px; 
-    background: var(--blanco);
-    border-radius: 30px; 
-    padding: 40px;
-    box-shadow: var(--sombra);
-    overflow-y: auto;
+.header-roles{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-
-.header-roles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+.header-roles h2{
+    margin:0;
+    font-size:24px;
+    color:#0d3b2e;
 }
 
-.btn-roles {
-    background: linear-gradient(135deg, #2ecc71, #145a32);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px; 
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+.roles-tools{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-
-.table-roles {
-    width: 100%;
-    border-collapse: collapse;
+.search-role{
+    width:260px;
+    padding:12px 14px;
+    border:1px solid rgba(13,59,46,0.15);
+    border-radius:10px;
+    background-color:#f4fbf7;
+    color:#2b313b;
+    font-size:14px;
+    outline:none;
 }
 
-.table-roles th {
-    text-align: left;
-    padding: 15px;
-    background: #0d3b2e;
-    color: #ffffff;
-    font-size: 0.9rem;
+.search-role:focus{
+    border-color:#1f7a63;
 }
 
-.table-roles td {
-    padding: 18px 15px;
-    border-bottom: 1px solid #f3f4f6;
-    color: #4b5563;
+.btn-import{
+    background:#fff;
+    border:1px solid #d7e3dd;
+    color:#0d3b2e;
+    padding:11px 18px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.table-roles tr:hover td {
-    background-color: #f9fafb;
+.btn-import:hover{
+    background:#eef8f3;
 }
 
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    backdrop-filter: blur(4px); 
+.btn-roles{
+    background:#0d3b2e;
+    color:white;
+    padding:11px 20px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:700;
+    transition:all 0.3s ease;
 }
 
-.modal-content {
-    background:  #0d3b2e;
-    margin: 10% auto;
-    padding: 40px;
-    width: 350px;
-    border-radius: 25px; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    text-align: center;
-    display: flex;
-    flex-direction: column; 
-    gap: 15px; 
+.btn-roles:hover{
+    background:#145a46;
 }
 
-.modal-content h3 {
-    margin-top: 0;
-    color: white;
-    font-size: 1.5rem;
+.table-responsive{
+    width:100%;
+    overflow-x:auto;
 }
 
-
-.modal-content input, 
-.modal-content select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    font-size: 1rem;
-    box-sizing: border-box; 
-    outline: none;
+.table-roles{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:16px;
+    background:#ffffff;
 }
 
-.modal-content input:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+.table-roles thead th{
+    padding:16px;
+    background:#0d3b2e;
+    color:#e8f5e9;
+    font-size:13px;
+    text-align:center;
+    font-weight:700;
+    border:none;
 }
 
-
-.modal-buttons {
-    display: flex;
-    flex-direction: column; 
-    gap: 10px;
-    margin-top: 10px;
+.table-roles tbody tr{
+    background:#ffffff;
+    border-bottom:1px solid #edf2f7;
+    transition:background 0.2s ease;
 }
 
-.modal-buttons .btn-roles {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
+.table-roles tbody tr:hover{
+    background:#f4fbf7;
 }
 
-.btn-cancel {
-    background-color: #f3f4f6;
-    color: #4b5563;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.table-roles tbody td{
+    padding:15px 14px;
+    border:none;
+    vertical-align:middle;
+    color:#2d3748;
+    font-size:14px;
+    text-align:center;
 }
 
-.btn-cancel:hover {
-    background-color: #e5e7eb;
+.estado-activo{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#dcfce7;
+    color:#15803d;
+    padding:9px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+    min-width:95px;
+}
+
+.estado-inactivo{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#fee2e2;
+    color:#dc2626;
+    padding:9px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+    min-width:95px;
+}
+
+.acciones-tabla{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    flex-wrap:nowrap;
+}
+
+.btn-editar,
+.btn-eliminar{
+    border:none;
+    padding:9px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.2s;
+    white-space:nowrap;
+    min-width:95px;
+}
+
+.btn-editar{
+    background:#f3f4f6;
+    color:#111827;
+}
+
+.btn-editar:hover{
+    background:#e5e7eb;
+}
+
+.btn-eliminar{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.btn-eliminar:hover{
+    background:#fecaca;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+    backdrop-filter:blur(4px);
+}
+
+.modal-content{
+    background:linear-gradient(135deg,#0d3b2e,#145a46,#1f7a63);
+    width:90%;
+    max-width:500px;
+    padding:30px;
+    border-radius:24px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.modal-content h3{
+    color:white;
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+    text-align:center;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:12px;
+    font-size:14px;
+    background:rgba(255,255,255,0.96);
+    color:#2d3748;
+    outline:none;
+    transition:all 0.3s ease;
+    box-sizing:border-box;
+}
+
+.modal-content input:focus,
+.modal-content select:focus{
+    border-color:#6fcf97;
+    box-shadow:0 0 0 3px rgba(111,207,151,0.2);
+}
+
+.modal-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.btn-cancel{
+    background:#f3f4f6;
+    color:#374151;
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
 }
 
 .error-text{
-    color: #e5e7eb;
-   
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin:0;
+    min-height:20px;
 }
 
-@media (max-width: 1024px) {
-
-    .roles .main-container {
-        display: grid;
-        grid-template-columns: 230px 1fr;
-        width: 100%;
-    }
-
-    .roles .sidebar {
-        display: block;
-        padding: 20px;
-    }
-
-    .roles .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .roles .nav-link {
-        flex-direction: row;
-        align-items: center;
-        min-width: auto;
-        font-size: 13px;
-        padding: 10px;
-        margin: 0;
-    }
-
-    .roles .main-content,
-    .main-content {
-        margin: 15px;
-        padding: 20px;
-        border-radius: 20px;
-        width: auto;
-        box-sizing: border-box;
-    }
-
-    .table-roles {
-        min-width: 700px;
-        width: 100%;
-    }
-
-    .modal-content {
-        width: 90%;
-        max-width: 400px;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+.roles .footer{
+    background:#0d3b2e;
+    color:#e8f5e9;
+    text-align:center;
+    padding:15px;
 }
 
-@media (max-width: 900px) {
-    .roles .main-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+@media (max-width:1200px){
+
+    .roles .main-container{
+        grid-template-columns:180px 1fr;
     }
 
-    .roles .sidebar {
-        width: 100%;
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px;
-        gap: 8px;
-        box-sizing: border-box;
+    .roles .header-content{
+        flex-wrap:wrap;
+        gap:15px;
     }
 
-    .roles .nav {
-        flex-direction: row;
-        gap: 8px;
+    .roles .user-info{
+        flex-shrink:0;
     }
 
-    .roles .nav-link {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        min-width: 90px;
-        font-size: 11px;
-        padding: 10px;
-        margin-bottom: 0;
+    .roles .sidebar{
+        padding:15px 10px;
     }
 
-    .roles .main-content,
-    .main-content {
-        margin: 15px;
-        padding: 20px;
-        border-radius: 20px;
-        width: auto;
-        box-sizing: border-box;
+    .roles .nav-link{
+        font-size:13px;
+        padding:10px 8px;
     }
 
-    .header-roles {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+    .roles .main-content{
+        padding:22px;
     }
 
-    .btn-roles {
-        width: 100%;
+    .roles .table-roles{
+        min-width:850px;
     }
 
-    .table-roles {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-        min-width: 700px;
-    }
-
-    .modal-content {
-        width: 90%;
-        max-width: 400px;
-        padding: 20px;
-        box-sizing: border-box;
+    .roles .table-responsive{
+        overflow-x:auto;
     }
 }
 
-@media (max-width: 500px) {
-    .roles .header {
-        padding: 12px 15px;
+@media (max-width:900px){
+
+    .roles .main-container{
+        display:flex;
+        flex-direction:column;
     }
 
-    .roles .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .roles .sidebar{
+        width:100%;
+        padding:10px;
+        position:sticky;
+        top:0;
+        z-index:100;
+        overflow-y:hidden;
     }
 
-    .roles .user-info {
-        width: 100%;
-        justify-content: flex-end;
+    .roles .nav{
+        flex-direction:row;
+        overflow-x:auto;
+        gap:8px;
+        -webkit-overflow-scrolling:touch;
     }
 
-    .roles .logo-negocio span {
-        font-size: 18px;
+    .roles .nav-link{
+        flex:0 0 auto;
+        white-space:nowrap;
+        min-width:95px;
+        text-align:center;
+        font-size:11px;
+        padding:10px;
     }
 
-    .roles .nav-link {
-        min-width: 75px;
-        font-size: 10px;
-        padding: 8px;
+    .roles .main-content{
+        padding:20px;
+        min-width:0;
+        overflow-x:hidden;
     }
 
-    .main-content {
-        margin: 10px;
-        padding: 15px;
-        border-radius: 15px;
+    .roles .header-roles{
+        flex-direction:column;
+        align-items:stretch;
+        gap:12px;
     }
 
-    .table-roles {
-        min-width: 800px;
+    .roles .roles-tools{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
     }
 
-    .table-roles th,
-    .table-roles td {
-        font-size: 12px;
-        padding: 10px;
+    .roles .search-role{
+        flex:1;
+        min-width:220px;
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-        border-radius: 18px;
+    .roles .table-responsive{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .roles .table-roles{
+        min-width:780px;
+    }
+
+    .roles .acciones-tabla{
+        display:flex;
+        flex-wrap:nowrap;
+        gap:8px;
+    }
+
+    .roles .modal-content{
+        width:95%;
+        max-width:430px;
+        box-sizing:border-box;
     }
 }
 
+@media (max-width:500px){
 
+    .roles .header{
+        padding:10px 15px;
+    }
 
+    .roles .header-content{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .roles .logo-negocio span{
+        font-size:18px;
+    }
+
+    .roles .main-content{
+        padding:15px 10px;
+        overflow-x:hidden;
+    }
+
+    .roles .roles-container{
+        padding:15px;
+    }
+
+    .roles .header-roles{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .roles .roles-tools{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        width:100%;
+        gap:10px;
+    }
+
+    .roles .search-role,
+    .roles .btn-import,
+    .roles .btn-roles{
+        width:100%;
+        margin:0;
+        box-sizing:border-box;
+    }
+
+    .roles .table-responsive{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .roles .table-roles{
+        min-width:680px;
+    }
+
+    .roles .table-roles thead th,
+    .roles .table-roles tbody td{
+        font-size:12px;
+        padding:10px;
+        white-space:nowrap;
+    }
+
+    .roles .acciones-tabla{
+        flex-direction:column;
+        gap:6px;
+    }
+
+    .roles .btn-editar,
+    .roles .btn-eliminar,
+    .roles .estado-activo,
+    .roles .estado-inactivo{
+        width:100%;
+        min-width:0;
+        padding:8px 4px;
+        font-size:13px;
+        box-sizing:border-box;
+    }
+
+    .roles .modal{
+        padding:10px;
+    }
+
+    .roles .modal-content{
+        width:100%;
+        max-width:100%;
+        padding:20px;
+        border-radius:20px;
+        box-sizing:border-box;
+    }
+
+    body.roles{
+        overflow-x:hidden;
+    }
+}

@@ -200,94 +200,81 @@ body.configuracion {
     margin-top: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 
     .configuracion .main-container {
-        display: grid;
-        grid-template-columns: 230px 1fr;
-        width: 100%;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .configuracion .header-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .configuracion .user-info {
+        flex-shrink: 0;
     }
 
     .configuracion .sidebar {
-        display: block;
-        padding: 20px;
-    }
-
-    .configuracion .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        padding: 15px 10px;
     }
 
     .configuracion .nav-link {
-        flex-direction: row;
-        min-width: auto;
-        min-height: auto;
         font-size: 13px;
-        padding: 10px;
-        margin: 0;
-        border-radius: 12px;
+        padding: 10px 8px;
     }
 
-    .configuracion .content {
+    .configuracion .main-content {
         padding: 20px;
-        box-sizing: border-box;
+    }
+
+    .configuracion .grid-secundario {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
     .configuracion .card {
-        max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
     }
 }
-
 
 @media (max-width: 900px) {
 
     .configuracion .main-container {
         display: flex;
         flex-direction: column;
-        width: 100%;
     }
 
     .configuracion .sidebar {
         width: 100%;
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 12px;
-        gap: 10px;
-        box-sizing: border-box;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        overflow-y: hidden;
     }
 
     .configuracion .nav {
-        display: flex;
         flex-direction: row;
-        gap: 12px;
-        width: max-content;
+        overflow-x: auto;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
     }
 
     .configuracion .nav-link {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-width: 110px;
-        min-height: 80px;
-        padding: 12px;
-        margin: 0;
-        text-align: center;
-        border-radius: 16px;
-        box-sizing: border-box;
+        flex: 0 0 auto;
+        white-space: nowrap;
     }
 
-    .configuracion .content {
-        width: 100%;
+    .configuracion .main-content {
         padding: 20px;
-        box-sizing: border-box;
+        min-width: 0;
     }
 
     .configuracion .grid-secundario {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .configuracion .card {
@@ -296,37 +283,64 @@ body.configuracion {
         box-sizing: border-box;
     }
 }
-
 @media (max-width: 500px) {
 
+    .configuracion .header {
+        padding: 10px 15px;
+    }
+
     .configuracion .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-    .configuracion .user-info {
+    .configuracion .logo-negocio {
         width: 100%;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     .configuracion .logo-negocio span {
         font-size: 18px;
     }
 
+    .configuracion .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .configuracion .main-content {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .configuracion .grid-secundario {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .configuracion .sidebar {
+        padding: 8px;
+    }
+
+    .configuracion .nav {
+        gap: 6px;
+    }
+
     .configuracion .nav-link {
         min-width: 85px;
-        min-height: 70px;
-        font-size: 11px;
+        font-size: 10px;
         padding: 10px;
     }
 
-    .configuracion .content {
-        padding: 15px;
+    .configuracion .card {
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
     }
 
-    .configuracion .card {
-        padding: 12px;
+    .configuracion .item input {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .configuracion .btn-save {
@@ -367,4 +381,9 @@ body.configuracion.dark-mode .footer {
 
 body.configuracion.dark-mode .nav-link {
     background: rgba(255,255,255,0.05);
+}
+
+.configuracion .main-content {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
 }
