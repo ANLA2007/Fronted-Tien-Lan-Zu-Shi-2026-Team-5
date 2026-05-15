@@ -1,13 +1,12 @@
-body.historialventas {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body.historialventas{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ffffff;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
 }
-
-
 
 .historialventas .header {
     background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);

@@ -5,12 +5,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body.Usuario {
-    background-color: #f5f8fb;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
+body.Usuario{
+    background-color:#f5f8fb;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
 }
 
 .Usuario .header {
@@ -230,6 +230,7 @@ body.Usuario {
 
 .Usuario .btn-new-user:hover {
     background: #0d3b2e;
+     background:#6fcf97;
 }
 
 .select-action {
@@ -250,7 +251,7 @@ body.Usuario {
 }
 
 .btn-apply {
-    background: linear-gradient(135deg, #0d3b2e, #1f7a63);
+   background: #0d3b2e;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -262,7 +263,8 @@ body.Usuario {
 }
 
 .btn-apply:hover {
-    background: linear-gradient(135deg, #145a46, #2e9b76);
+   
+   background:#6fcf97;
 }
 
 .Usuario .btn-delete {
@@ -413,7 +415,7 @@ body.Usuario {
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
-    background: linear-gradient(135deg, #6fcf97, #1f7a63);
+    background: #0d3b2e;;
     padding: 13px;
     border-radius: 12px;
     width: 100%;
@@ -424,8 +426,11 @@ body.Usuario {
 }
 
 .btn-save:hover {
-    background: linear-gradient(135deg, #81e6a8, #2e9b76);
+  
+    background: #6fcf97;
 }
+    
+
 
 .Usuario .footer {
     background: #0d3b2e;

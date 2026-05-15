@@ -1,10 +1,11 @@
-body.Inventario {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body.Inventario{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ffffff;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
 }
 
 .Inventario .header {
@@ -355,7 +356,7 @@ body.Inventario {
 }
 
 .modal-content {
-    background: #0d3b2e;
+    background: linear-gradient(135deg, #0d3b2e, #145a46, #1f7a63);
     padding: 25px;
     border-radius: 12px;
     width: 500px;
@@ -419,7 +420,7 @@ body.Inventario {
 .btn-save {
     width: 100%;
     padding: 12px;
-     background: linear-gradient(135deg, #2ecc71, #145a32); ;
+   background:#0d3b2e;
     color: white;
     border: none;
     border-radius: 8px;
@@ -429,7 +430,8 @@ body.Inventario {
 }
 
 .btn-save:hover{
-    background: #6cc3f2;
+   
+  background:#6fcf97;
 }
 
 .filter-select {
@@ -457,14 +459,13 @@ body.Inventario {
 }
 
 .btn-more{
-    background-color: white;
+     background:#ffff;
     border: none;
     cursor: pointer;
 }
 
 .btn-more:hover{
-    background: white;
-    color: rgb(23, 120, 21);
+background:#6fcf97;
 }
 
 .title-section{
@@ -497,7 +498,7 @@ body.Inventario {
 }
 
 .btn-filtrar {
-    background-color: #099872;
+    background:#0d3b2e;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -507,7 +508,7 @@ body.Inventario {
 }
 
 .btn-filtrar:hover {
-    background-color: #0d3b2e;
+  background:#6fcf97;
 }
 
 
