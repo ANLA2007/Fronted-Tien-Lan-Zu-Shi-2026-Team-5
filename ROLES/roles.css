@@ -4,8 +4,8 @@ body.roles{
     background:#f5f8fb;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
-    overflow-x:hidden;
+    height:100vh;
+    overflow:hidden;
 }
 
 .roles .header{
@@ -166,9 +166,9 @@ body.roles{
 }
 
 .btn-import{
-    background:#fff;
+    background: #0d3b2e;
     border:1px solid #d7e3dd;
-    color:#0d3b2e;
+    color:#ffff;
     padding:11px 18px;
     border-radius:10px;
     font-weight:700;
@@ -177,7 +177,7 @@ body.roles{
 }
 
 .btn-import:hover{
-    background:#eef8f3;
+    background:#6fcf97;
 }
 
 .btn-roles{
@@ -192,7 +192,7 @@ body.roles{
 }
 
 .btn-roles:hover{
-    background:#145a46;
+     background:#6fcf97;
 }
 
 .table-responsive{
@@ -363,13 +363,16 @@ body.roles{
 }
 
 .btn-cancel{
-    background:#f3f4f6;
-    color:#374151;
+    background:#0d3b2e;
+    color:#ffff;
     border:none;
     padding:12px;
     border-radius:12px;
     font-weight:700;
     cursor:pointer;
+}
+ .btn-cancel:hover{
+     background:#6fcf97;
 }
 
 .error-text{

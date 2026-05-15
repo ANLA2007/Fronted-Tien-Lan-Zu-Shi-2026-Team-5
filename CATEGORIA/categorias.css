@@ -4,10 +4,9 @@ body.categorias{
     background:#f5f8fb;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
-    overflow-x:hidden;
+    height:100vh;
+    overflow:hidden;
 }
-
 .categorias .header{
     background:linear-gradient(135deg,#0d3b2e,#1f7a63,#6fcf97);
     padding:15px 30px;
@@ -116,9 +115,9 @@ body.categorias{
     background:#6fcf97;
     color:#0d3b2e;
 }
-
 .categorias .main-content{
     padding:30px;
+    overflow-y:auto;
 }
 
 .categorias .categorias-container{
@@ -166,9 +165,9 @@ body.categorias{
 }
 
 .categorias .btn-import{
-    background:#fff;
+    background:#0d3b2e;
     border:1px solid #d7e3dd;
-    color:#0d3b2e;
+    color:#ffffff;
     padding:11px 18px;
     border-radius:10px;
     font-weight:700;
@@ -177,7 +176,7 @@ body.categorias{
 }
 
 .categorias .btn-import:hover{
-    background:#eef8f3;
+      background:#6fcf97;
 }
 
 .categorias .btn-categoria{
@@ -193,7 +192,7 @@ body.categorias{
 }
 
 .categorias .btn-categoria:hover{
-    background:#145a46;
+     background:#6fcf97;
 }
 
 .categorias .table-responsive{
@@ -384,8 +383,8 @@ body.categorias{
 }
 
 .categorias .btn-cancel{
-    background:#f3f4f6;
-    color:#374151;
+   background:#0d3b2e;
+    color:#ffffff;
     border:none;
     width:100%;
     padding:13px;
@@ -396,8 +395,8 @@ body.categorias{
 }
 
 .categorias .btn-cancel:hover{
-    background:#e5e7eb;
-}
+     background:#6fcf97;
+    }
 
 .categorias .footer{
     background:#0d3b2e;

@@ -4,8 +4,8 @@ body.porcion{
     background:#f5f8fb;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
-    overflow-x:hidden;
+    height:100vh;
+    overflow:hidden;
 }
 
 .porcion .header{
@@ -166,9 +166,9 @@ body.porcion{
 }
 
 .porcion .btn-import{
-    background:#fff;
+    background:#0d3b2e;
     border:1px solid #d7e3dd;
-    color:#0d3b2e;
+    color:#ffffff;
     padding:11px 18px;
     border-radius:8px;
     font-weight:700;
@@ -177,7 +177,7 @@ body.porcion{
 }
 
 .porcion .btn-import:hover{
-    background:#eef8f3;
+      background:#6fcf97;
 }
 
 .porcion .btn-porcion{
@@ -192,7 +192,7 @@ body.porcion{
 }
 
 .porcion .btn-porcion:hover{
-    background:#145a46;
+  background:#6fcf97;
 }
 
 .porcion .table-responsive{
@@ -370,8 +370,8 @@ body.porcion{
 }
 
 .porcion .btn-cancel{
-    background:#f3f4f6;
-    color:#374151;
+    background:#0d3b2e;
+    color:#ffffff;
     border:none;
     padding:12px;
     border-radius:8px;
@@ -380,7 +380,7 @@ body.porcion{
 }
 
 .porcion .btn-cancel:hover{
-    background:#e5e7eb;
+   background:#6fcf97;
 }
 
 .porcion .error-text{
