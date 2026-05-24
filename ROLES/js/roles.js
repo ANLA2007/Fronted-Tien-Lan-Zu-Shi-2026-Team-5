@@ -1,147 +1,127 @@
-console.log("JS conectado");
+console.log("JS Roles conectado");
 
+const modal = document.getElementById("modalRoles");
+const nombreInput = document.getElementById("nombreRol");
+const estadoInput = document.getElementById("estadoRol");
+const error = document.getElementById("errorRol");
+const tbody = document.querySelector(".table-usuarios tbody");
+const buscador = document.querySelector(".search-usuarios");
 
-// ABRIR MODAL
+let filaEditando = null;
+
 function abrirModal() {
+    modal.style.display = "flex";
+    limpiarCampos();
+    filaEditando = null;
+}
 
-    const modal = document.getElementById("modalRol");
+function cerrarModal() {
+    modal.style.display = "none";
+    limpiarCampos();
+    filaEditando = null;
+}
+
+function limpiarCampos() {
+    nombreInput.value = "";
+    estadoInput.value = "Activo";
+    error.innerHTML = "";
+}
+
+function guardarRol() {
+    const nombre = nombreInput.value.trim();
+    const estado = estadoInput.value;
+
+    if (nombre === "") {
+        error.innerHTML = "⚠️ Completa el nombre";
+        return;
+    }
+
+    const filas = document.querySelectorAll(".table-usuarios tbody tr");
+
+    for (let fila of filas) {
+        const nombreTabla = fila.cells[0].textContent.trim().toLowerCase();
+
+        if (fila !== filaEditando) {
+            if (nombreTabla === nombre.toLowerCase()) {
+                error.innerHTML = "⚠️ Ya existe este rol";
+                return;
+            }
+        }
+    }
+
+    error.innerHTML = "";
+
+    const claseEstado = estado === "Activo" ? "estado-activo" : "estado-inactivo";
+
+    if (filaEditando) {
+        filaEditando.innerHTML = `
+            <td>${nombre}</td>
+            <td><span class="${claseEstado}">${estado}</span></td>
+            <td>
+                <div class="acciones-tabla">
+                    <button class="btn-accion editar" onclick="editarRol(this)">
+                        <img src="img/editar.png">
+                    </button>
+                    <button class="btn-accion eliminar" onclick="eliminarRol(this)">
+                        <img src="img/borrar.png">
+                    </button>
+                </div>
+            </td>
+        `;
+        cerrarModal();
+        return;
+    }
+
+    const fila = document.createElement("tr");
+
+    fila.innerHTML = `
+        <td>${nombre}</td>
+        <td><span class="${claseEstado}">${estado}</span></td>
+        <td>
+            <div class="acciones-tabla">
+                <button class="btn-accion editar" onclick="editarRol(this)">
+                    <img src="img/editar.png">
+                </button>
+                <button class="btn-accion eliminar" onclick="eliminarRol(this)">
+                    <img src="img/borrar.png">
+                </button>
+            </div>
+        </td>
+    `;
+
+    tbody.appendChild(fila);
+
+    cerrarModal();
+}
+
+function editarRol(boton) {
+    filaEditando = boton.closest("tr");
+
+    const nombre = filaEditando.cells[0].textContent.trim();
+    const estado = filaEditando.cells[1].textContent.trim();
+
+    nombreInput.value = nombre;
+    estadoInput.value = estado;
 
     modal.style.display = "flex";
 }
 
-
-// CERRAR MODAL
-function cerrarModal() {
-
-    const modal = document.getElementById("modalRol");
-
-    const input = document.getElementById("nombreRol");
-
-    const error = document.getElementById("errorRol");
-
-
-    modal.style.display = "none";
-
-    input.value = "";
-
-    error.innerHTML = "";
-}
-
-
-// GUARDAR ROL
-function guardarRol() {
-
-    const nombre = document.getElementById("nombreRol").value.trim();
-
-    const estado = document.getElementById("estadoRol").value;
-
-    const error = document.getElementById("errorRol");
-
-
-    // VALIDAR INPUT
-    if (nombre === "") {
-
-        error.innerHTML = "⚠️ Debes ingresar un nombre para el rol";
-
-        return;
-    }
-
-
-    // LIMPIAR ERROR
-    error.innerHTML = "";
-
-
-    // OBTENER TABLA
-    const tbody = document.querySelector(".table-roles tbody");
-
-
-    // CREAR FILA
-    const fila = document.createElement("tr");
-
-
-    // CONTENIDO
-    fila.innerHTML = `
-
-        <td>${nombre}</td>
-
-        <td>
-            <span class="estado-activo">
-                ${estado}
-            </span>
-        </td>
-
-        <td>
-
-            <div class="acciones-tabla">
-
-                <button class="btn-editar">
-                    Editar
-                </button>
-
-                <button class="btn-eliminar"
-                    onclick="eliminarRol(this)">
-                    Eliminar
-                </button>
-
-            </div>
-
-        </td>
-    `;
-
-
-    // AGREGAR FILA
-    tbody.appendChild(fila);
-
-
-    // CERRAR MODAL
-    cerrarModal();
-}
-
-
-// ELIMINAR
 function eliminarRol(boton) {
-
     const fila = boton.closest("tr");
-
     fila.remove();
 }
 
-
-// BUSCAR ROL
-const buscador = document.querySelector(".search-role");
-
 buscador.addEventListener("keyup", function () {
-
     const texto = this.value.toLowerCase();
 
-    const filas = document.querySelectorAll(".table-roles tbody tr");
-
-
-    filas.forEach(fila => {
-
-        const nombreRol = fila.cells[0].textContent.toLowerCase();
-
-
-        if (nombreRol.includes(texto)) {
-
-            fila.style.display = "";
-
-        } else {
-
-            fila.style.display = "none";
-        }
+    document.querySelectorAll(".table-usuarios tbody tr").forEach(fila => {
+        const nombre = fila.cells[0].textContent.toLowerCase();
+        fila.style.display = nombre.includes(texto) ? "" : "none";
     });
-
 });
 
-
-// CERRAR MODAL 
-window.onclick = function(event) {
-
-    const modal = document.getElementById("modalRol");
-
+window.onclick = function (event) {
     if (event.target === modal) {
-
         cerrarModal();
     }
-}
+};

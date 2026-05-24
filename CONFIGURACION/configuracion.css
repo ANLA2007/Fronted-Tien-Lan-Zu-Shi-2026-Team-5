@@ -1,13 +1,12 @@
-body.configuracion{
+body.configuracion {
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#ffffff;
+  font-family:Arial,sans-serif;
+    background:#f5f8fb;
     display:flex;
     flex-direction:column;
     height:100vh;
     overflow:hidden;
 }
-
 
 .configuracion .header {
     background: linear-gradient(135deg, #0d3b2e, #1f7a63, #6fcf97);
@@ -21,7 +20,6 @@ body.configuracion{
     justify-content: space-between;
     align-items: center;
 }
-
 
 .configuracion .logo-negocio {
     display: flex;
@@ -40,7 +38,6 @@ body.configuracion{
     font-weight: bold;
     color: #e8f5e9;
 }
-
 
 .configuracion .user-info {
     display: flex;
@@ -80,17 +77,16 @@ body.configuracion{
     font-weight: bold;
 }
 
-
 .configuracion .main-container {
     display: grid;
     grid-template-columns: 230px 1fr;
     flex: 1;
 }
 
-
 .configuracion .sidebar {
     background: linear-gradient(180deg, #0d3b2e, #1f7a63);
     padding: 20px;
+    overflow-y:auto;
 }
 
 .configuracion .nav {
@@ -102,12 +98,11 @@ body.configuracion{
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px;
+    padding: 14px 16px;
     margin-bottom: 10px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-decoration: none;
     color: #e8f5e9;
-    background: rgba(255,255,255,0.08);
     transition: 0.3s;
     font-weight: 600;
 }
@@ -118,16 +113,128 @@ body.configuracion{
 }
 
 .configuracion .nav-link:hover {
-    background: rgba(111,207,151,0.3);
-    transform: translateX(5px);
+    background: rgba(111,207,151,0.18);
+    transform: translateX(4px);
 }
 
 .configuracion .nav-link.active {
-    background: #6fcf97;
-    color: #0d3b2e;
+    background: linear-gradient(
+        135deg,
+        rgba(34,160,107,0.92),
+        rgba(31,122,99,0.92)
+    );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.configuracion .menu-desplegable {
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding-top: 18px;
+    margin-top: 12px;
+}
+
+.configuracion .menu-title {
+    list-style: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 4px;
+
+    color: #bdf7c8;
+
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.configuracion .menu-title::-webkit-details-marker {
+    display: none;
+}
+
+.configuracion .menu-title:hover {
+    color: #ffffff;
+}
+
+.configuracion .menu-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.configuracion .menu-left img {
+    width: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.configuracion .flecha {
+    font-size: 18px;
+    color: #bdf7c8;
+    transition: 0.3s;
+}
+
+.configuracion .menu-desplegable[open] .flecha {
+    transform: rotate(180deg);
+}
+
+.configuracion .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    margin-top: 12px;
+    padding-left: 8px;
+}
+
+.configuracion .sub-link {
+    background: transparent;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.configuracion .sub-link:hover {
+    background: rgba(111,207,151,0.14);
+    transform: translateX(4px);
+}
+
+.configuracion .sub-link.active {
+    background: linear-gradient(
+        135deg,
+        rgba(34,160,107,0.92),
+        rgba(31,122,99,0.92)
+    );
+
+    color: white;
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.configuracion .logout-link {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+.configuracion .linea-cerrar{
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    margin: 18px 0;
 }
 
 
+/*CONTENIDO*/
 .configuracion .main-content {
     padding: 20px;
     display: flex;
@@ -183,14 +290,15 @@ body.configuracion{
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #1f7a63;
+    background:#0d3b2e;
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
 .configuracion .btn-save:hover {
-    background: #0d3b2e;
+  
+  background:#6fcf97;
 }
 
 .configuracion .footer {

@@ -1,47 +1,53 @@
 console.log("JS Categorías conectado");
 
+const modal = document.getElementById("modalCategoria");
+const nombreInput = document.getElementById("nombreCategoria");
+const estadoInput = document.getElementById("estadoCategoria");
+const descripcionInput = document.getElementById("descripcionCategoria");
+const error = document.getElementById("errorCategoria");
+const tbody = document.querySelector(".table-categorias tbody");
+const buscador = document.querySelector(".search-categoria");
 
-// ABRIR MODAL
+// VARIABLE PARA EDITAR
+let filaEditando = null;
+
 function abrirModal() {
-
-    const modal = document.getElementById("modalCategoria");
-
+    
     modal.style.display = "flex";
+
+    limpiarCampos();
+
+    filaEditando = null;
 }
 
-
-// CERRAR MODAL
 function cerrarModal() {
-
-    const modal = document.getElementById("modalCategoria");
-
-    const nombre = document.getElementById("nombreCategoria");
-
-    const descripcion = document.getElementById("descripcionCategoria");
-
-    const error = document.getElementById("errorCategoria");
-
 
     modal.style.display = "none";
 
-    nombre.value = "";
+    limpiarCampos();
 
-    descripcion.value = "";
+    filaEditando = null;
+}
+
+function limpiarCampos() {
+
+    nombreInput.value = "";
+
+    estadoInput.value = "Activo";
+
+    descripcionInput.value = "";
 
     error.innerHTML = "";
 }
+//GUARDAR CATEGORÍA
 
-
-// GUARDAR CATEGORÍA
 function guardarCategoria() {
 
-    const nombre = document.getElementById("nombreCategoria").value.trim();
+    const nombre = nombreInput.value.trim();
 
-    const estado = document.getElementById("estadoCategoria").value;
+    const estado = estadoInput.value;
 
-    const descripcion = document.getElementById("descripcionCategoria").value.trim();
-
-    const error = document.getElementById("errorCategoria");
+    const descripcion = descripcionInput.value.trim();
 
 
     // VALIDAR CAMPOS
@@ -56,19 +62,32 @@ function guardarCategoria() {
     }
 
 
+    // VALIDAR NOMBRE REPETIDO
+    const filas = document.querySelectorAll(".table-categorias tbody tr");
+
+    for (let fila of filas) {
+
+        const nombreTabla =
+            fila.cells[0].textContent.trim().toLowerCase();
+
+        if (
+            nombreTabla === nombre.toLowerCase() &&
+            fila !== filaEditando
+        ) {
+
+            error.innerHTML =
+                "⚠️ Ya existe una categoría con ese nombre";
+
+            return;
+        }
+    }
+
+
     // LIMPIAR ERROR
     error.innerHTML = "";
 
 
-    // TABLA
-    const tbody = document.querySelector(".table-categorias tbody");
-
-
-    // CREAR FILA
-    const fila = document.createElement("tr");
-
-
-    // CLASE ESTADO
+    // CLASE DEL ESTADO
     let claseEstado = "";
 
     if (estado === "Activo") {
@@ -80,8 +99,59 @@ function guardarCategoria() {
         claseEstado = "estado-inactivo";
     }
 
+//EDITAR FILA
 
-    // CONTENIDO FILA
+    if (filaEditando) {
+
+        filaEditando.innerHTML = `
+
+            <td>${nombre}</td>
+
+            <td>
+                <span class="${claseEstado}">
+                    ${estado}
+                </span>
+            </td>
+
+            <td>${descripcion}</td>
+
+            <td>
+
+                <div class="acciones-tabla">
+
+                    <button 
+                        class="btn-accion editar"
+                        onclick="editarCategoria(this)"
+                    >
+
+                        <img src="img/editar.png">
+
+                    </button>
+
+                    <button 
+                        class="btn-accion eliminar"
+                        onclick="eliminarCategoria(this)"
+                    >
+
+                        <img src="img/borrar.png">
+
+                    </button>
+
+                </div>
+
+            </td>
+        `;
+
+        cerrarModal();
+
+        return;
+    }
+
+//CREAR FILA
+
+    const fila = document.createElement("tr");
+
+
     fila.innerHTML = `
 
         <td>${nombre}</td>
@@ -98,14 +168,22 @@ function guardarCategoria() {
 
             <div class="acciones-tabla">
 
-                <button class="btn-editar"
-                    onclick="cambiarEstado(this)">
-                    Editar
+                <button 
+                    class="btn-accion editar"
+                    onclick="editarCategoria(this)"
+                >
+
+                    <img src="img/editar.png">
+
                 </button>
 
-                <button class="btn-eliminar"
-                    onclick="eliminarCategoria(this)">
-                    Eliminar
+                <button 
+                    class="btn-accion eliminar"
+                    onclick="eliminarCategoria(this)"
+                >
+
+                    <img src="img/borrar.png">
+
                 </button>
 
             </div>
@@ -122,8 +200,40 @@ function guardarCategoria() {
     cerrarModal();
 }
 
+function editarCategoria(boton) {
 
-// ELIMINAR
+    filaEditando = boton.closest("tr");
+
+
+    // OBTENER DATOS
+    const nombre =
+        filaEditando.cells[0].textContent.trim();
+
+    const estado =
+        filaEditando.cells[1]
+        .querySelector("span")
+        .textContent
+        .trim();
+
+    const descripcion =
+        filaEditando.cells[2].textContent.trim();
+
+
+    // PASAR DATOS AL MODAL
+    nombreInput.value = nombre;
+
+    estadoInput.value = estado;
+
+    descripcionInput.value = descripcion;
+
+
+    // ABRIR MODAL
+    modal.style.display = "flex";
+}
+
+
+//ELIMINAR CATEGORÍA//
+
 function eliminarCategoria(boton) {
 
     const fila = boton.closest("tr");
@@ -131,46 +241,24 @@ function eliminarCategoria(boton) {
     fila.remove();
 }
 
-
-// CAMBIAR ESTADO
-function cambiarEstado(boton) {
-
-    const estado = boton.closest("tr").querySelector("span");
-
-
-    if (estado.innerText === "Activo") {
-
-        estado.innerText = "Inactivo";
-
-        estado.classList.remove("estado-activo");
-
-        estado.classList.add("estado-inactivo");
-
-    } else {
-
-        estado.innerText = "Activo";
-
-        estado.classList.remove("estado-inactivo");
-
-        estado.classList.add("estado-activo");
-    }
-}
-
-
-// BUSCADOR
-const buscador = document.querySelector(".search-categoria");
+// BUSCAR//
 
 buscador.addEventListener("keyup", function () {
 
     const texto = this.value.toLowerCase();
 
-    const filas = document.querySelectorAll(".table-categorias tbody tr");
+    const filas =
+        document.querySelectorAll(
+            ".table-categorias tbody tr"
+        );
 
 
     filas.forEach(fila => {
 
         const nombreCategoria =
-            fila.cells[0].textContent.toLowerCase();
+            fila.cells[0]
+            .textContent
+            .toLowerCase();
 
 
         if (nombreCategoria.includes(texto)) {
@@ -182,17 +270,13 @@ buscador.addEventListener("keyup", function () {
             fila.style.display = "none";
         }
     });
-
 });
 
-
-// CERRAR MODAL 
+// CERRAR MODAL //
 window.onclick = function(event) {
-
-    const modal = document.getElementById("modalCategoria");
 
     if (event.target === modal) {
 
         cerrarModal();
     }
-}
+};

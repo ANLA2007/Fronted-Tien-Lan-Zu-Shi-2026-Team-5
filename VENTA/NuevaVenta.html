@@ -35,62 +35,150 @@
 
 <div class="main-container">
 
+
     <aside class="sidebar">
+
         <nav class="nav">
 
             <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
-                    <img src="img/home.png">
-                    <span>Inicio</span>
-                </a>
+                <img src="img/home.png">
+                <span>Inicio</span>
+            </a>
+
             <a href="../DASHBOARD/dashboard.html" class="nav-link">
-                    <img src="img/grafico.png">
-                    <span>Dashboard</span>
-                </a>
-
-            <a href="../USUARIO/usuario.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Usuarios</span>
+                <img src="img/grafico.png">
+                <span>Dashboard</span>
             </a>
 
-            <a href="../ROLES/roles.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Roles</span>
-            </a>
+            <details class="menu-desplegable" open>
 
-            <a href="../CLIENTE/Cliente.html" class="nav-link">
-                <img src="img/usuario.png">
-                <span>Clientes</span>
-            </a>
+                <summary class="menu-title">
 
-            <a href="../CATEGORIA/categoria.html" class="nav-link ">
-                <img src="img/usuario.png">
-                <span>Categorías</span>
-            </a>
+                    <div class="menu-left">
+                        <img src="img/catalogo.png">
+                        <span>Catálogos</span>
+                    </div>
 
-            <a href="../PLATILLO/porcion.html" class="nav-link">
-                <img src="img/platillos.png">
-                <span>Porcion</span>
-            </a>
+                    <span class="flecha">⌄</span>
 
-            <a href="../VENTA/NuevaVenta.html" class="nav-link active">
-                <img src="img/venta.png">
-                <span>Ventas</span>
-            </a>
+                </summary>
 
-            <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
-                <img src="img/historialventa.png">
-                <span>Historial Venta</span>
-            </a>
+                <div class="submenu">
 
-            <a href="../INVENTARIO/inventario.html" class="nav-link">
-                <img src="img/inventario.png">
-                <span>Inventario</span>
-            </a>
+                    <a href="../USUARIO/usuario.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Usuarios</span>
+                    </a>
 
-            <a href="../CONFIGURACION/configuracion.html" class="nav-link">
-                <img src="img/configuracion.png">
-                <span>Configuración</span>
-            </a>
+                    <a href="../ROLES/roles.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Roles</span>
+                    </a>
+
+                    <a href="../CLIENTE/Cliente.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Clientes</span>
+                    </a>
+
+                    <a href="../CATEGORIA/categoria.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Categorías</span>
+                    </a>
+
+                    <a href="../PLATILLO/porcion.html" class="nav-link sub-link">
+                        <img src="img/platillos.png">
+                        <span>Porción</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable" open>
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="img/ventas1.png">
+                        <span>Ventas</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../VENTA/NuevaVenta.html" class="nav-link sub-link active">
+                        <img src="img/venta.png">
+                        <span>Nueva Venta</span>
+                    </a>
+
+                    <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link sub-link">
+                        <img src="img/historialventa.png">
+                        <span>Historial Venta</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="img/invcat.png">
+                        <span>Movimientos</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../INVENTARIO/inventario.html" class="nav-link sub-link">
+                        <img src="img/inventario.png">
+                        <span>Inventario</span>
+                    </a>
+
+                      <a href="../MOVIMIENTO INVENTARIO/movimientoinventario.html" class="nav-link sub-link">
+                        <img src="img/movimiento.png">
+                        <span>Movimiento Inventario</span>
+                    </a>
+
+
+                </div>
+
+            </details>
+
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="img/Conficat.png">
+                        <span>Sistema</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../CONFIGURACION/configuracion.html" class="nav-link sub-link">
+                        <img src="img/configuracion.png">
+                        <span>Configuración</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <hr class="linea-cerrar">
 
             <a href="../LOGIN/login.html" class="nav-link">
                 <img src="img/cerrarsesion.png">
@@ -98,12 +186,11 @@
             </a>
 
         </nav>
+
     </aside>
 
   
     <div class="main-content">
-
-        
 
         <div class="container">
 
@@ -179,7 +266,6 @@
     </div>
 
 </div>
-
 
 <footer class="footer">
     © 2026 Tien Lan Zu Shi 
