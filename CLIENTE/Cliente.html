@@ -11,242 +11,275 @@
 
 <body class="cliente">
 
-    <header class="header">
+<header class="header">
 
-        <div class="header-content">
+    <div class="header-content">
 
-            <div class="logo-negocio">
-                <img src="img/logo.png">
-                <span>Tien Lan Zu Shi</span>
+        <div class="logo-negocio">
+            <img src="img/logo.png">
+            <span>Tien Lan Zu Shi</span>
+        </div>
+
+        <div class="user-info">
+
+            <div class="notif">
+                🔔
+                <span class="notif-badge">3</span>
             </div>
 
-            <div class="user-info">
+            <span>Admin</span>
 
-                <div class="notif">
-                    🔔
-                    <span class="notif-badge">3</span>
-                </div>
-
-                <span>Admin</span>
-
-                <div class="user-avatar">
-                    TL
-                </div>
-
+            <div class="user-avatar">
+                TL
             </div>
 
         </div>
 
-    </header>
+    </div>
 
-    <div class="main-container">
+</header>
 
-        <aside class="sidebar">
+<div class="main-container">
 
-            <nav class="nav">
+    <aside class="sidebar">
 
-                <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
-                    <img src="img/home.png">
-                    <span>Inicio</span>
-                </a>
+        <nav class="nav">
 
-                <a href="../DASHBOARD/dashboard.html" class="nav-link">
-                    <img src="img/grafico.png">
-                    <span>Dashboard</span>
-                </a>
+            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                <img src="img/home.png">
+                <span>Inicio</span>
+            </a>
 
-                <a href="../USUARIO/usuario.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Usuarios</span>
-                </a>
+            <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                <img src="img/grafico.png">
+                <span>Dashboard</span>
+            </a>
 
-                <a href="../ROLES/roles.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Roles</span>
-                </a>
+            <details class="menu-desplegable" open>
 
-                <a href="../CLIENTE/Cliente.html" class="nav-link active">
-                    <img src="img/usuario.png">
-                    <span>Clientes</span>
-                </a>
+                <summary class="menu-title">
 
-                <a href="../CATEGORIA/categoria.html" class="nav-link">
-                    <img src="img/usuario.png">
-                    <span>Categorías</span>
-                </a>
-
-                <a href="../PLATILLO/Porcion.html" class="nav-link">
-                    <img src="img/platillos.png">
-                    <span>Porción</span>
-                </a>
-
-                <a href="../VENTA/NuevaVenta.html" class="nav-link">
-                    <img src="img/venta.png">
-                    <span>Ventas</span>
-                </a>
-
-                <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link">
-                    <img src="img/historialventa.png">
-                    <span>Historial Venta</span>
-                </a>
-
-                <a href="../INVENTARIO/inventario.html" class="nav-link">
-                    <img src="img/inventario.png">
-                    <span>Inventario</span>
-                </a>
-
-                <a href="../CONFIGURACION/configuracion.html" class="nav-link">
-                    <img src="img/configuracion.png">
-                    <span>Configuración</span>
-                </a>
-
-                <a href="../LOGIN/login.html" class="nav-link">
-                    <img src="img/cerrarsesion.png">
-                    <span>Cerrar sesión</span>
-                </a>
-
-            </nav>
-
-        </aside>
-
-        <main class="content">
-
-            <div class="card">
-
-                <div class="header-clientes">
-
-                    <h2>Gestión de Clientes</h2>
-
-                    <div class="clientes-tools">
-
-                        <input type="text"
-                               class="search-cliente"
-                               placeholder="Buscar cliente...">
-
-                        <button class="btn-import">
-                            Importar
-                        </button>
-
-                        <button class="btn"
-                                onclick="abrirModal()">
-                            + Nuevo Cliente
-                        </button>
-
+                    <div class="menu-left">
+                        <img src="img/catalogo.png">
+                        <span>Catálogos</span>
                     </div>
 
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../USUARIO/usuario.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Usuarios</span>
+                    </a>
+
+                    <a href="../ROLES/roles.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Roles</span>
+                    </a>
+
+                    <a href="../CLIENTE/Cliente.html" class="nav-link sub-link active">
+                        <img src="img/usuario.png">
+                        <span>Clientes</span>
+                    </a>
+
+                    <a href="../CATEGORIA/categoria.html" class="nav-link sub-link">
+                        <img src="img/usuario.png">
+                        <span>Categorías</span>
+                    </a>
+
+                    <a href="../PLATILLO/Porcion.html" class="nav-link sub-link">
+                        <img src="img/platillos.png">
+                        <span>Porción</span>
+                    </a>
+
                 </div>
 
-                <div class="table-responsive">
+            </details>
 
-                    <table class="table-clientes">
+            <details class="menu-desplegable">
 
-                        <thead>
+                <summary class="menu-title">
 
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Teléfono</th>
-                                <th>Dirección</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
-                            </tr>
+                    <div class="menu-left">
+                        <img src="img/ventas1.png">
+                        <span>Ventas</span>
+                    </div>
 
-                        </thead>
+                    <span class="flecha">⌄</span>
 
-                        <tbody>
+                </summary>
 
-                            <tr>
+                <div class="submenu">
 
-                                <td>Camila López</td>
+                    <a href="../VENTA/NuevaVenta.html" class="nav-link sub-link">
+                        <img src="img/venta.png">
+                        <span>Nueva Venta</span>
+                    </a>
 
-                                <td>878766787</td>
+                    <a href="../HISTORIAL VENTA/HistorialVentas.html" class="nav-link sub-link">
+                        <img src="img/historialventa.png">
+                        <span>Historial Venta</span>
+                    </a>
 
-                                <td>Managua</td>
+                </div>
 
-                                <td>
-                                    <span class="estado-activo">
-                                        Activo
-                                    </span>
-                                </td>
+            </details>
 
-                                <td>
+            <details class="menu-desplegable">
 
-                                    <div class="acciones-tabla">
+                <summary class="menu-title">
 
-                                        <button class="btn-editar">
-                                            Editar
-                                        </button>
+                    <div class="menu-left">
+                        <img src="img/invcat.png">
+                        <span>Movimientos</span>
+                    </div>
 
-                                        <button class="btn-eliminar"
-                                                onclick="eliminarCliente(this)">
-                                            Eliminar
-                                        </button>
+                    <span class="flecha">⌄</span>
 
-                                    </div>
+                </summary>
 
-                                </td>
+                <div class="submenu">
 
-                            </tr>
+                    <a href="../INVENTARIO/inventario.html" class="nav-link sub-link">
+                        <img src="img/inventario.png">
+                        <span>Inventario</span>
+                    </a>
 
-                        </tbody>
+                    <a href="../MOVIMIENTO INVENTARIO/movimientoinventario.html" class="nav-link sub-link">
+                        <img src="img/movimiento.png">
+                        <span>Movimiento Inventario</span>
+                    </a>
 
-                    </table>
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="img/Conficat.png">
+                        <span>Sistema</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../CONFIGURACION/configuracion.html" class="nav-link sub-link">
+                        <img src="img/configuracion.png">
+                        <span>Configuración</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <hr class="linea-cerrar">
+
+            <a href="../LOGIN/login.html" class="nav-link">
+                <img src="img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="card">
+
+            <div class="header-clientes">
+
+                <h2>Gestión de Clientes</h2>
+
+                <div class="clientes-tools">
+
+                    <input type="text" class="search-cliente" placeholder="Buscar cliente...">
+
+                    <button class="btn-import">Importar</button>
+
+                    <button class="btn" onclick="abrirModal()">+ Nuevo Cliente</button>
 
                 </div>
 
             </div>
 
-        </main>
+            <div class="table-responsive">
 
-    </div>
+                <table class="table-clientes">
 
-    <div id="modalCliente" class="modal">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
 
-        <div class="modal-content">
+                    <tbody>
+                        <tr>
+                            <td>Camila López</td>
+                            <td>878766787</td>
+                            <td>Managua</td>
+                            <td><span class="estado-activo">Activo</span></td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-editar">Editar</button>
+                                    <button class="btn-eliminar" onclick="eliminarCliente(this)">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
 
-            <h3>Nuevo Cliente</h3>
-
-            <input type="text"
-                   id="nombreCliente"
-                   placeholder="Nombre">
-
-            <input type="text"
-                   id="apellidoCliente"
-                   placeholder="Apellido">
-
-            <input type="text"
-                   id="telefonoCliente"
-                   placeholder="Teléfono">
-
-            <input type="text"
-                   id="direccionCliente"
-                   placeholder="Dirección">
-
-            <p id="errorCliente" class="error-text"></p>
-
-            <div class="modal-buttons">
-
-                <button class="btn"
-                        onclick="guardarCliente()">
-                    Guardar
-                </button>
-
-                <button class="btn btn-cerrar"
-                        onclick="cerrarModal()">
-                    Cancelar
-                </button>
+                </table>
 
             </div>
 
         </div>
 
+    </main>
+
+</div>
+
+<div id="modalCliente" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Nuevo Cliente</h3>
+
+        <input type="text" id="nombreCliente" placeholder="Nombre">
+        <input type="text" id="apellidoCliente" placeholder="Apellido">
+        <input type="text" id="telefonoCliente" placeholder="Teléfono">
+        <input type="text" id="direccionCliente" placeholder="Dirección">
+
+        <p id="errorCliente" class="error-text"></p>
+
+        <div class="modal-buttons">
+
+            <button class="btn" onclick="guardarCliente()">Guardar</button>
+            <button class="btn btn-cerrar" onclick="cerrarModal()">Cancelar</button>
+
+        </div>
+
     </div>
 
-    <footer class="footer">
-        <p>© 2026 Tien Lan Zu Shi</p>
-    </footer>
+</div>
 
-    <script src="script.js"></script>
+<footer class="footer">
+    <p>© 2026 Tien Lan Zu Shi</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
