@@ -80,13 +80,15 @@ body.Inventario {
 .Inventario .main-container {
     display: grid;
     grid-template-columns: 230px 1fr;
-    flex: 1;
+    height: calc(100vh - 80px);
+    overflow: hidden;
 }
 
 .Inventario .sidebar {
     background: linear-gradient(180deg, #0d3b2e, #1f7a63);
     padding: 20px;
-    overflow-y:auto;
+    overflow-y: hidden; /*modificado por dulce para que no se vea el scroll de la barra lateral, pero si el del contenido*/
+     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .Inventario .nav {
@@ -235,12 +237,21 @@ body.Inventario {
 
 
 /*CONTENIDO*/
+
 .Inventario .main-content{
     padding: 35px 30px 30px 30px;
     display: block;
     height: calc(100vh - 110px);
     overflow-y: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .Inventario .main-content > *{
@@ -260,7 +271,6 @@ body.Inventario {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; 
     box-sizing: border-box;
 }
 
@@ -277,27 +287,30 @@ body.Inventario {
 
 .filter-bar {
     display: flex;
-    width: 100%;
-    max-width: 1200px; 
+    flex-wrap: wrap;
+    width: 100%; /* Asegura que tome todo el ancho disponible */
     justify-content: space-between; 
     align-items: center;
-    padding: 20px;
-    background: #f3f4ef;
-    border-radius: 8px;
-    border: 1px solid #1f7a63;
-    box-shadow: 0 8px 20px rgba(125, 236, 108, 0.139);
+    padding: 28px;
+    background: linear-gradient(180deg, #ffffff, #f7fbf9);
+    border-radius: 15px;
+    border: 1px solid rgba(111, 207, 151, 0.18); /* Corregido el error de sintaxis "1px solid 1px solid" */
+    box-shadow: 0 10px 35px rgba(13, 59, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     box-sizing: border-box; 
+    gap: 15px;
+    margin-bottom: 20px; /* Separación de la tabla */
 }
-
 
 .search-container {
     padding: 8px 12px;
-    border: 1px solid #e5e7eb; 
+    border:1px solid rgba(13,59,46,0.12) ; 
     border-radius: 8px;
     background-color: white;
     display: flex;
     align-items: center;
     width: 250px;
+    flex:0.8 ;
+
 }
 
 .search-container input {
@@ -310,19 +323,24 @@ body.Inventario {
 .table-container {
     background: #ffffff;
     border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(125, 236, 108, 0.247);
+    border: 1px solid #0d3b2e;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px;
+    box-shadow: 0 10px 35px rgba(13,59,46,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.7);
     border-color: #1f7a63;
     border-radius: 8px;
     width: 100%;
-    max-width: 1200px; 
+    position: relative;
     box-sizing: border-box;
 }
 
 .orders-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
 }
 
 .orders-table th {
@@ -331,57 +349,85 @@ body.Inventario {
     text-align: left;
     font-size: 12px;
     color: white;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #0d3b2e;
+    font-weight: 600; /*prueba y error corazon*/
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .orders-table td {
     padding: 15px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #0d3b2e;
     font-size: 14px;
+    vertical-align: middle; /* Alinea el contenido verticalmente al centro */
 }
 
-.table-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: #ffffff;
-    border-top: 1px solid #edf2f7;
-}
-
-.pagination {
-    display: flex;
-    gap: 5px;
-}
-
-.page-btn {
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    background: white;
+.product-img-placeholder { /*la img*/
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
     border-radius: 6px;
-    cursor: pointer;
-}
-.page-btn:hover {
-    color: #e2e8f0;
-    border: 1px solid #1f7a63;
-    background:#6fcf97;
-    border-radius: 6px;
+    background-color: #eee;
+    display: block;
 }
 
 
-.active-page {
-    background-color: #111827 !important;
-    color: white !important;
+.acciones-tabla{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
 }
 
-.filter-bar {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
+/* Estilos para los botones de acción (editar y eliminar) */
+
+.btn-accion{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn-accion img{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+}
+
+.btn-accion.editar{
+    background:#dcfce7;
+    align-self: center;
+    
+}
+
+.btn-accion.editar:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
+}
+
+.btn-accion.editar:hover img{
+    filter:brightness(0) invert(1);
+}
+
+.btn-accion.eliminar{
+    background:#fee2e2;
+}
+
+.btn-accion.eliminar:hover{
+    background:#ef4444;
+    transform:translateY(-2px);
+}
+
+.btn-accion.eliminar:hover img{
+    filter:brightness(0) invert(1);
 }
 
 .search-container {
@@ -441,17 +487,17 @@ body.Inventario {
 
 
 .footer-fin {
-    background: #0d3b2e;
-    color: #e8f5e9;
-    text-align: center;
-    padding: 0px;
-    width: 100%;
-    font-size: 14px;
-    box-sizing: border-box;
+     background:#0d3b2e;
+    color:#e8f5e9;
+    text-align:center;
+    padding:16px 0;
+    margin-top:auto;
+    margin-bottom:0;
     flex-shrink: 0;
+     width: 100%;
 }
 
-.modal-overlay {
+.modal-overlay { /*ARREGLAR COLORES DE AQUI*/
     position: fixed;
     top: 0;
     left: 0;
@@ -462,45 +508,62 @@ body.Inventario {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+
 }
 
 .modal-overlay.modal-open {
     display: flex;
 }
 
-.modal-content {
-    background: linear-gradient(135deg, #0d3b2e, #145a46, #1f7a63);
-    padding: 25px;
-    border-radius: 12px;
-    width: 500px;
-    color: white;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: 0.3s all ease;
+.modal-content { /*ARREGLAR COLORES DE AQUI*/
+    width:100%;
+    max-width:650px;
+    background:#eef8f1;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,0.30);
+    animation:modalShow 0.25s ease;/* Limita la altura máxima de la modal */
+}
+
+.user-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .modal-content.activo {
     transform: translateY(0);
     opacity: 1;
+
 }
 
 .modal-header {
+    background:linear-gradient(135deg,#0d3b2e,#1f7a63,#6fcf97) ;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding:22px 26px;
+    color:white;
+
 }
 
 .close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+    background:rgba(255,255,255,0.15);
+    border:none;
+    color:white;
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.2s;
 }
 
 .close-btn:hover{
-    color: #6fcf97;
+     background:white;
+    color:#0d3b2e;
 }
 
 .form-row {
@@ -510,48 +573,121 @@ body.Inventario {
 }
 
 .form-group {
-    flex: 1;
+    flex: 100%;
     display: flex;
     flex-direction: column;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
+
+
 .form-group label {
-    font-size: 15px;
-    margin-bottom: 5px;
+    font-family: 'Segoe UI', sans-serif;
+    
+    font-size:15px;
+    font-weight:700;
+    color:#0d3b2e;
+}
+
+
+/*Ocultamos el input original, pero funciona */
+#imgInput {
+    display: none; 
+}
+
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;       /* Tamaño cuadrado */
+    height: 100px;      /* Tamaño cuadrado */
+    background: #f5f8fb; 
+    border: 2px dashed #cfe5d6; 
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    color: #0d3b2e;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.custom-file-upload:hover {
+    background: #e8f5e9;
+    border-color: #1f7a63;
 }
 
 .form-group input, .select-acciones {
-    padding: 8px;
-    width: 13vh;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
+    width:100%;
+    padding:15px 16px;
+    border:1px solid #cfe5d6;
+    border-radius:14px;
+    background:white;
+    font-size:14px;
+    outline:none;
+    transition:0.2s;
+    box-sizing:border-box;
+    
+
+}
+.form-group input:focus, .select-acciones:focus {
+    border-color:#1f7a63;
+    box-shadow:0 0 0 3px rgba(31,122,99,0.2);
+}
+
+.usuarios .modal-content input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cfe5d6;
+    border-radius: 14px;
     background: white;
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+    
 }
 
 .btn-save {
-    width: 100%;
-    padding: 12px;
-   background:#0d3b2e;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    size: 10px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#0d3b2e;
+    color:white;
+    border:none;
+    padding:8px 20px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+    align-self: flex-end;
+    font-size: 14px
 }
 
+
+
 .btn-save:hover{
-   
-  background:#6fcf97;
+    background:#6fcf97;
 }
+
+.btn-save img {
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+}
+
+
 
 .filter-select {
     padding: 8px 12px;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    background-color:  #e8f5e9;
+    background-color:   rgb(251, 251, 251);
     color: #2b313b;
     font-size: 14px;
     outline: none;
@@ -572,7 +708,7 @@ body.Inventario {
 }
 
 .btn-more{
-     background:#ffff;
+    background:#ffff;
     border: none;
     cursor: pointer;
 }
@@ -597,7 +733,7 @@ background:#6fcf97;
 
 .input-date {
     
-    background: rgb(229, 235, 223);
+    background: rgb(251, 251, 251);
     border: 1px solid  rgb(62, 77, 52);
     padding: 6px 10px;
     border-radius: 8px;
@@ -625,6 +761,17 @@ background:#6fcf97;
 }
 
 
+.filtro select {
+    background: #0d3b2e;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    
+    
+}
 
 @media (max-width: 1200px) {
 
@@ -764,11 +911,7 @@ background:#6fcf97;
         white-space: nowrap;
     }
 
-    .table-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+    
 
     .pagination {
         flex-wrap: wrap;
@@ -897,12 +1040,7 @@ background:#6fcf97;
         white-space: nowrap;
     }
 
-    .table-footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 12px;
-    }
+    
 
     .pagination {
         justify-content: center;
