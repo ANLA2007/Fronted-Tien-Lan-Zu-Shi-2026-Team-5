@@ -190,78 +190,409 @@
     </aside>
 
   
-    <div class="main-content">
+<div class="main-content">
 
         <div class="container">
 
-            <div class="card">
-                <h2> Datos del Cliente</h2>
+           <section class="top-header card">
 
-                <input type="text" placeholder="Nombre del cliente"><br>
-                <input type="text" placeholder="Teléfono"><br>
-                <input type="text" placeholder="Dirección">
+        <div class="header-left">
+            <h1>Registro de Venta</h1>
+            <p>Registra una nueva venta</p>
+        </div>
+
+        <div class="header-right">
+
+            <div class="clock-container">
+                <span id="hours">00</span>
+                <span id="minutes">00</span> :
+                <span id="seconds">00</span>
+            </div>
+
+            
+
+            <div class="header-item notification">
+                <img src="IMG/notificacion.png" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="content-grid">
+
+        <div class="left-content">
+
+            <div class="card info-card">
+
+                <div class="input-group">
+                    <label>Cliente</label>
+
+                    <div class="input-flex">
+
+                        <div class="input-box">
+                            <img src="img/usuario.png" alt="">
+                            <input type="text" placeholder="Seleccionar cliente (Opcional)">
+                        </div>
+
+                        <button class="btn-outline" href="../CLIENTE/Cliente.html">
+                            + Nuevo cliente
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="double-grid">
+
+                    <div class="input-group">
+                        <label>Mesa</label>
+
+                        <div class="input-box">
+                            <img src="IMG/mesa.png" alt="">
+                            <select>
+                                <option>Mesa 5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Atendido por</label>
+
+                        <div class="input-box">
+                            <img src="img/usuario.png" alt="">
+                            <select>
+                                <option>Admin</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="card">
-                <h2> Datos de la Venta</h2>
 
-                <label>Vendedor:</label>
-                <select>
-                    <option>Mesero 1</option>
-                    <option>Mesero 2</option>
-                    <option>Mesero 3</option>
-                    <option>Mesero 4</option>
-                </select>
+                <h2 class="section-title">Agregar productos</h2>
 
-                <br><br>
+                <div class="search-grid">
 
-                <label>Seleccionar platillos:</label>
+                    <div class="input-box">
+                        <img src="img/search.png" alt="">
+                        <input type="text" placeholder="Buscar platillo...">
+                    </div>
 
-                <select id="menuSelect" multiple onchange="agregarSeleccionados()">
-                    <option value="Arroz Cantones|10"> Arroz Cantones - $10</option>
-                    <option value="Arroz Chino|10"> Arroz Chino - $10</option>
-                    <option value="Arroz Blanco|7"> Arroz Blanco - $7</option>
-                    <option value="Fideos con Arroz|10"> Fideos con Arroz - $10</option>
-                    <option value="Chao Mein|15"> Chao Mein - $15</option>
-                    <option value="Porcion de Vegetales|8"> Porcion de Vegetales - $8</option>
-                    <option value="Sopa de vegetales|8"> Sopa de vegetales - $8</option>
-                    <option value="Tacos a la Plancha|12"> Tacos a la Plancha - $12</option>
-                    <option value="Tacos Fritos|12"> Tacos Fritos - $12</option>
-                    <option value="Tallarines|12"> Tallarines - $12</option>
-                    <option value="Leche de soya con Jengibre|3"> Leche de soya con Jengibre - $3</option>
-                    <option value="Te Caliente|6"> Te Caliente - $6</option>
-                    <option value="Te de Limon|6"> Te de Limon - $6</option>
-                    <option value="Te de Jamaica|6"> Te de Jamaica - $6</option>
-                    <option value="Cafe con Leche|6"> Cafe con Leche - $6</option>
-                    <option value="Cafe negro|6"> Cafe negro - $6</option>
-                </select>
+                    <select class="select-style">
+                        <option>Todas las categorías</option>
+                    </select>
+
+                    
+                        <select class="btn-outline">
+                        <option>Todo</option>
+                        <option>10</option>
+                        <option>3</option>
+                    </select>
+                    
+
+                </div>
+
+                <div class="categories">
+
+                    <button class="category active">Todos</button>
+                    <button class="category">Entradas</button>
+                    <button class="category">Platos Fuertes</button>
+                    <button class="category">Pastas</button>
+                    <button class="category">Bebidas</button>
+                    <button class="category">Postres</button>
+
+                </div>
+
+                <div class="products-grid">
+
+                    <div class="product-card">
+
+                        <img class="food-img" src="img/arroz.png" alt="">
+
+                        <div class="product-info">
+
+                            <div>
+                                <h3>Arroz Frito Especial</h3>
+                                <span>$120.00</span>
+                            </div>
+
+                            <button class="add-btn">+</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-card">
+
+                        <img class="food-img" src="img/Esparragos.png" alt="">
+
+                        <div class="product-info">
+
+                            <div>
+                                <h3>Esparragos</h3>
+                                <span>$45.00</span>
+                            </div>
+
+                            <button class="add-btn">+</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-card">
+
+                        <img class="food-img" src="img/fideos.png" alt="">
+
+                        <div class="product-info">
+
+                            <div>
+                                <h3>Fideos</h3>
+                                <span>$150.00</span>
+                            </div>
+
+                            <button class="add-btn">+</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-card">
+
+                        <img class="food-img" src="img/piñaconcoco.png" alt="">
+
+                        <div class="product-info">
+
+                            <div>
+                                <h3>Piña con Coco</h3>
+                                <span>$130.00</span>
+                            </div>
+
+                            <button class="add-btn">+</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
             <div class="card">
-                <h2> Detalle de Venta</h2>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
+                <div class="input-group">
 
-                    <tbody id="detalle"></tbody>
-                </table>
+                    <label>Observaciones (Opcional)</label>
 
-                <h3>Total a pagar: $<span id="total">0</span></h3>
+                    <textarea placeholder="Agregar observaciones a la venta..."></textarea>
 
-                <button class="btn-primary">Guardar Venta</button>
-                <button class="btn-danger">Cancelar</button>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="table-header">
+
+                    <h2 class="section-title">Ventas recientes</h2>
+
+                    <button class="view-all">
+                        Ver todas
+                    </button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Mesa</th>
+                                <th>Cliente</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Hora</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#VTA-000123</td>
+                                <td>Mesa 3</td>
+                                <td>General</td>
+                                <td>$320.00</td>
+                                <td>
+                                    <span class="status">
+                                        Completada
+                                    </span>
+                                </td>
+                                <td>04:20 PM</td>
+
+                                <td>
+                                    <img class="table-icon" src="IMG/ver.png" alt="">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#VTA-000122</td>
+                                <td>Mesa 1</td>
+                                <td>María López</td>
+                                <td>$185.00</td>
+                                <td>
+                                    <span class="status">
+                                        Completada
+                                    </span>
+                                </td>
+                                <td>04:10 PM</td>
+
+                                <td>
+                                    <img class="table-icon" src="IMG/ver.png" alt="">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#VTA-000121</td>
+                                <td>Para llevar</td>
+                                <td>Carlos Hernández</td>
+                                <td>$245.00</td>
+                                <td>
+                                    <span class="status">
+                                        Completada
+                                    </span>
+                                </td>
+                                <td>04:00 PM</td>
+
+                                <td>
+                                    <img class="table-icon" src="IMG/ver.png" alt="">
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
 
             </div>
 
         </div>
+
+        <aside class="sale-detail card">
+
+            <div class="detail-header">
+
+                <h2>Detalle de la venta</h2>
+
+                <button class="clear-btn">
+                    Limpiar todo
+                </button>
+
+            </div>
+
+            <div class="sale-items">
+
+                <div class="sale-item">
+
+                    <div class="quantity">1</div>
+
+                    <div class="sale-text">
+                        <h4>Arroz Frito Especial</h4>
+                    </div>
+
+                    <div class="sale-price">
+                        $120.00
+                    </div>
+
+                    <img class="delete-icon" src="IMG/delete.png" alt="">
+
+                </div>
+
+                <div class="sale-item">
+
+                    <div class="quantity">2</div>
+
+                    <div class="sale-text">
+                        <h4>Rollito Primavera</h4>
+                        <span>Orden normal</span>
+                    </div>
+
+                    <div class="sale-price">
+                        $90.00
+                    </div>
+
+                    <img class="delete-icon" src="IMG/delete.png" alt="">
+
+                </div>
+
+            </div>
+
+            <div class="totals">
+
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <strong>$395.00</strong>
+                </div>
+
+                <div class="total-row">
+                    <span>Descuento</span>
+                    <strong>$0.00</strong>
+                </div>
+
+                <div class="total-row">
+                    <span> </span>
+                    <strong> </strong>
+                </div>
+
+                <div class="total-row final-total">
+                    <span>Total</span>
+                    <strong>$458.20</strong>
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Método de pago</label>
+
+                <select class="select-style">
+                    <option>Efectivo</option>
+                    <option>Tarjeta de crédito/débito</option>
+                    <option>Transferencia bancaria</option>
+                </select>
+
+            </div>
+
+            <div class="buttons-column">
+
+                <button class="btn-primary">
+                    Procesar Venta
+                </button>
+
+                <div class="bottom-buttons">
+
+                    <button class="btn-Guardar">
+                     <!--   <img src="img/guardar.png"> -->
+                      <!--  Guardar -->
+                    </button>
+
+                    <button class="btn-Cancelar">
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
 
     </div>
 
