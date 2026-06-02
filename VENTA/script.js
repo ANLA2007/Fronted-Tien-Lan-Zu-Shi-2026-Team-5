@@ -12,3 +12,16 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+
+
+
+
+
+const newSaleBtn = document.querySelector(".btn-new-sale");
+
+newSaleBtn.addEventListener("click", () => {
+
+   window.location.href = "HistorialVentas.html";
+
+});
