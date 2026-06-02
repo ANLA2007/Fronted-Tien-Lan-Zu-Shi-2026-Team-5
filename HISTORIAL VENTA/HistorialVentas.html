@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial de Ventas</title>
+
+     <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="HistorialVentas.css">
 </head>
 
@@ -196,125 +200,230 @@
     </aside>
 
   
-    <div class="main-content">
+         <div class="container">
 
-        <div class="container">
+        <div class="sales-header">
 
-            <div class="card">
-                <h2>Historial de Ventas</h2>
-
-                <input type="text" id="buscador" placeholder="Buscar cliente..." onkeyup="buscar()">
-
-                <br>
-
-                <label>Desde:</label>
-                <input type="date" id="fromDate">
-
-                <label>Hasta:</label>
-                <input type="date" id="toDate">
-
-                <button class="btn-primary" onclick="filtrar()">Filtrar</button>
+            <div>
+                <h1>Historial de Ventas</h1>
+                <p>Gestiona y visualiza todas las ventas realizadas.</p>
             </div>
 
-            <div class="card">
-
-                <table id="tablaVentas">
-
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Fecha</th>
-                            <th>Cliente</th>
-                            <th>Vendedor</th>
-                            <th>Estado</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                        <td>1</td><td>2026-04-01</td><td>David Sánchez</td><td>Mesero 1</td>
-                        <td><span class="status paid">Pagada</span></td><td>$12.00</td>
-                        </tr>
-
-                        <tr>
-                        <td>2</td><td>2026-04-03</td><td>Juan Pérez</td><td>Mesero 2</td>
-                        <td><span class="status paid">Pagada</span></td><td>$18.50</td>
-                        </tr>
-
-                        <tr>
-                        <td>3</td><td>2026-04-05</td><td>Carlos Ruiz</td><td>Mesero 1</td>
-                        <td><span class="status cancel">Anulada</span></td><td>$8.00</td>
-                        </tr>
-
-                        <tr>
-                        <td>4</td><td>2026-04-06</td><td>Ana Martínez</td><td>Mesero 3</td>
-                        <td><span class="status paid">Pagada</span></td><td>$22.00</td>
-                        </tr>
-
-                        <tr>
-                        <td>5</td><td>2026-04-07</td><td>Pedro Sánchez</td><td>Mesero 2</td>
-                        <td><span class="status paid">Pagada</span></td><td>$15.75</td>
-                        </tr>
-
-                        <tr>
-                        <td>6</td><td>2026-04-08</td><td>Lucía Gómez</td><td>Mesero 1</td>
-                        <td><span class="status cancel">Anulada</span></td><td>$9.50</td>
-                        </tr>
-
-                        <tr>
-                        <td>7</td><td>2026-04-09</td><td>Sofía Hernández</td><td>Mesero 3</td>
-                        <td><span class="status paid">Pagada</span></td><td>$19.00</td>
-                        </tr>
-
-                        <tr>
-                        <td>8</td><td>2026-04-10</td><td>Diego Torres</td><td>Mesero 2</td>
-                        <td><span class="status paid">Pagada</span></td><td>$13.25</td>
-                        </tr>
-
-                        <tr>
-                        <td>9</td><td>2026-04-11</td><td>Valeria Castro</td><td>Mesero 1</td>
-                        <td><span class="status paid">Pagada</span></td><td>$17.80</td>
-                        </tr>
-
-                        <tr>
-                        <td>10</td><td>2026-04-12</td><td>José Ramírez</td><td>Mesero 3</td>
-                        <td><span class="status cancel">Anulada</span></td><td>$11.00</td>
-                        </tr>
-
-                        <tr>
-                        <td>11</td><td>2026-04-13</td><td>Camila Flores</td><td>Mesero 2</td>
-                        <td><span class="status paid">Pagada</span></td><td>$20.40</td>
-                        </tr>
-
-                        <tr>
-                        <td>12</td><td>2026-04-14</td><td>Andrés Vega</td><td>Mesero 1</td>
-                        <td><span class="status paid">Pagada</span></td><td>$16.90</td>
-                        </tr>
-
-                        <tr>
-                        <td>13</td><td>2026-04-15</td><td>Paula Rivas</td><td>Mesero 3</td>
-                        <td><span class="status paid">Pagada</span></td><td>$14.60</td>
-                        </tr>
-
-                        <tr>
-                        <td>14</td><td>2026-04-16</td><td>Fernando López</td><td>Mesero 2</td>
-                        <td><span class="status cancel">Anulada</span></td><td>$10.20</td>
-                        </tr>
-
-                        <tr>
-                        <td>15</td><td>2026-04-17</td><td>Daniela Cruz</td><td>Mesero 1</td>
-                        <td><span class="status paid">Pagada</span></td><td>$23.10</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
+            <button class="btn-new-sale">
+                <i class="fa-solid fa-plus"></i>
+                Nueva Venta
+            </button>
 
         </div>
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="card-info">
+                    <h3>Ventas Hoy</h3>
+                    <h2>$1,250</h2>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-info">
+                    <h3>Ventas Semana</h3>
+                    <h2>$8,430</h2>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-info">
+                    <h3>Ventas Mes</h3>
+                    <h2>$32,500</h2>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-info">
+                    <h3>Ticket Promedio</h3>
+                    <h2>$18.50</h2>
+                </div>
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+            </div>
+
+        </section>
+
+        
+        <section class="top-bar">
+
+            
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text"
+                id="searchInput"
+                placeholder="Buscar ventas...">
+            </div>
+
+           
+                <div class="filters">
+
+                    <div class="date-filter">
+
+                        <label>Desde</label>
+                        <input type="date" id="fromDate">
+
+                    </div>
+
+                    <div class="date-filter">
+
+                        <label>Hasta</label>
+                        <input type="date" id="toDate">
+
+                    </div>
+
+                    <button class="btn-filter">
+                        Filtrar
+                    </button>
+
+                    <select id="paymentFilter">
+
+                        <option value="all">Método de Pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Tarjeta">Tarjeta</option>
+                        <option value="Transferencia">Transferencia</option>
+
+                    </select>
+
+                </div>
+                
+                <div class="export-dropdown">
+
+                    <button class="btn-export">
+                        <i class="fa-solid fa-file-export"></i>
+                        Exportar
+                    </button>
+
+                    <div class="export-menu">
+                        <p>Exportar PDF</p>
+                        <p>Exportar Excel</p>
+                        <p>Exportar CSV</p>
+                    </div>
+
+                 </div>
+
+        </section>
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Método</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="salesTable">
+
+                    <tr>
+                        <td>VTA-001</td>
+                        <td>22/05/2026</td>
+                        <td>María López</td>
+                        <td>Efectivo</td>
+                        <td>$35.00</td>
+
+                        <td>
+                            <span class="status completed">
+                                Completada
+                            </span>
+                        </td>
+
+                        <td class="actions">
+
+                            <button class="btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="btn-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>VTA-002</td>
+                        <td>22/05/2026</td>
+                        <td>Carlos Ruiz</td>
+                        <td>Tarjeta</td>
+                        <td>$18.50</td>
+
+                        <td>
+                            <span class="status pending">
+                                Pendiente
+                            </span>
+                        </td>
+
+                        <td class="actions">
+
+                            <button class="btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="btn-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>VTA-003</td>
+                        <td>21/05/2026</td>
+                        <td>Andrea Pérez</td>
+                        <td>Transferencia</td>
+                        <td>$42.00</td>
+
+                        <td>
+                            <span class="status completed">
+                                Completada
+                            </span>
+                        </td>
+
+                        <td class="actions">
+
+                            <button class="btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="btn-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
 
     </div>
 
@@ -323,6 +432,40 @@
 <footer class="footer">
     <p>© 2026 Tien Lan Zu Shi </p>
 </footer>
+
+<!-- MODAL ELIMINAR -->
+
+<div id="deleteModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <h2>Eliminar Venta</h2>
+
+        <p>
+            ¿Deseas eliminar esta venta?
+            <br>
+            Esta acción no se puede deshacer.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelDelete" class="btn-cancel">
+                Cancelar
+            </button>
+
+            <button id="confirmDelete" class="btn-confirm">
+                Eliminar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>

@@ -7,6 +7,9 @@
     <title>Platillos - Tien Lan Zhu Shi</title>
 
     <link rel="stylesheet" href="Porcion.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="porcion">
@@ -198,140 +201,580 @@
 
         </aside>
 
-   
-        <main class="main-content">
+    
+    <!-- CONTENIDO -->
 
-            <div class="porcion-container">
 
-                <div class="header-porcion">
+<div class="container">
 
-                    <h2>Gestión de Platillos</h2>
+    <!-- PANEL IZQUIERDO -->
 
-                    <div class="porcion-tools">
+    <section class="left-panel">
 
-                        <input 
-                            type="text" 
-                            class="search-porcion" 
-                            placeholder="Buscar platillo"
-                        >
+        <div class="page-title">
 
-                        <button class="btn-import">
-                            Importar
-                        </button>
+            <h1>Platillos</h1>
 
-                        <button 
-                            class="btn-porcion" 
-                            onclick="abrirModal()"
-                        >
-                            + Nuevo Platillo
-                        </button>
+            <p>
+                Gestiona los platillos del buffet vegetariano.
+            </p>
 
-                    </div>
+        </div>
 
-                </div>
+        <!-- FILTROS -->
 
-                <div class="table-responsive">
+        <div class="filters">
 
-                    <table class="table-porcion">
+            <div class="search-box">
 
-                        <thead>
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Categoría</th>
-                                <th>Precio Porción</th>
-                                <th>Descripción</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Buscar platillo...">
 
             </div>
 
-        </main>
+            <select id="categoryFilter">
 
-    </div>
-
-   
-    <div id="modalPorcion" class="modal">
-
-        <div class="modal-content">
-
-            <h3>Nuevo Platillo</h3>
-
-            <input 
-                type="text"
-                id="nombrePlatillo"
-                placeholder="Nombre del platillo"
-            >
-
-            <input 
-                type="text"
-                id="categoriaPlatillo"
-                placeholder="Nombre categoría"
-            >
-
-            <input 
-                type="number"
-                id="precioPlatillo"
-                placeholder="Precio porción"
-            >
-
-            <input 
-                type="text"
-                id="descripcionPlatillo"
-                placeholder="Descripción"
-            >
-
-            <p id="errorPlatillo" class="error-text"></p>
-
-            <select id="estadoPlatillo">
-
-                <option value="Activo">
-                    Activo
+                <option value="todos">
+                    Todas
                 </option>
 
-                <option value="Inactivo">
-                    Inactivo
+                <option value="Plato fuerte">
+                    Plato fuerte
+                </option>
+
+                <option value="Postres">
+                    Postres
+                </option>
+
+                <option value="Refrescos y batidos">
+                    Refrescos y batidos
                 </option>
 
             </select>
 
-            <div class="modal-buttons">
+        </div>
 
-                <button 
-                    class="btn-porcion"
-                    onclick="guardarPlatillo()"
-                >
-                    Guardar
-                </button>
+        <!-- TABLA -->
 
-                <button 
-                    class="btn-cancel"
-                    onclick="cerrarModal()"
-                >
-                    Cancelar
-                </button>
+        <div class="table-container">
 
-            </div>
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Platillo</th>
+
+                    <th>Categoría</th>
+
+                    <th>Porción</th>
+
+                    <th>Precio</th>
+
+                    <th>Estado</th>
+
+                    <th>Acciones</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="tablaPlatillos">
+
+                    <!-- FILA 1 -->
+
+                    <tr data-category="Plato fuerte">
+
+                        <td>
+
+                            <div class="dish-info">
+
+                                <img src="img/spaghetti.png">
+
+                                <div>
+
+                                    <h4>Spaghetti</h4>
+
+                                    <p>
+                                        Quinoa, garbanzos,
+                                        verduras asadas y brocoli.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge plato">
+
+                                <i class="fa-solid fa-utensils"></i>
+
+                                Plato fuerte
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <select class="portion-select">
+
+                                <option value="120">
+                                    Porción completa
+                                </option>
+
+                                <option value="70">
+                                    Media porción
+                                </option>
+
+                            </select>
+
+                        </td>
+
+                        <td class="price">
+
+                            $120.00
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active-status">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- FILA 2 -->
+
+                    <tr data-category="Plato fuerte">
+
+                        <td>
+
+                            <div class="dish-info">
+
+                                <img src="img/tofu.png">
+
+                                <div>
+
+                                    <h4>Tofu</h4>
+
+                                    <p>
+                                        Tofu con arroz y verduras.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge plato">
+
+                                <i class="fa-solid fa-utensils"></i>
+
+                                Plato fuerte
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <select class="portion-select">
+
+                                <option value="75">
+                                    Media porción
+                                </option>
+
+                                <option value="120">
+                                    Porción completa
+                                </option>
+
+                            </select>
+
+                        </td>
+
+                        <td class="price">
+
+                            $75.00
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active-status">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- FILA 3 -->
+
+                    <tr data-category="Postres">
+
+                        <td>
+
+                            <div class="dish-info">
+
+                                <img src="img/carrot cake.jpg">
+
+                                <div>
+
+                                    <h4>Pastel de Zanahoria</h4>
+
+                                    <p>
+                                        Elaborado sin ingredientes animales.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge postre">
+
+                                <i class="fa-solid fa-cake-candles"></i>
+
+                                Postres
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <select class="portion-select">
+
+                                <option value="60">
+                                    Porción completa
+                                </option>
+
+                                <option value="35">
+                                    Media porción
+                                </option>
+
+                            </select>
+
+                        </td>
+
+                        <td class="price">
+
+                            $60.00
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active-status">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- FILA 4 -->
+
+                    <tr data-category="Refrescos y batidos">
+
+                        <td>
+
+                            <div class="dish-info">
+
+                                <img src="img/melon.png">
+
+                                <div>
+
+                                    <h4>Jugo Natural de melon</h4>
+
+                                    <p>
+                                        Jugo de melon con naranja recién exprimido.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+
+                            <span class="badge bebida">
+
+                                <i class="fa-solid fa-glass-water"></i>
+
+                                Refrescos y batidos
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <select class="portion-select">
+
+                                <option value="40">
+                                    Porción completa
+                                </option>
+
+                            </select>
+
+                        </td>
+
+                        <td class="price">
+
+                            $40.00
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active-status">
+
+                                Activo
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- PANEL DERECHO -->
+
+    <aside class="right-panel">
+
+        <h2>
+
+            <i class="fa-solid fa-leaf"></i>
+
+            Agregar nuevo platillo
+
+        </h2>
+
+        <label>Nombre del platillo</label>
+
+        <input type="text"
+               id="dishName"
+               placeholder="Ensalada César Vegana">
+
+        <label>Descripción</label>
+
+        <textarea id="dishDescription"
+                  rows="4"></textarea>
+
+        <label>Categoría</label>
+
+        <select id="dishCategory">
+
+            <option value="">
+                Selecciona una categoría
+            </option>
+
+            <option>
+                Plato fuerte
+            </option>
+
+            <option>
+                Postres
+            </option>
+
+            <option>
+                Refrescos y batidos
+            </option>
+
+        </select>
+
+        <label>Precio porción completa</label>
+
+        <input type="number"
+               id="fullPrice">
+
+        <label>Precio media porción</label>
+
+        <input type="number"
+               id="halfPrice">
+
+        <label>Estado</label>
+
+        <div class="switch-container">
+
+            <label class="switch">
+
+                <input type="checkbox"
+                       id="dishStatus"
+                       checked>
+
+                <span class="slider"></span>
+
+            </label>
+
+            <span id="statusText">
+
+                Activo
+
+            </span>
+
+        </div>
+
+        <label>Imagen del platillo</label>
+
+        <input type="file"
+               id="dishImage"
+               accept="image/*">
+
+        <img id="previewImage">
+
+        <div class="buttons">
+
+            <button id="cancelBtn">
+
+                Cancelar
+
+            </button>
+
+            <button id="saveBtn">
+
+                Guardar platillo
+
+            </button>
+
+        </div>
+
+    </aside>
+
+</div>
+    
+    <footer class="footer">
+        <p>© 2026 Tien Lan Zhu Shi</p>
+    </footer>
+<!-- MODAL ELIMINAR -->
+
+<div id="deleteModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <h2>Eliminar Platillo</h2>
+
+        <p>
+            ¿Deseas eliminar este platillo?
+            <br>
+            Esta acción no se puede deshacer.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelDelete" class="btn-cancel">
+                Cancelar
+            </button>
+
+            <button id="confirmDelete" class="btn-confirm">
+                Eliminar
+            </button>
 
         </div>
 
     </div>
 
-    <footer class="footer">
-        <p>© 2026 Tien Lan Zhu Shi</p>
-    </footer>
-
+</div>
     <script src="js/Porcion.js" defer></script>
 
 </body>
