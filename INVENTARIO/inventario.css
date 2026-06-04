@@ -234,6 +234,70 @@ body.Inventario {
     border-top: 1px solid rgba(255,255,255,0.18);
     margin: 18px 0;
 }
+.Inventario .footer{
+    background:#0d3b2e;
+    color:#e8f5e9;
+    text-align:center;
+    padding:0px;
+    margin-top:auto;
+}
+
+
+/*OCULTAR MENU*/
+.Inventario .sidebar {
+    width: 230px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
+.Inventario .main-content {
+    min-width: 0;
+    overflow-x: hidden;
+}
+.Inventario .main-container {
+    transition: grid-template-columns 0.3s ease;
+}
+.Inventario .menu-title {
+    color: #ffffff;
+}
+.Inventario .menu-title:hover {
+    color: #6fcf97;
+}
+.Inventario .flecha {
+    color: #ffffff;
+}
+#toggle-sidebar:checked ~ .main-container {
+    grid-template-columns: 70px 1fr;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar {
+    width: 70px;
+    padding: 20px 5px;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar span {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .flecha {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .submenu {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-title {
+    justify-content: center;
+    padding: 10px 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-left {
+    justify-content: center;
+}
+.Inventario .toggle-menu {
+    color: #ffffff !important;
+}
 
 
 /*CONTENIDO*/
@@ -288,17 +352,17 @@ body.Inventario {
 .filter-bar {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; /* Asegura que tome todo el ancho disponible */
+    width: 100%; 
     justify-content: space-between; 
     align-items: center;
     padding: 28px;
     background: linear-gradient(180deg, #ffffff, #f7fbf9);
     border-radius: 15px;
-    border: 1px solid rgba(111, 207, 151, 0.18); /* Corregido el error de sintaxis "1px solid 1px solid" */
+    border: 1px solid rgba(111, 207, 151, 0.18); 
     box-shadow: 0 10px 35px rgba(13, 59, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     box-sizing: border-box; 
     gap: 15px;
-    margin-bottom: 20px; /* Separación de la tabla */
+    margin-bottom: 20px; 
 }
 
 .search-container {
@@ -350,7 +414,7 @@ body.Inventario {
     font-size: 12px;
     color: white;
     border-bottom: 1px solid #0d3b2e;
-    font-weight: 600; /*prueba y error corazon*/
+    font-weight: 600; 
     position: sticky;
     top: 0;
     z-index: 10;
@@ -360,10 +424,10 @@ body.Inventario {
     padding: 15px;
     border-bottom: 1px solid #0d3b2e;
     font-size: 14px;
-    vertical-align: middle; /* Alinea el contenido verticalmente al centro */
+    vertical-align: middle; 
 }
 
-.product-img-placeholder { /*la img*/
+.product-img-placeholder { 
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -382,7 +446,7 @@ body.Inventario {
 
 }
 
-/* Estilos para los botones de acción (editar y eliminar) */
+
 
 .btn-accion{
     width:40px;
@@ -486,18 +550,9 @@ body.Inventario {
 }
 
 
-.footer-fin {
-     background:#0d3b2e;
-    color:#e8f5e9;
-    text-align:center;
-    padding:16px 0;
-    margin-top:auto;
-    margin-bottom:0;
-    flex-shrink: 0;
-     width: 100%;
-}
 
-.modal-overlay { /*ARREGLAR COLORES DE AQUI*/
+
+.modal-overlay { 
     position: fixed;
     top: 0;
     left: 0;
@@ -515,14 +570,14 @@ body.Inventario {
     display: flex;
 }
 
-.modal-content { /*ARREGLAR COLORES DE AQUI*/
+.modal-content {
     width:100%;
     max-width:650px;
     background:#eef8f1;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 25px 60px rgba(0,0,0,0.30);
-    animation:modalShow 0.25s ease;/* Limita la altura máxima de la modal */
+    animation:modalShow 0.25s ease;
 }
 
 .user-form {
@@ -591,8 +646,6 @@ body.Inventario {
     color:#0d3b2e;
 }
 
-
-/*Ocultamos el input original, pero funciona */
 #imgInput {
     display: none; 
 }
@@ -602,8 +655,8 @@ body.Inventario {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;       /* Tamaño cuadrado */
-    height: 100px;      /* Tamaño cuadrado */
+    width: 100px;      
+    height: 100px;     
     background: #f5f8fb; 
     border: 2px dashed #cfe5d6; 
     border-radius: 14px;

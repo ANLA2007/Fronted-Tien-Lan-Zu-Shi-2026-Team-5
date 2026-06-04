@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="Cliente.css">
 </head>
 
-<body class="cliente">
+<body class="clientes">
 
 <header class="header">
 
     <div class="header-content">
 
         <div class="logo-negocio">
-            <img src="img/logo.png">
-            <span>Tien Lan Zu Shi</span>
+            <img src="img/logo.png" alt="">
+            <span>Tien Lan Zhu Shi</span>
         </div>
 
         <div class="user-info">
@@ -38,12 +38,14 @@
     </div>
 
 </header>
+<input type="checkbox" id="toggle-sidebar" hidden>
 
 <div class="main-container">
 
     <aside class="sidebar">
 
         <nav class="nav">
+               <label for="toggle-sidebar" class="toggle-menu">☰</label>
 
             <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
                 <img src="img/home.png">
@@ -70,7 +72,7 @@
 
                 <div class="submenu">
 
-                    <a href="../USUARIO/usuario.html" class="nav-link sub-link">
+                    <a href="../USUARIO/usuario.html" class="nav-link sub-link ">
                         <img src="img/usuario.png">
                         <span>Usuarios</span>
                     </a>
@@ -150,7 +152,7 @@
 
                     <a href="../MOVIMIENTO INVENTARIO/movimientoinventario.html" class="nav-link sub-link">
                         <img src="img/movimiento.png">
-                        <span>Movimiento Inventario</span>
+                        <span>Control Inventario</span>
                     </a>
 
                 </div>
@@ -192,9 +194,9 @@
 
     </aside>
 
-    <main class="content">
+    <main class="main-content">
 
-        <div class="card">
+        <div class="clientes-container">
 
             <div class="header-clientes">
 
@@ -202,11 +204,16 @@
 
                 <div class="clientes-tools">
 
-                    <input type="text" class="search-cliente" placeholder="Buscar cliente...">
+                    <input type="text" class="search-clientes" placeholder="Buscar Cliente...">
 
-                    <button class="btn-import">Importar</button>
+                    <button class="btn-import">
+                        <img src="img/import.png">
+                        <span>Importar</span>
+                    </button>
 
-                    <button class="btn" onclick="abrirModal()">+ Nuevo Cliente</button>
+                    <button class="btn-clientes" onclick="abrirModal()">
+                        + Nuevo Cliente
+                    </button>
 
                 </div>
 
@@ -214,31 +221,88 @@
 
             <div class="table-responsive">
 
-                <table class="table-clientes">
+                <table class="table-cliente">
 
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Teléfono</th>
-                            <th>Dirección</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
 
                     <tbody>
+
                         <tr>
-                            <td>Camila López</td>
-                            <td>878766787</td>
-                            <td>Managua</td>
+                            <td>Nohemi </td>
+                             <td>Aráuz</td>
+                            <td>alexalara@gmail.com</td>
                             <td><span class="estado-activo">Activo</span></td>
                             <td>
                                 <div class="acciones-tabla">
-                                    <button class="btn-editar">Editar</button>
-                                    <button class="btn-eliminar" onclick="eliminarCliente(this)">Eliminar</button>
+                                    <button class="btn-accion editar">
+                                        <img src="img/editar.png">
+                                    </button>
+                                    <button class="btn-accion eliminar">
+                                        <img src="img/borrar.png">
+                                    </button>
                                 </div>
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>Maria</td>
+                            <td>Bermudez</td>
+                            <td>dulcevelasquez@gmail.com</td>
+                            <td><span class="estado-activo">Activo</span></td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-accion editar">
+                                        <img src="img/editar.png">
+                                    </button>
+                                    <button class="btn-accion eliminar">
+                                        <img src="img/borrar.png">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Alejandra </td>
+                             <td>Velazquez</td>
+                            <td>robertabaltodano@gmail.com</td>
+                            <td><span class="estado-activo">Activo</span></td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-accion editar">
+                                        <img src="img/editar.png">
+                                    </button>
+                                    <button class="btn-accion eliminar">
+                                        <img src="img/borrar.png">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Daniela </td>
+                             <td>Zamora</td>
+                            <td>anahilopez@gmail.com</td>
+                            <td><span class="estado-activo">Activo</span></td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-accion editar">
+                                        <img src="img/editar.png">
+                                    </button>
+                                    <button class="btn-accion eliminar">
+                                        <img src="img/borrar.png">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
                     </tbody>
 
                 </table>
@@ -251,35 +315,71 @@
 
 </div>
 
+<footer class="footer">
+    <p>© 2026 Tien Lan Zhu Shi</p>
+</footer>
+
 <div id="modalCliente" class="modal">
 
     <div class="modal-content">
 
-        <h3>Nuevo Cliente</h3>
+        <div class="modal-header">
 
-        <input type="text" id="nombreCliente" placeholder="Nombre">
-        <input type="text" id="apellidoCliente" placeholder="Apellido">
-        <input type="text" id="telefonoCliente" placeholder="Teléfono">
-        <input type="text" id="direccionCliente" placeholder="Dirección">
+            <h3>Nuevo Cliente</h3>
+
+            <button class="btn-close" onclick="cerrarModal()">✕</button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+                <label>Nombre</label>
+                <input type="text" id="nombreCliente" placeholder="Ingrese nombre">
+            </div>
+                <div class="input-group">
+                    <label>Apellido</label>
+                    <input type="text" id="apellidoCliente" placeholder="Ingrese apellido">
+                </div>
+
+
+
+            <div class="input-group">
+                <label>Correo</label>
+                <input type="text" id="correoCliente" placeholder="Ingrese correo">
+            </div>
+
+           
+            <div class="input-group">
+                <label>Estado</label>
+                <select id="estadoCliente">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+
+        </div>
 
         <p id="errorCliente" class="error-text"></p>
 
         <div class="modal-buttons">
 
-            <button class="btn" onclick="guardarCliente()">Guardar</button>
-            <button class="btn btn-cerrar" onclick="cerrarModal()">Cancelar</button>
+       <button class="btn-clientes" onclick="guardarCliente()">
+        <img src="img/guardar.png">
+        Guardar
+        </button>
 
-        </div>
+      <button class="btn-cancel" onclick="cerrarModal()">
+        Cancelar
+      </button>
+
+</div>
 
     </div>
 
 </div>
 
-<footer class="footer">
-    <p>© 2026 Tien Lan Zu Shi</p>
-</footer>
-
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

@@ -1,10 +1,11 @@
 body.porcion{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#f5f8fb;
+    background:#ffffff;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
+    height:100vh;
+    overflow:hidden;
 }
 
 .porcion .header {
@@ -232,6 +233,84 @@ body.porcion{
     margin: 18px 0;
 }
 
+.porcion .footer {
+    background: #0d3b2e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 8px;
+    flex-shrink: 0;
+}
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: none;
+    flex: 1;
+    min-height: 0;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+
+/*OCULTAR MENU*/
+.porcion .sidebar {
+    width: 230px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
+.porcion .main-content {
+    min-width: 0;
+    overflow-x: hidden;
+}
+.porcion .main-container {
+    transition: grid-template-columns 0.3s ease;
+}
+.porcion .menu-title {
+    color: #ffffff;
+}
+.porcion .menu-title:hover {
+    color: #6fcf97;
+}
+.porcion .flecha {
+    color: #ffffff;
+}
+#toggle-sidebar:checked ~ .main-container {
+    grid-template-columns: 70px 1fr;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar {
+    width: 70px;
+    padding: 20px 5px;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar span {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .flecha {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .submenu {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-title {
+    justify-content: center;
+    padding: 10px 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-left {
+    justify-content: center;
+}
+.porcion .toggle-menu {
+    color: #ffffff !important;
+}
 
 /*CONTENIDO NUEVO*/
 
@@ -247,13 +326,20 @@ body{
 }
 
 /*LAYOUT*/
-.container{
-    display:flex;
-    gap:20px;
-    padding:20px;
-    width:100%;
-    max-width:1200px;
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    align-items: flex-start;
 }
+
 
 /*PANEL IZQUIERDO */
 .left-panel{
@@ -263,6 +349,7 @@ body{
     padding:30px;
     border-radius:20px;
     box-shadow:0 4px 20px rgba(0,0,0,.06);
+    
 }
 
 .page-title{
@@ -319,7 +406,6 @@ body{
     cursor:pointer;
 }
 
-/* TABLA */
 
 .table-container{
     overflow-x:auto;
@@ -333,13 +419,13 @@ table{
 }
 
 thead{
-    background:#fafafa;
+    background:#0d3b2e;;
 }
 
 thead th{
     text-align:left;
     padding:18px;
-    color:#666;
+    color:#ffffff;
     font-size:14px;
     font-weight:600;
     border-bottom:1px solid #eee;
@@ -354,7 +440,6 @@ tbody tr:hover{
     background:#fafafa;
 }
 
-/* IMAGEN + INFo*/
 
 .dish-info{
     display:flex;
@@ -474,8 +559,8 @@ tbody tr:hover{
 
 /* PANEL DERECHo */
 .right-panel{
-    width:320px;
-    min-width:320px;
+    width:280px;
+    min-width:280px;
     background:white;
     padding:25px;
     border-radius:20px;
@@ -613,12 +698,12 @@ tbody tr:hover{
     background:#ccc;
     border-radius:10px;
 }
-body{
-    overflow-y:auto !important;
+body {
+    overflow-y: hidden !important;
 }
 
-html{
-    overflow-y:auto !important;
+html {
+    overflow-y: hidden !important;
 }
 
 /*FORMULARIO*/
@@ -742,3 +827,41 @@ body{
     overflow-x:hidden;
 }
 
+/*RECONSUMIBLE*/
+.reconsumible-si{
+    background:#e8f7e8;
+    color:#2f8f2f;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.reconsumible-no{
+    background:#ffe8e8;
+    color:#d63031;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+
+/* COLUMNA RECONSUMIBLE */
+th:nth-child(6),
+td:nth-child(6){
+    min-width:120px;
+    text-align:center;
+}
+
+/* COLUMNA ACCIONES */
+th:nth-child(7),
+td:nth-child(7){
+    min-width:100px;
+    text-align:center;
+}
+
+/* BOTONES SIEMPRE EN SU COLUMNA */
+td:last-child{
+    white-space: nowrap;
+}

@@ -20,6 +20,9 @@ const statusText = document.getElementById("statusText");
 const dishImage = document.getElementById("dishImage");
 const previewImage = document.getElementById("previewImage");
 
+//reusable
+const dishReusable =
+document.getElementById("dishReconsumible");//aqui termina
 // MODAL ELIMINAR
 const deleteModal = document.getElementById("deleteModal");
 const cancelDelete = document.getElementById("cancelDelete");
@@ -86,6 +89,13 @@ saveBtn.addEventListener("click", () => {
         dishStatus.checked
             ? `<span class="status active-status">Activo</span>`
             : `<span class="status inactive-status">Inactivo</span>`;
+
+            // Reusable
+    const reconsumibleHTML =
+    dishReusable.value === "si"
+    ? `<span class="reconsumible-si">Sí</span>`
+    : `<span class="reconsumible-no">No</span>`; //aqui termina
+
 
     if (editRow) {
 
@@ -161,12 +171,16 @@ saveBtn.addEventListener("click", () => {
         </td>
 
         <td>
-            ${estadoHTML}
-        </td>
+                ${estadoHTML}
+                </td>
 
-        <td>
+                <td>
+                ${reconsumibleHTML}
+                </td>
 
-            <button class="edit-btn">
+                <td>
+
+                <button class="edit-btn">
                 <i class="fa-solid fa-pen"></i>
             </button>
 
@@ -238,6 +252,13 @@ function activarEventosFila(fila) {
             activo
                 ? "Activo"
                 : "Inactivo";
+//reconsumible
+        const reconsumible =
+        fila.querySelector(".reconsumible-si")
+            ? "si"
+            : "no";
+
+        dishReusable.value = reconsumible;
 
         window.scrollTo({
             top: 0,
@@ -290,6 +311,7 @@ function actualizarFila(
     fila.querySelector("td:nth-child(2)")
         .innerHTML =
         categoriaBadge;
+    
 
     fila.dataset.category =
         dishCategory.value;
@@ -322,7 +344,14 @@ function actualizarFila(
     fila.querySelector("td:nth-child(5)")
         .innerHTML =
         estadoHTML;
+//Reconsumible
+    const reconsumibleHTML =
+    dishReusable.value === "si"
+            ? `<span class="reconsumible-si">Sí</span>`
+            : `<span class="reconsumible-no">No</span>`;
 
+    fila.querySelector("td:nth-child(6)")
+.innerHTML = reconsumibleHTML;
 }
 
 // BADGES
@@ -421,6 +450,8 @@ function limpiarFormulario() {
     dishStatus.checked = true;
 
     statusText.textContent = "Activo";
+//reconsumible
+    dishReusable.value = "si"; /// solo esto
 
     dishImage.value = "";
 
@@ -497,12 +528,12 @@ function cargarLocalStorage() {
 
 }
 
-// INICIO
+
 window.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        cargarLocalStorage();
+        // cargarLocalStorage();
 
         tablaPlatillos
             .querySelectorAll("tr")

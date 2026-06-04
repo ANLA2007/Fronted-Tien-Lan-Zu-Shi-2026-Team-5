@@ -243,6 +243,64 @@ body.dashboard{
     margin: 18px 0;
 }
 
+
+/*OCULTAR MENU*/
+.dashboard .sidebar {
+    width: 230px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
+.dashboard .main-content {
+    min-width: 0;
+    overflow-x: hidden;
+}
+.dashboard .main-container {
+    transition: grid-template-columns 0.3s ease;
+}
+.dashboard .menu-title {
+    color: #ffffff;
+}
+.dashboard .menu-title:hover {
+    color: #6fcf97;
+}
+.dashboard .flecha {
+    color: #ffffff;
+}
+#toggle-sidebar:checked ~ .main-container {
+    grid-template-columns: 70px 1fr;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar {
+    width: 70px;
+    padding: 20px 5px;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar span {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .flecha {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .submenu {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-title {
+    justify-content: center;
+    padding: 10px 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-left {
+    justify-content: center;
+}
+.dashboard .toggle-menu {
+    color: #ffffff !important;
+}
+
+
 /*CONTENIDO*/
 
 .dashboard .main-content {
@@ -681,7 +739,6 @@ body.dashboard{
     .dashboard .main-content{
         padding:20px;
 
-        /* 🔥 FIX CLAVE DEL SCROLL */
         min-height:calc(100vh - 140px);
         overflow-y:visible;
         overflow-x:hidden;

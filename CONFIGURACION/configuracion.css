@@ -234,6 +234,64 @@ body.configuracion {
 }
 
 
+
+/*OCULTAR MENU*/
+.configuracion .sidebar {
+    width: 230px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
+.configuracion .main-content {
+    min-width: 0;
+    overflow-x: hidden;
+}
+.configuracion .main-container {
+    transition: grid-template-columns 0.3s ease;
+}
+.configuracion .menu-title {
+    color: #ffffff;
+}
+.configuracion .menu-title:hover {
+    color: #6fcf97;
+}
+.configuracion .flecha {
+    color: #ffffff;
+}
+#toggle-sidebar:checked ~ .main-container {
+    grid-template-columns: 70px 1fr;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar {
+    width: 70px;
+    padding: 20px 5px;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar span {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .flecha {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .submenu {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-title {
+    justify-content: center;
+    padding: 10px 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-left {
+    justify-content: center;
+}
+.configuracion .toggle-menu {
+    color: #ffffff !important;
+}
+
+
 /*CONTENIDO*/
 .configuracion .main-content {
     padding: 20px;
