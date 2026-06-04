@@ -1,7 +1,7 @@
-body.venta {
+body.venta{
     margin:0;
-  font-family:Arial,sans-serif;
-    background:#f5f8fb;
+    font-family:Arial,sans-serif;
+    background:#ffffff;
     display:flex;
     flex-direction:column;
     height:100vh;
@@ -20,6 +20,7 @@ body.venta {
     justify-content: space-between;
     align-items: center;
 }
+
 
 .venta .logo-negocio {
     display: flex;
@@ -77,6 +78,7 @@ body.venta {
     font-weight: bold;
 }
 
+
 .venta .main-container {
     display: grid;
     grid-template-columns: 230px 1fr;
@@ -89,10 +91,12 @@ body.venta {
     overflow-y:auto;
 }
 
+
 .venta .nav {
     display: flex;
     flex-direction: column;
 }
+
 
 .venta .nav-link {
     display: flex;
@@ -117,7 +121,7 @@ body.venta {
     transform: translateX(4px);
 }
 
-.venta  .nav-link.active {
+.venta .nav-link.active {
     background: linear-gradient(
         135deg,
         rgba(34,160,107,0.92),
@@ -130,6 +134,7 @@ body.venta {
         0 5px 14px rgba(0,0,0,0.15),
         inset 0 1px 0 rgba(255,255,255,0.05);
 }
+
 
 .venta .menu-desplegable {
     border-top: 1px solid rgba(255,255,255,0.14);
@@ -165,6 +170,7 @@ body.venta {
     color: #ffffff;
 }
 
+
 .venta .menu-left {
     display: flex;
     align-items: center;
@@ -175,6 +181,7 @@ body.venta {
     width: 20px;
     filter: brightness(0) invert(1);
 }
+
 
 .venta .flecha {
     font-size: 18px;
@@ -207,6 +214,7 @@ body.venta {
     transform: translateX(4px);
 }
 
+
 .venta .sub-link.active {
     background: linear-gradient(
         135deg,
@@ -221,6 +229,8 @@ body.venta {
         inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
+
+
 .venta .logout-link {
     margin-top: 18px;
     padding-top: 18px;
@@ -233,9 +243,67 @@ body.venta {
     margin: 18px 0;
 }
 
+
+/*OCULTAR MENU*/
+.venta .sidebar {
+    width: 230px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
+.venta .main-content {
+    min-width: 0;
+    overflow-x: hidden;
+}
+.venta .main-container {
+    transition: grid-template-columns 0.3s ease;
+}
+.venta .menu-title {
+    color: #ffffff;
+}
+.venta .menu-title:hover {
+    color: #6fcf97;
+}
+.venta .flecha {
+    color: #ffffff;
+}
+#toggle-sidebar:checked ~ .main-container {
+    grid-template-columns: 70px 1fr;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar {
+    width: 70px;
+    padding: 20px 5px;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar span {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .flecha {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .submenu {
+    display: none;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .nav-link {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-title {
+    justify-content: center;
+    padding: 10px 0;
+}
+#toggle-sidebar:checked ~ .main-container .sidebar .menu-left {
+    justify-content: center;
+}
+.venta .toggle-menu {
+    color: #ffffff !important;
+}
+
+
 /*CONTENIDO*/
 .venta .main-content {
-    padding: 30px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -250,10 +318,8 @@ body.venta {
 body{
     font-family:Arial, sans-serif;
     background:#f5f7fa;
-    padding:20px;
     color:#1e293b;
 }
-
 label{
     font-family:'Segoe UI', sans-serif;
     font-size:14px;
@@ -318,14 +384,13 @@ label{
     width:18px;
     height:18px;
 }
-
 .content-grid{
-    display:grid;
-    grid-template-columns:2fr 380px;
-    gap:20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    display: grid;
+    grid-template-columns: 2fr 380px;
+    gap: 20px;
+    position: sticky; 
+     top: 0; 
+    z-index: 10; 
 }
 
 .left-content{
