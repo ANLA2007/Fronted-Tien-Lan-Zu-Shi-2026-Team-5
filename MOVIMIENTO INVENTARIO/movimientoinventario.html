@@ -197,9 +197,83 @@
 
     </aside>
 
-    <main class="main-content">
+              <main class="main-content">
 
-    </main>
+    <div class="top-header">
+        <div class="header-left">
+            <h1>Movimiento de Inventario</h1>
+            <p>Monitoreo y control de existencias en tiempo real</p>
+        </div>
+    </div>
+
+    <section class="card">
+        <div class="filter-bar">
+            <div class="filter-left">
+                <div class="search-container">
+                    <img src="IMG/icon-icons (12).png" alt="Buscar">
+                    <input type="text" id="searchProduct" placeholder="Buscar movimientos...">
+                </div>
+                
+                <button class="btn-exportar"  id="btnExportarExcel">
+                    <img src="IMG/exportar.png"  alt="Exportar">
+                    Exportar
+                </button>
+
+                <button class="btn-registrar">
+                    + Registrar Ajuste
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="filter-right">
+            <div class="date-group">
+                <label>Desde</label>
+                <input type="date" id="fromDate" class="date-input">
+            </div>
+            
+            <div class="date-group">
+                <label>Hasta</label>
+                <input type="date" id="toDate" class="date-input">
+            </div>
+
+            <button class="btn-filtrar">
+                Filtrar
+            </button>
+
+            <select class="custom-select">
+                <option value="acumulado">Stock acumulado</option>
+                <option value="diario">Stock diario</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="card">
+        <h2 class="card-title">Historial de Movimientos</h2>
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Movimiento</th>
+                        <th>Usuario</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Stock Antes</th>
+                        <th>Stock Después</th>
+                        <th>Motivo</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
+
+
 
 </div>
 
@@ -207,5 +281,37 @@
     <p>© 2026 Tien Lan Zu Shi</p>
 </footer>
 
+<div id="modalAjuste" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" id="closeModal">✖</button>
+        <div class="modal-header-gradient">
+        <h3>Registrar Ajuste</h3>
+        </div>
+        <form id="formAjuste">
+            <div class="form-group">
+                <label>Platillo</label>
+                <input type="text" id="buscadorPlatillo" placeholder="Escribe para buscar..." required autocomplete="off">
+                <ul id="listaPlatillos" class="dropdown-list"></ul>
+            </div>
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" id="inputCantidad" placeholder="Ej: 5" required>
+            </div>
+             <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="inputFecha" name="fecha" required>
+                </div>
+            <div class="form-group">
+                <label>Motivo</label>
+                <input type="text" id="inputMotivo" placeholder="Ej: Venta" required>
+            </div>
+            <button type="submit" class="btn-save">
+                <img src="img/guardar.png" alt=""> Guardar Ajuste
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="Movimiento.js" defer></script>
 </body>
 </html>

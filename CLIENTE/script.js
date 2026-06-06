@@ -75,7 +75,12 @@ function guardarCliente() {
                 return;
             }
         }
+
+            const nuevosClientes = [...clientesActuales, nuevoCliente];
+    localStorage.setItem('catalogoClientes', JSON.stringify(nuevosClientes));
     }
+
+    
 
     const claseEstado =
         estado === "Activo"
