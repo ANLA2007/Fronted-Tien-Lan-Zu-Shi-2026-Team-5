@@ -231,39 +231,32 @@
                     <label>Cliente</label>
 
                     <div class="input-flex">
-
-                        <div class="input-box">
-                            <img src="img/usuario.png" alt="">
-                            <input type="text" placeholder="Seleccionar cliente (Opcional)">
+                        <div class="search-container">
+                            <div class="input-box">
+                                <img src="img/usuario.png" alt="">
+                                <input type="lists" id="cliente-input" placeholder="Seleccionar cliente (Opcional)">
+                                
+                            </div>
+                            <ul class="dropdown-list" id="clientes-dropdown"></ul>
                         </div>
+                        
 
-                        <button class="btn-outline" href="../CLIENTE/Cliente.html">
+                        <a class="btn-outline" href="../CLIENTE/Cliente.html">
                             + Nuevo cliente
-                        </button>
+                    </a>
 
                     </div>
                 </div>
 
                 <div class="double-grid">
 
-                    <div class="input-group">
-                        <label>Mesa</label>
-
-                        <div class="input-box">
-                            <img src="IMG/mesa.png" alt="">
-                            <select>
-                                <option>Mesa 5</option>
-                            </select>
-                        </div>
-                    </div>
 
                     <div class="input-group">
                         <label>Atendido por</label>
-
                         <div class="input-box">
                             <img src="img/usuario.png" alt="">
                             <select>
-                                <option>Admin</option>
+                                <option value="option"> </option>
                             </select>
                         </div>
 
@@ -383,17 +376,7 @@
 
             </div>
 
-            <div class="card">
-
-                <div class="input-group">
-
-                    <label>Observaciones (Opcional)</label>
-
-                    <textarea placeholder="Agregar observaciones a la venta..."></textarea>
-
-                </div>
-
-            </div>
+        
 
             <div class="card">
 
@@ -559,6 +542,8 @@
 
             </div>
 
+                        <div class="payment-method">
+
             <div class="input-group">
 
                 <label>Método de pago</label>
@@ -591,7 +576,7 @@
                 </div>
 
             </div>
-
+                        </div>
         </aside>
 
     </section>
@@ -604,6 +589,6 @@
     © 2026 Tien Lan Zu Shi 
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

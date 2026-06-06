@@ -64,6 +64,8 @@ function guardarUsuario() {
         return;
     }
 
+    
+
     // VALIDAR REPETIDOS
     const filas = document.querySelectorAll(".table-usuarios tbody tr");
 
@@ -89,9 +91,21 @@ function guardarUsuario() {
                 return;
             }
         }
+        
     }
 
     error.innerHTML = "";
+
+        const usuariosActualesStr = localStorage.getItem('catalogoUsuarios');
+        const usuariosActuales = usuariosActualesStr ? JSON.parse(usuariosActualesStr) : [];
+
+        const nuevoUsuario = {
+        nombre: nombre
+        };
+
+        const nuevosUsuarios = [...usuariosActuales, nuevoUsuario];
+        localStorage.setItem('catalogoUsuarios', JSON.stringify(nuevosUsuarios));
+
 
     let claseEstado = "";
 
@@ -257,3 +271,15 @@ window.onclick = function (event) {
         cerrarModal();
     }
 };
+
+
+const clientesActualesStr = localStorage.getItem('catalogoClientes');
+const clientesActuales = clientesActualesStr ? JSON.parse(clientesActualesStr) : [];
+
+const nuevoCliente = {
+    nombre: document.getElementById('nombre-input').value,
+    apellido: document.getElementById('apellido-input').value
+};
+
+const nuevosClientes = [...clientesActuales, nuevoCliente];
+localStorage.setItem('catalogoClientes', JSON.stringify(nuevosClientes));
