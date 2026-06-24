@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento Inventario</title>
+
+    
+     <link rel="stylesheet" href="../../STYLES/global.css">
+     <link rel="stylesheet" href="../../STYLES/paginacion.css">
+
+    <link rel="stylesheet" href="movimientoinventario.css">
+</head>
+
+<body class="movimiento">
+
+<header class="header">
+
+    <div class="header-content">
+
+        <div class="logo-negocio">
+            <img src="../../ASSETS/img/logo.png" alt="">
+            <span>Tien Lan Zu Shi</span>
+        </div>
+
+        <div class="user-info">
+
+            <div class="notif">
+                🔔
+                <span class="notif-badge">3</span>
+            </div>
+
+            <span>Admin</span>
+
+            <div class="user-avatar">
+                TL
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+ <input type="checkbox" id="toggle-sidebar" hidden>
+
+<div class="main-container">
+
+    <aside class="sidebar">
+
+        <nav class="nav">
+            <label for="toggle-sidebar" class="toggle-menu">☰</label>
+
+            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                <img src="../../ASSETS/img/home.png">
+                <span>Inicio</span>
+            </a>
+
+            <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                <img src="../../ASSETS/img/grafico.png">
+                <span>Dashboard</span>
+            </a>
+
+       
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/catalogo.png">
+                        <span>Catálogos</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../SEGURIDAD/USUARIO/usuario.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/usuario.png">
+                        <span>Usuarios</span>
+                    </a>
+
+                    <a href="../SEGURIDAD/ROLES/roles.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/rol.png">
+                        <span>Roles</span>
+                    </a>
+
+                    <a href="../CLIENTE/Cliente.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/usuario.png">
+                        <span>Clientes</span>
+                    </a>
+
+                    <a href="../CATEGORIA/categoria.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/categoria.png">
+                        <span>Categorías</span>
+                    </a>
+
+                    <a href="../PLATILLO/Porcion.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/platillos.png">
+                        <span>Platillos</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+    
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/ventas1.png">
+                        <span>Ventas</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                   
+
+                    <a href="../VENTA/venta.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/historialventa.png">
+                        <span> Venta</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable" open>
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/invcat.png">
+                        <span>Movimientos</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../INVENTARIO/inventario.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/inventario.png">
+                        <span>Inventario</span>
+                    </a>
+
+                    <a href="../MOVIMIENTO INVENTARIO/movimientoInventario.html" class="nav-link sub-link active">
+                        <img src="../../ASSETS/img/movimiento.png">
+                        <span>Control Inventario</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/Conficat.png">
+                        <span>Sistema</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../CONFIGURACION/configuracion.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/configuracion.png">
+                        <span>Configuración</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <hr class="linea-cerrar">
+
+            <a href="../AUTH/COMPONENTS/LOGIN/login.html" class="nav-link">
+                <img src="../../ASSETS/img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+              <main class="main-content">
+
+    <div class="top-header">
+        <div class="header-left">
+            <h2>Movimiento de Inventario</h2>
+            <p>Monitoreo y control de existencias en tiempo real</p>
+        </div>
+    </div>
+
+    <section class="card">
+        <div class="filter-bar">
+            <div class="filter-left">
+                <div class="search-container">
+                    <img src="../../ASSETS/img/search.png" alt="Buscar">
+                    <input type="text" id="searchProduct" placeholder="Buscar movimientos...">
+                </div>
+                
+                <button class="btn-exportar"  id="btnExportarExcel">
+                    <img src="../../ASSETS/img/import.png"  alt="Exportar">
+                    Exportar
+                </button>
+
+                <button class="btn-registrar">
+                    + Registrar Ajuste
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="filter-right">
+            <div class="date-group">
+                <label>Desde</label>
+                <input type="date" id="fromDate" class="date-input">
+            </div>
+            
+            <div class="date-group">
+                <label>Hasta</label>
+                <input type="date" id="toDate" class="date-input">
+            </div>
+
+            <button class="btn-filtrar">
+                Filtrar
+            </button>
+        </div>
+    </section>
+
+    <div class="card">
+        <h2 class="card-title">Historial de Movimientos</h2>
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Porcion</th>
+                        <th>Tipo de Movimiento</th>
+                        <th>Cantidad</th>
+                        <th>Stock Diario Previo</th>
+                        <th>Nuevo Stock Diario</th>
+                        <th>Stock Acumulado Previo</th>
+                        <th>Nuevo Stock Acumulado</th>
+                        <th>Justificación</th>
+                        <th>Fecha Movimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+
+                <span class="pagination-info">
+                    Mostrando 1 - 10 de 50 registros
+                </span>
+
+                <div class="pagination-controls">
+                    <button>‹</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>›</button>
+                </div>
+
+            </div>
+    </div>
+
+</main>
+
+
+
+</div>
+<div id="modalAjuste" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" id="closeModal">✖</button>
+        <div class="modal-header-gradient">
+        <h3>Registrar Ajuste</h3>
+        </div>
+        <form id="formAjuste">
+            <div class="form-group">
+                <label>Platillo</label>
+                <input type="text" id="buscadorPlatillo" placeholder="Escribe para buscar..." required autocomplete="off">
+                <ul id="listaPlatillos" class="dropdown-list"></ul>
+            </div>
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" id="inputCantidad" placeholder="Ej: 5" required>
+            </div>
+             <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="inputFecha" name="fecha" required>
+                </div>
+            <div class="form-group">
+                <label>Motivo</label>
+                <input type="text" id="inputMotivo" placeholder="Ej: Venta" required>
+            </div>
+            <div class="form-group">
+                <label>Justificación</label>
+                <input type="text" id="inputJustificacion" placeholder="Ej: Producto vencido" required>
+            </div>
+            <button type="submit" class="btn-save">
+                <img src="../../ASSETS/img/guardar.png" alt=""> Guardar Ajuste
+            </button>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="module" src="./js/movimientoinventario-function.js"></script>
+</body>
+</html>
