@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios </title>
+
+     <link rel="stylesheet" href="../../../STYLES/global.css">
+     <link rel="stylesheet" href="../../../STYLES/paginacion.css">
+
+    <link rel="stylesheet" href="usuario.css">
+</head>
+
+<body class="usuarios">
+
+<header class="header">
+
+    <div class="header-content">
+
+        <div class="logo-negocio">
+            <img src="../../../ASSETS/img/logo.png" alt="">
+            <span>Tien Lan Zhu Shi</span>
+        </div>
+
+        <div class="user-info">
+
+            <div class="notif">
+                🔔
+                <span class="notif-badge">3</span>
+            </div>
+
+            <span>Admin</span>
+
+            <div class="user-avatar">
+                TL
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<input type="checkbox" id="toggle-sidebar" hidden>
+
+<div class="main-container">
+
+    <aside class="sidebar">
+
+        <nav class="nav">
+            <label for="toggle-sidebar" class="toggle-menu">☰</label>
+
+            <a href="../../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                <img src="../../../ASSETS/img/home.png">
+                <span>Inicio</span>
+            </a>
+
+            <a href="../../DASHBOARD/dashboard.html" class="nav-link">
+                <img src="../../../ASSETS/img/grafico.png">
+                <span>Dashboard</span>
+            </a>
+
+            <details class="menu-desplegable" open>
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../../ASSETS/img/catalogo.png">
+                        <span>Catálogos</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../../SEGURIDAD/USUARIO/usuario.html" class="nav-link sub-link active">
+                        <img src="../../../ASSETS/img/usuario.png">
+                        <span>Usuarios</span>
+                    </a>
+
+                    <a href="../../SEGURIDAD/ROLES/roles.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/rol.png">
+                        <span>Roles</span>
+                    </a>
+
+                    <a href="../../CLIENTE/Cliente.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/usuario.png">
+                        <span>Clientes</span>
+                    </a>
+
+                    <a href="../../CATEGORIA/categoria.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/categoria.png">
+                        <span>Categorías</span>
+                    </a>
+
+                    <a href="../../PLATILLO/Porcion.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/platillos.png">
+                        <span>Platillos</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../../ASSETS/img/ventas1.png">
+                        <span>Ventas</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+
+                    <a href="../../VENTA/venta.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/historialventa.png">
+                        <span> Venta</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../../ASSETS/img/invcat.png">
+                        <span>Movimientos</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../../INVENTARIO/inventario.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/inventario.png">
+                        <span>Inventario</span>
+                    </a>
+
+                    <a href="../../MOVIMIENTO INVENTARIO/movimientoinventario.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/movimiento.png">
+                        <span>Control Inventario</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="menu-desplegable">
+
+                <summary class="menu-title">
+
+                    <div class="menu-left">
+                        <img src="../../../ASSETS/img/Conficat.png">
+                        <span>Sistema</span>
+                    </div>
+
+                    <span class="flecha">⌄</span>
+
+                </summary>
+
+                <div class="submenu">
+
+                    <a href="../../CONFIGURACION/configuracion.html" class="nav-link sub-link">
+                        <img src="../../../ASSETS/img/configuracion.png">
+                        <span>Configuración</span>
+                    </a>
+
+                </div>
+
+            </details>
+
+            <hr class="linea-cerrar">
+
+            <a href="../../AUTH/COMPONENTS/LOGIN/login.html" class="nav-link">
+                <img src="../../../ASSETS/img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="usuarios-container">
+
+            <div class="header-usuarios">
+
+                <h2>Gestión de Usuarios</h2>
+
+                <div class="usuarios-tools">
+
+                    <input type="text" class="search-usuarios" placeholder="Buscar Usuario...">
+
+                    <button class="btn-import">
+                        <img src="../../../ASSETS/img/import.png">
+                        <span>Importar</span>
+                    </button>
+
+                    <button class="btn-usuarios" id="btnNuevoUsuario">
+                        + Nuevo Usuario
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table-usuarios">
+
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                    </tbody>
+
+                </table>
+
+            </div>
+              <div class="pagination">
+
+                <span class="pagination-info">
+                    Mostrando 1 - 10 de 50 registros
+                </span>
+
+                <div class="pagination-controls">
+                    <button>‹</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>›</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<div id="modalUsuario" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Nuevo Usuario</h3>
+
+            <button class="btn-close" id="btnCerrarModal">✕</button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+                <label>Nombre</label>
+                <input type="text" id="nombreUsuario" placeholder="Ingrese nombre">
+            </div>
+
+            <div class="input-group">
+                <label>Correo</label>
+                <input type="text" id="correoUsuario" placeholder="Ingrese correo">
+            </div>
+
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" id="passwordUsuario" placeholder="Ingrese contraseña">
+            </div>
+
+            <div class="input-group">
+                <label>Estado</label>
+                <select id="estadoUsuario">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+
+        </div>
+
+        <p id="errorUsuario" class="error-text"></p>
+
+        <div class="modal-buttons">
+
+            <button class="btn-usuarios" id="btnGuardar">
+                <img src="../../../ASSETS/img/guardar.png">
+                Guardar
+            </button>
+
+            <button class="btn-cancel" id="btnCancelar">
+                Cancelar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="modalRol" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Asignar Rol</h3>
+
+            <button class="btn-close" id="btnCerrarModalRol">✕</button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+                <label>Rol</label>
+                <select id="selectRol">
+                    <option value="">Seleccione un rol...</option>
+                </select>
+            </div>
+
+        </div>
+
+        <p id="errorRol" class="error-text"></p>
+
+        <div class="modal-buttons">
+
+            <button class="btn-usuarios" id="btnGuardarRol">
+                <img src="../../../ASSETS/img/guardar.png">
+                Asignar
+            </button>
+
+            <button class="btn-cancel" id="btnCancelarRol">
+                Cancelar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="./js/usuario-fuction.js"></script>
+
+</body>
+</html>

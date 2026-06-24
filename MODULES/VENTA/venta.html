@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../STYLES/global.css">
+    <link rel="stylesheet" href="../../STYLES/paginacion.css">
+    <link rel="stylesheet" href="Venta.css">
+</head>
+<body class="historialventas">
+
+<header class="header">
+    <div class="header-content">
+        <div class="logo-negocio">
+            <img src="../../ASSETS/img/logo.png" alt="">
+            <span>Tien Lan Zu Shi</span>
+        </div>
+        <div class="user-info">
+            <div class="notif">
+                🔔
+                <span class="notif-badge">3</span>
+            </div>
+            <span>Admin</span>
+            <div class="user-avatar">TL</div>
+        </div>
+    </div>
+</header>
+
+<input type="checkbox" id="toggle-sidebar" hidden>
+
+<div class="main-container">
+    <aside class="sidebar">
+        <nav class="nav">
+            <label for="toggle-sidebar" class="toggle-menu">☰</label>
+            <a href="../PAGINA PRINCIPAL/pagprincipal.html" class="nav-link">
+                <img src="../../ASSETS/img/home.png">
+                <span>Inicio</span>
+            </a>
+            <a href="../DASHBOARD/dashboard.html" class="nav-link">
+                <img src="../../ASSETS/img/grafico.png">
+                <span>Dashboard</span>
+            </a>
+            <details class="menu-desplegable">
+                <summary class="menu-title">
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/catalogo.png">
+                        <span>Catálogos</span>
+                    </div>
+                    <span class="flecha">⌄</span>
+                </summary>
+                <div class="submenu">
+                    <a href="../SEGURIDAD/USUARIO/usuario.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/usuario.png">
+                        <span>Usuarios</span>
+                    </a>
+                    <a href="../SEGURIDAD/ROLES/roles.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/rol.png">
+                        <span>Roles</span>
+                    </a>
+                    <a href="../CLIENTE/Cliente.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/usuario.png">
+                        <span>Clientes</span>
+                    </a>
+                    <a href="../CATEGORIA/categoria.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/categoria.png">
+                        <span>Categorías</span>
+                    </a>
+                    <a href="../PLATILLO/Porcion.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/platillos.png">
+                        <span>Platillos</span>
+                    </a>
+                </div>
+            </details>
+            <details class="menu-desplegable" open>
+                <summary class="menu-title">
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/ventas1.png">
+                        <span>Ventas</span>
+                    </div>
+                    <span class="flecha">⌄</span>
+                </summary>
+                <div class="submenu">
+                    <a href="../VENTA/venta.html" class="nav-link sub-link active">
+                        <img src="../../ASSETS/img/historialventa.png">
+                        <span>Venta</span>
+                    </a>
+                </div>
+            </details>
+            <details class="menu-desplegable">
+                <summary class="menu-title">
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/invcat.png">
+                        <span>Movimientos</span>
+                    </div>
+                    <span class="flecha">⌄</span>
+                </summary>
+                <div class="submenu">
+                    <a href="../INVENTARIO/inventario.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/inventario.png">
+                        <span>Inventario</span>
+                    </a>
+                    <a href="../MOVIMIENTO INVENTARIO/movimientoinventario.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/movimiento.png">
+                        <span>Control Inventario</span>
+                    </a>
+                </div>
+            </details>
+            <details class="menu-desplegable">
+                <summary class="menu-title">
+                    <div class="menu-left">
+                        <img src="../../ASSETS/img/Conficat.png">
+                        <span>Sistema</span>
+                    </div>
+                    <span class="flecha">⌄</span>
+                </summary>
+                <div class="submenu">
+                    <a href="../CONFIGURACION/configuracion.html" class="nav-link sub-link">
+                        <img src="../../ASSETS/img/configuracion.png">
+                        <span>Configuración</span>
+                    </a>
+                </div>
+            </details>
+            <hr class="linea-cerrar">
+            <a href="../AUTH/COMPONENTS/LOGIN/login.html" class="nav-link">
+                <img src="../../ASSETS/img/cerrarsesion.png">
+                <span>Cerrar sesión</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="container">
+        <div class="sales-header">
+            <div>
+                <h1>Ventas</h1>
+                <p>Gestiona y visualiza todas las ventas realizadas.</p>
+            </div>
+            <button class="btn-new-sale" id="openVentaModalBtn">
+                <i class="fa-solid fa-plus"></i>
+                Nueva Venta
+            </button>
+        </div>
+
+        <section class="top-bar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Buscar ventas...">
+            </div>
+            <div class="filters">
+                <div class="date-filter">
+                    <label>Desde</label>
+                    <input type="date" id="fromDate">
+                </div>
+                <div class="date-filter">
+                    <label>Hasta</label>
+                    <input type="date" id="toDate">
+                </div>
+                <button class="btn-filter" id="btnFiltrar">Filtrar</button>
+                <select id="paymentFilter">
+                    <option value="all">Método de Pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Transferencia">Transferencia</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="table-wrapper">
+            <div class="table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Platillo</th>
+                            <th>Tipo</th>
+                            <th>Fecha</th>
+                            <th>Cantidad</th>
+                            <th>Total línea</th>
+                            <th>Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="pagination-info">Mostrando 0 - 0 de 0 registros</span>
+            <div class="pagination-controls"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="ventaModal" class="modal-overlay">
+    <div class="modal-venta animate-modal">
+
+        <div class="mv-sidebar">
+            <div class="mv-sidebar-icon"><i class="fa-solid fa-bowl-food"></i></div>
+            <span class="mv-sidebar-label">Nueva<br>Venta</span>
+            <div class="mv-sidebar-deco"></div>
+        </div>
+
+        <div class="mv-body">
+            <div class="mv-header">
+                <h2>Registrar Venta</h2>
+                <button class="mv-close" id="closeVentaModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="mv-scroll">
+                <div class="mv-section-label"><i class="fa-solid fa-user"></i> Información del cliente</div>
+
+                <div class="mv-row-2">
+                    <div class="mv-field">
+                        <label>Cliente</label>
+                        <div class="mv-search-wrap">
+                            <input type="text" id="clienteSearchInput" class="mv-input" placeholder="Buscar cliente...">
+                            <button type="button" class="mv-search-btn" id="btnBuscarCliente">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mv-field">
+                        <label>Fecha de Venta</label>
+                        <input type="date" id="ventaDate" class="mv-input">
+                    </div>
+                </div>
+
+                <div id="ventaModalError" class="mv-error"></div>
+
+                <div class="mv-divider"></div>
+                <div class="mv-section-label"><i class="fa-solid fa-utensils"></i> Agregar plaatillos</div>
+
+                <div class="mv-field">
+                    <label>Platillo</label>
+                    <div class="mv-search-wrap">
+                        <input type="text" id="portionSearchInput" class="mv-input" placeholder="Buscar porción disponible...">
+                        <button type="button" class="mv-search-btn" id="btnBuscarPorcion">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+
+               
+                <div class="mv-field">
+                    <label>Tipo de Porción</label>
+                    <select id="portionType" class="mv-input">
+                        <option value=""> Seleccionar tipo </option>
+                        <option value="Media Porción">Media Porción</option>
+                        <option value="Completa">Completa</option>
+                    </select>
+                </div>
+
+                <div class="mv-row-2">
+                    <div class="mv-field">
+                        <label>Cantidad</label>
+                        <input type="number" id="portionQuantity" class="mv-input" value="1" min="1">
+                    </div>
+                    <div class="mv-field">
+                        <label>Precio Venta</label>
+                        <input type="number" id="portionPrice" class="mv-input" min="0" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div id="mvError" class="mv-error"></div>
+
+                <button type="button" class="mv-btn-add" id="btnAddToCart">
+                    <i class="fa-solid fa-circle-plus"></i> Agregar 
+                </button>
+
+                <div class="mv-divider"></div>
+                <div class="mv-section-label"><i class="fa-solid fa-basket-shopping"></i> Porciones</div>
+
+                <div class="mv-cart-wrapper">
+                    <table class="mv-cart-table">
+                        <thead>
+                            <tr>
+                                <th>Porción</th>
+                                <th>Tipo</th>
+                                <th>Cant.</th>
+                                <th>P. Unit.</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartBody">
+                            <tr class="mv-empty-row">
+                                <td colspan="6">
+                                    <div class="mv-empty-state">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <p>La venta esta vacia</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mv-total-bar">
+                    <span>Total Neto</span>
+                    <span id="cartTotal" class="mv-total-amount">C$0.00</span>
+                </div>
+            </div>
+
+            <div class="mv-footer">
+                <button type="button" class="mv-btn-cancel" id="btnCancelarVenta">
+                    <i class="fa-solid fa-xmark"></i> Cancelar
+                </button>
+                <button type="button" class="mv-btn-save" id="btnGenerarFactura">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar venta
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="verVentaModal" class="modal-overlay">
+    <div class="modal-ver animate-modal">
+        <div class="mver-header">
+            <div class="mver-header-icon"><i class="fa-solid fa-receipt"></i></div>
+            <div>
+                <h2>Detalle de Venta</h2>
+                <p>Información completa de la venta</p>
+            </div>
+            <button class="mver-close" id="closeVerVentaModal"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="mver-body">
+            <div class="mver-info-grid">
+                <div class="mver-chip">
+                    <span class="mver-chip-label"><i class="fa-solid fa-user"></i> Cliente</span>
+                    <input type="text" id="verCliente" class="mver-input" readonly>
+                </div>
+                <div class="mver-chip">
+                    <span class="mver-chip-label"><i class="fa-solid fa-calendar"></i> Fecha</span>
+                    <input type="text" id="verFecha" class="mver-input" readonly>
+                </div>
+            </div>
+
+            <div class="mver-table-wrap">
+                <table class="mver-table">
+                    <thead>
+                        <tr>
+                            <th>Porción</th>
+                            <th>Tipo</th>
+                            <th>Cant.</th>
+                            <th>P. Unit.</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="verVentaDetalle"></tbody>
+                </table>
+            </div>
+
+            <div class="mver-total">
+                <span>Total Neto</span>
+                <span id="verVentaTotal" class="mver-total-num">C$0.00</span>
+            </div>
+        </div>
+
+        <div class="mver-footer">
+            <button type="button" class="mver-btn-close" id="btnCerrarVerVenta">
+                <i class="fa-solid fa-xmark"></i> Cerrar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="facturaModal" class="modal-overlay">
+    <div class="modal-factura animate-modal">
+
+        <div class="mf-top-strip">
+            <div class="mf-brand">
+                <span class="mf-brand-zh">天兰竹石</span>
+                <span class="mf-brand-sub">Tien Lan Zu Shi · Jinotepe</span>
+            </div>
+            <div class="mf-invoice-tag">
+                <span class="mf-invoice-label">收据</span>
+                <span class="mf-invoice-num" id="facturaNumero">#0001</span>
+                <span class="mf-invoice-date" id="facturaDateTag">14-06-2026</span>
+            </div>
+            <button class="mf-close" id="closeFacturaModal"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="mf-body">
+            <div class="mf-client-row">
+                <span class="mf-client-label">客户</span>
+                <span id="facturaCliente">Sin especificar</span>
+            </div>
+
+            <table class="mf-table">
+                <thead>
+                    <tr>
+                        <th>Porción</th>
+                        <th>Tipo</th>
+                        <th>Cant.</th>
+                        <th>P. Unit.</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="facturaTableBody"></tbody>
+            </table>
+
+            <hr class="mf-sep">
+
+            <div class="mf-totals">
+                <div class="mf-total-line final">
+                    <span>TOTAL</span>
+                    <span id="facturaTotalNeto">C$0.00</span>
+                </div>
+            </div>
+
+            <div class="mf-thanks">
+                <span class="mf-thanks-zh">谢谢惠顾</span>
+                <span class="mf-thanks-pinyin">xièxie huìgù</span>
+            </div>
+        </div>
+
+        <div class="mf-footer-ticket"></div>
+
+        <div class="mf-footer">
+            <button class="mf-btn-close" id="btnCerrarFactura">
+                <i class="fa-solid fa-xmark"></i> Cerrar
+            </button>
+            <button class="mf-btn-print" id="btnImprimirFactura">
+                <i class="fa-solid fa-print"></i> Imprimir
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="module" src="./js/venta-function.js"></script>
+</body>
+</html>
